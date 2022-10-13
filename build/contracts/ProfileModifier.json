@@ -1,0 +1,1683 @@
+{
+  "contractName": "ProfileModifier",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"author\":\"Blockchain Clinic Records Team\",\"kind\":\"dev\",\"methods\":{},\"title\":\"ProfileModifier\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Contract to use modifiers which validates users roles\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ProfileModifier.sol\":\"ProfileModifier\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ProfileModifier.sol\":{\"keccak256\":\"0x7b6866ecb7e34f77b32ef6b0b2f9d57db3e7e8b650e8db65654ec788c8754b41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6eea6e407d1c5a06224577b3bf752203630ce256411399c7aa0157a35b9ea83\",\"dweb:/ipfs/Qmak4ED9tNLmTNLKp4w9Ft7AAPW6du7YwqRLNM2KL3kv4Q\"]},\"project:/contracts/RoleTypes.sol\":{\"keccak256\":\"0xd0071b3c60d31d752b026ef9a249cd19b588b8e0702f9f4a02750ed4a8004593\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a333c38b49598c4fc9f048689d8a52c7192fef31a914dcc31aa37e771133ef1c\",\"dweb:/ipfs/QmRZtr7SWnWUFAADqgFFYJg6kjBZnmCakrNXah37AHMYqE\"]},\"project:/contracts/SessionContract.sol\":{\"keccak256\":\"0x7d187d8fd7d430aeabfe8d75935276e88bc02f27b35f0a6f73775c9a28d41a3e\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://572dd8158d15b71ea3fdc9799a01eef278100784a97085236e3e03e220d04ea5\",\"dweb:/ipfs/QmPv88enB4rPYSekRAt2guhCpfy3ZZi23bwkUMYb3qQuwk\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220b913477839ecb1af4d28144f3b24b1e90c6af61409b4350fe0c577155732b5ee64736f6c63430008070033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220b913477839ecb1af4d28144f3b24b1e90c6af61409b4350fe0c577155732b5ee64736f6c63430008070033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "270:2254:10:-:0;;;302:16;;;;;;;;;;270:2254;;;;;;",
+  "deployedSourceMap": "270:2254:10:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.7;\r\n\r\nimport \"./RoleTypes.sol\";\r\nimport \"./SessionContract.sol\";\r\n\r\n/**\r\n * @author Blockchain Clinic Records Team\r\n * @title ProfileModifier\r\n * @notice Contract to use modifiers which validates users roles\r\n */\r\ncontract ProfileModifier {\r\n    constructor() {}\r\n\r\n    /**\r\n     * @notice modifier that validates if a user has an administrator role\r\n     * @param _sender user address eoa\r\n     * @param sessionContract address of the deployed SessionContract instance\r\n     */\r\n    modifier isAdmin(address _sender, address sessionContract) {\r\n        require(\r\n            SessionContract(sessionContract).validateUser(\r\n                _sender,\r\n                uint256(RoleTypes.ADMIN)\r\n            ),\r\n            \"sender is not an admin\"\r\n        );\r\n        _;\r\n    }\r\n\r\n    /**\r\n     * @notice modifier that validates if a user has a doctor role\r\n     * @param _sender user address eoa\r\n     * @param sessionContract address of the deployed SessionContract instance\r\n     */\r\n    modifier isDoctor(address _sender, address sessionContract) {\r\n        require(\r\n            SessionContract(sessionContract).validateUser(\r\n                _sender,\r\n                uint256(RoleTypes.DOCTOR)\r\n            ),\r\n            \"sender is not a doctor\"\r\n        );\r\n        _;\r\n    }\r\n\r\n    /**\r\n     * @notice modifier that validates if a user has a nurse role\r\n     * @param _sender user address eoa\r\n     * @param sessionContract address of the deployed SessionContract instance\r\n     */\r\n    modifier isNurse(address _sender, address sessionContract) {\r\n        require(\r\n            SessionContract(sessionContract).validateUser(\r\n                _sender,\r\n                uint256(RoleTypes.NURSE)\r\n            ),\r\n            \"sender is not a nurse\"\r\n        );\r\n        _;\r\n    }\r\n\r\n    /**\r\n     * @notice modifier that validates if a user has a nurse or doctor role\r\n     * @param _sender user address eoa\r\n     * @param sessionContract address of the deployed SessionContract instance\r\n     */\r\n    modifier isMedical(address _sender, address sessionContract) {\r\n        require(\r\n            SessionContract(sessionContract).validateUser(\r\n                _sender,\r\n                uint256(RoleTypes.DOCTOR)\r\n            ) ||\r\n                SessionContract(sessionContract).validateUser(\r\n                    _sender,\r\n                    uint256(RoleTypes.NURSE)\r\n                ),\r\n            \"sender is not a medical\"\r\n        );\r\n        _;\r\n    }\r\n}\r\n",
+  "sourcePath": "D:\\Documents\\React\\Tesis Historias Clinicas\\contracts\\ProfileModifier.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ProfileModifier.sol",
+    "exportedSymbols": {
+      "Module": [
+        1219
+      ],
+      "ModuleIdentificator": [
+        1279
+      ],
+      "ModulePermissions": [
+        1248
+      ],
+      "Permisions": [
+        1214
+      ],
+      "ProfileModifier": [
+        1197
+      ],
+      "Role": [
+        1226
+      ],
+      "RoleModules": [
+        1255
+      ],
+      "RoleTypes": [
+        1204
+      ],
+      "Session": [
+        1264
+      ],
+      "SessionContract": [
+        2564
+      ],
+      "User": [
+        1237
+      ],
+      "UserRole": [
+        1242
+      ]
+    },
+    "id": 1198,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1081,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".7"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:10"
+      },
+      {
+        "absolutePath": "project:/contracts/RoleTypes.sol",
+        "file": "./RoleTypes.sol",
+        "id": 1082,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1198,
+        "sourceUnit": 1205,
+        "src": "62:25:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/SessionContract.sol",
+        "file": "./SessionContract.sol",
+        "id": 1083,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1198,
+        "sourceUnit": 2565,
+        "src": "89:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 1084,
+          "nodeType": "StructuredDocumentation",
+          "src": "124:144:10",
+          "text": " @author Blockchain Clinic Records Team\n @title ProfileModifier\n @notice Contract to use modifiers which validates users roles"
+        },
+        "fullyImplemented": true,
+        "id": 1197,
+        "linearizedBaseContracts": [
+          1197
+        ],
+        "name": "ProfileModifier",
+        "nameLocation": "279:15:10",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1087,
+              "nodeType": "Block",
+              "src": "316:2:10",
+              "statements": []
+            },
+            "id": 1088,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1085,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "313:2:10"
+            },
+            "returnParameters": {
+              "id": 1086,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "316:0:10"
+            },
+            "scope": 1197,
+            "src": "302:16:10",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1111,
+              "nodeType": "Block",
+              "src": "599:232:10",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 1100,
+                            "name": "_sender",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1091,
+                            "src": "696:7:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "arguments": [
+                              {
+                                "expression": {
+                                  "id": 1103,
+                                  "name": "RoleTypes",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 1204,
+                                  "src": "730:9:10",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_enum$_RoleTypes_$1204_$",
+                                    "typeString": "type(enum RoleTypes)"
+                                  }
+                                },
+                                "id": 1104,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "memberName": "ADMIN",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 1201,
+                                "src": "730:15:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_enum$_RoleTypes_$1204",
+                                  "typeString": "enum RoleTypes"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_enum$_RoleTypes_$1204",
+                                  "typeString": "enum RoleTypes"
+                                }
+                              ],
+                              "id": 1102,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "722:7:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_uint256_$",
+                                "typeString": "type(uint256)"
+                              },
+                              "typeName": {
+                                "id": 1101,
+                                "name": "uint256",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "722:7:10",
+                                "typeDescriptions": {}
+                              }
+                            },
+                            "id": 1105,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "722:24:10",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "arguments": [
+                              {
+                                "id": 1097,
+                                "name": "sessionContract",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1093,
+                                "src": "648:15:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "id": 1096,
+                              "name": "SessionContract",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2564,
+                              "src": "632:15:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_SessionContract_$2564_$",
+                                "typeString": "type(contract SessionContract)"
+                              }
+                            },
+                            "id": 1098,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "632:32:10",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_SessionContract_$2564",
+                              "typeString": "contract SessionContract"
+                            }
+                          },
+                          "id": 1099,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "validateUser",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2111,
+                          "src": "632:45:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$returns$_t_bool_$",
+                            "typeString": "function (address,uint256) view external returns (bool)"
+                          }
+                        },
+                        "id": 1106,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "632:129:10",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "73656e646572206973206e6f7420616e2061646d696e",
+                        "id": 1107,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "776:24:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_156cbb05733026f4aa0b363c6a3be5f21b7ab8f248a865cc639a4d928ddeabb8",
+                          "typeString": "literal_string \"sender is not an admin\""
+                        },
+                        "value": "sender is not an admin"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_156cbb05733026f4aa0b363c6a3be5f21b7ab8f248a865cc639a4d928ddeabb8",
+                          "typeString": "literal_string \"sender is not an admin\""
+                        }
+                      ],
+                      "id": 1095,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "610:7:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1108,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "610:201:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1109,
+                  "nodeType": "ExpressionStatement",
+                  "src": "610:201:10"
+                },
+                {
+                  "id": 1110,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "822:1:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1089,
+              "nodeType": "StructuredDocumentation",
+              "src": "326:208:10",
+              "text": " @notice modifier that validates if a user has an administrator role\n @param _sender user address eoa\n @param sessionContract address of the deployed SessionContract instance"
+            },
+            "id": 1112,
+            "name": "isAdmin",
+            "nameLocation": "549:7:10",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1094,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1091,
+                  "mutability": "mutable",
+                  "name": "_sender",
+                  "nameLocation": "565:7:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1112,
+                  "src": "557:15:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1090,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "557:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1093,
+                  "mutability": "mutable",
+                  "name": "sessionContract",
+                  "nameLocation": "582:15:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1112,
+                  "src": "574:23:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1092,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "574:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "556:42:10"
+            },
+            "src": "540:291:10",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1135,
+              "nodeType": "Block",
+              "src": "1105:233:10",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 1124,
+                            "name": "_sender",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1115,
+                            "src": "1202:7:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "arguments": [
+                              {
+                                "expression": {
+                                  "id": 1127,
+                                  "name": "RoleTypes",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 1204,
+                                  "src": "1236:9:10",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_enum$_RoleTypes_$1204_$",
+                                    "typeString": "type(enum RoleTypes)"
+                                  }
+                                },
+                                "id": 1128,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "memberName": "DOCTOR",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 1202,
+                                "src": "1236:16:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_enum$_RoleTypes_$1204",
+                                  "typeString": "enum RoleTypes"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_enum$_RoleTypes_$1204",
+                                  "typeString": "enum RoleTypes"
+                                }
+                              ],
+                              "id": 1126,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "1228:7:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_uint256_$",
+                                "typeString": "type(uint256)"
+                              },
+                              "typeName": {
+                                "id": 1125,
+                                "name": "uint256",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "1228:7:10",
+                                "typeDescriptions": {}
+                              }
+                            },
+                            "id": 1129,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1228:25:10",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "arguments": [
+                              {
+                                "id": 1121,
+                                "name": "sessionContract",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1117,
+                                "src": "1154:15:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "id": 1120,
+                              "name": "SessionContract",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2564,
+                              "src": "1138:15:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_SessionContract_$2564_$",
+                                "typeString": "type(contract SessionContract)"
+                              }
+                            },
+                            "id": 1122,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1138:32:10",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_SessionContract_$2564",
+                              "typeString": "contract SessionContract"
+                            }
+                          },
+                          "id": 1123,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "validateUser",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2111,
+                          "src": "1138:45:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$returns$_t_bool_$",
+                            "typeString": "function (address,uint256) view external returns (bool)"
+                          }
+                        },
+                        "id": 1130,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1138:130:10",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "73656e646572206973206e6f74206120646f63746f72",
+                        "id": 1131,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1283:24:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_4537d8ff95bdb448711910ce14a2e24a0d32104e762792bf8604fc1a21b065b0",
+                          "typeString": "literal_string \"sender is not a doctor\""
+                        },
+                        "value": "sender is not a doctor"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_4537d8ff95bdb448711910ce14a2e24a0d32104e762792bf8604fc1a21b065b0",
+                          "typeString": "literal_string \"sender is not a doctor\""
+                        }
+                      ],
+                      "id": 1119,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1116:7:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1132,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1116:202:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1133,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1116:202:10"
+                },
+                {
+                  "id": 1134,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1329:1:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1113,
+              "nodeType": "StructuredDocumentation",
+              "src": "839:200:10",
+              "text": " @notice modifier that validates if a user has a doctor role\n @param _sender user address eoa\n @param sessionContract address of the deployed SessionContract instance"
+            },
+            "id": 1136,
+            "name": "isDoctor",
+            "nameLocation": "1054:8:10",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1118,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1115,
+                  "mutability": "mutable",
+                  "name": "_sender",
+                  "nameLocation": "1071:7:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1136,
+                  "src": "1063:15:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1114,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1063:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1117,
+                  "mutability": "mutable",
+                  "name": "sessionContract",
+                  "nameLocation": "1088:15:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1136,
+                  "src": "1080:23:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1116,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1080:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1062:42:10"
+            },
+            "src": "1045:293:10",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1159,
+              "nodeType": "Block",
+              "src": "1610:231:10",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 1148,
+                            "name": "_sender",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1139,
+                            "src": "1707:7:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "arguments": [
+                              {
+                                "expression": {
+                                  "id": 1151,
+                                  "name": "RoleTypes",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 1204,
+                                  "src": "1741:9:10",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_enum$_RoleTypes_$1204_$",
+                                    "typeString": "type(enum RoleTypes)"
+                                  }
+                                },
+                                "id": 1152,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "memberName": "NURSE",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 1203,
+                                "src": "1741:15:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_enum$_RoleTypes_$1204",
+                                  "typeString": "enum RoleTypes"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_enum$_RoleTypes_$1204",
+                                  "typeString": "enum RoleTypes"
+                                }
+                              ],
+                              "id": 1150,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "1733:7:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_uint256_$",
+                                "typeString": "type(uint256)"
+                              },
+                              "typeName": {
+                                "id": 1149,
+                                "name": "uint256",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "1733:7:10",
+                                "typeDescriptions": {}
+                              }
+                            },
+                            "id": 1153,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1733:24:10",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "arguments": [
+                              {
+                                "id": 1145,
+                                "name": "sessionContract",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1141,
+                                "src": "1659:15:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "id": 1144,
+                              "name": "SessionContract",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2564,
+                              "src": "1643:15:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_SessionContract_$2564_$",
+                                "typeString": "type(contract SessionContract)"
+                              }
+                            },
+                            "id": 1146,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1643:32:10",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_SessionContract_$2564",
+                              "typeString": "contract SessionContract"
+                            }
+                          },
+                          "id": 1147,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "validateUser",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2111,
+                          "src": "1643:45:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$returns$_t_bool_$",
+                            "typeString": "function (address,uint256) view external returns (bool)"
+                          }
+                        },
+                        "id": 1154,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1643:129:10",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "73656e646572206973206e6f742061206e75727365",
+                        "id": 1155,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1787:23:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_998a027c81620bda8608c6825243c45f43b73d14a63e9418789db91e7391307d",
+                          "typeString": "literal_string \"sender is not a nurse\""
+                        },
+                        "value": "sender is not a nurse"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_998a027c81620bda8608c6825243c45f43b73d14a63e9418789db91e7391307d",
+                          "typeString": "literal_string \"sender is not a nurse\""
+                        }
+                      ],
+                      "id": 1143,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1621:7:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1156,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1621:200:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1157,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1621:200:10"
+                },
+                {
+                  "id": 1158,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1832:1:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1137,
+              "nodeType": "StructuredDocumentation",
+              "src": "1346:199:10",
+              "text": " @notice modifier that validates if a user has a nurse role\n @param _sender user address eoa\n @param sessionContract address of the deployed SessionContract instance"
+            },
+            "id": 1160,
+            "name": "isNurse",
+            "nameLocation": "1560:7:10",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1142,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1139,
+                  "mutability": "mutable",
+                  "name": "_sender",
+                  "nameLocation": "1576:7:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1160,
+                  "src": "1568:15:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1138,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1568:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1141,
+                  "mutability": "mutable",
+                  "name": "sessionContract",
+                  "nameLocation": "1593:15:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1160,
+                  "src": "1585:23:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1140,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1585:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1567:42:10"
+            },
+            "src": "1551:290:10",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1195,
+              "nodeType": "Block",
+              "src": "2125:396:10",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 1190,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "arguments": [
+                            {
+                              "id": 1172,
+                              "name": "_sender",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1163,
+                              "src": "2222:7:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            {
+                              "arguments": [
+                                {
+                                  "expression": {
+                                    "id": 1175,
+                                    "name": "RoleTypes",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 1204,
+                                    "src": "2256:9:10",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_type$_t_enum$_RoleTypes_$1204_$",
+                                      "typeString": "type(enum RoleTypes)"
+                                    }
+                                  },
+                                  "id": 1176,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "memberName": "DOCTOR",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 1202,
+                                  "src": "2256:16:10",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_RoleTypes_$1204",
+                                    "typeString": "enum RoleTypes"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_enum$_RoleTypes_$1204",
+                                    "typeString": "enum RoleTypes"
+                                  }
+                                ],
+                                "id": 1174,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "nodeType": "ElementaryTypeNameExpression",
+                                "src": "2248:7:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_uint256_$",
+                                  "typeString": "type(uint256)"
+                                },
+                                "typeName": {
+                                  "id": 1173,
+                                  "name": "uint256",
+                                  "nodeType": "ElementaryTypeName",
+                                  "src": "2248:7:10",
+                                  "typeDescriptions": {}
+                                }
+                              },
+                              "id": 1177,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "2248:25:10",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "expression": {
+                              "arguments": [
+                                {
+                                  "id": 1169,
+                                  "name": "sessionContract",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 1165,
+                                  "src": "2174:15:10",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_address",
+                                    "typeString": "address"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_address",
+                                    "typeString": "address"
+                                  }
+                                ],
+                                "id": 1168,
+                                "name": "SessionContract",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 2564,
+                                "src": "2158:15:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_SessionContract_$2564_$",
+                                  "typeString": "type(contract SessionContract)"
+                                }
+                              },
+                              "id": 1170,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "2158:32:10",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_SessionContract_$2564",
+                                "typeString": "contract SessionContract"
+                              }
+                            },
+                            "id": 1171,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "validateUser",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 2111,
+                            "src": "2158:45:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$returns$_t_bool_$",
+                              "typeString": "function (address,uint256) view external returns (bool)"
+                            }
+                          },
+                          "id": 1178,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2158:130:10",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "||",
+                        "rightExpression": {
+                          "arguments": [
+                            {
+                              "id": 1183,
+                              "name": "_sender",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1163,
+                              "src": "2377:7:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            {
+                              "arguments": [
+                                {
+                                  "expression": {
+                                    "id": 1186,
+                                    "name": "RoleTypes",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 1204,
+                                    "src": "2415:9:10",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_type$_t_enum$_RoleTypes_$1204_$",
+                                      "typeString": "type(enum RoleTypes)"
+                                    }
+                                  },
+                                  "id": 1187,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "memberName": "NURSE",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 1203,
+                                  "src": "2415:15:10",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_RoleTypes_$1204",
+                                    "typeString": "enum RoleTypes"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_enum$_RoleTypes_$1204",
+                                    "typeString": "enum RoleTypes"
+                                  }
+                                ],
+                                "id": 1185,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "nodeType": "ElementaryTypeNameExpression",
+                                "src": "2407:7:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_uint256_$",
+                                  "typeString": "type(uint256)"
+                                },
+                                "typeName": {
+                                  "id": 1184,
+                                  "name": "uint256",
+                                  "nodeType": "ElementaryTypeName",
+                                  "src": "2407:7:10",
+                                  "typeDescriptions": {}
+                                }
+                              },
+                              "id": 1188,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "2407:24:10",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "expression": {
+                              "arguments": [
+                                {
+                                  "id": 1180,
+                                  "name": "sessionContract",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 1165,
+                                  "src": "2325:15:10",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_address",
+                                    "typeString": "address"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_address",
+                                    "typeString": "address"
+                                  }
+                                ],
+                                "id": 1179,
+                                "name": "SessionContract",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 2564,
+                                "src": "2309:15:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_SessionContract_$2564_$",
+                                  "typeString": "type(contract SessionContract)"
+                                }
+                              },
+                              "id": 1181,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "2309:32:10",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_SessionContract_$2564",
+                                "typeString": "contract SessionContract"
+                              }
+                            },
+                            "id": 1182,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "validateUser",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 2111,
+                            "src": "2309:45:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$returns$_t_bool_$",
+                              "typeString": "function (address,uint256) view external returns (bool)"
+                            }
+                          },
+                          "id": 1189,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2309:141:10",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "2158:292:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "73656e646572206973206e6f742061206d65646963616c",
+                        "id": 1191,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2465:25:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_a95588f0b51824b2bf8641e34cebcdb5a6b3f8bb2f616e3e3c0a145906f2daf6",
+                          "typeString": "literal_string \"sender is not a medical\""
+                        },
+                        "value": "sender is not a medical"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_a95588f0b51824b2bf8641e34cebcdb5a6b3f8bb2f616e3e3c0a145906f2daf6",
+                          "typeString": "literal_string \"sender is not a medical\""
+                        }
+                      ],
+                      "id": 1167,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "2136:7:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1192,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2136:365:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1193,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2136:365:10"
+                },
+                {
+                  "id": 1194,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "2512:1:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1161,
+              "nodeType": "StructuredDocumentation",
+              "src": "1849:209:10",
+              "text": " @notice modifier that validates if a user has a nurse or doctor role\n @param _sender user address eoa\n @param sessionContract address of the deployed SessionContract instance"
+            },
+            "id": 1196,
+            "name": "isMedical",
+            "nameLocation": "2073:9:10",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1166,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1163,
+                  "mutability": "mutable",
+                  "name": "_sender",
+                  "nameLocation": "2091:7:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1196,
+                  "src": "2083:15:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1162,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2083:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1165,
+                  "mutability": "mutable",
+                  "name": "sessionContract",
+                  "nameLocation": "2108:15:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1196,
+                  "src": "2100:23:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1164,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2100:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2082:42:10"
+            },
+            "src": "2064:457:10",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1198,
+        "src": "270:2254:10",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:2491:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-10-08T07:25:54.895Z",
+  "devdoc": {
+    "author": "Blockchain Clinic Records Team",
+    "kind": "dev",
+    "methods": {},
+    "title": "ProfileModifier",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Contract to use modifiers which validates users roles",
+    "version": 1
+  }
+}

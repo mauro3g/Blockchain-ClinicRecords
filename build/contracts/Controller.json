@@ -1,0 +1,2874 @@
+{
+  "contractName": "Controller",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_sessionContract",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_usersInformation",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_crSickness",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_crBiologicFunctions",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_crPatologicalHistory",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_crPhysicalExam",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_crSyndromeGeriatricProblems",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_crClinicalAssessment",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_crCommentary",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "getSessionContractAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getUsersInfoAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sessionContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_usersInformation\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crSickness\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crBiologicFunctions\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crPatologicalHistory\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crPhysicalExam\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crSyndromeGeriatricProblems\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crClinicalAssessment\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crCommentary\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getSessionContractAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUsersInfoAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Blockchain Clinic Records Team\",\"details\":\"inherits from Ownable to use modifiers\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Controller\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Contract to mantain the deployed contract addresses on the environment\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Controller.sol\":\"Controller\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CRBiologicFunctions.sol\":{\"keccak256\":\"0x14bc8014abd6094bb40b2cd45930015a7042545d4cc0e6bafee19783a0159683\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://b023ce477b7b15302e2c0d2395c757f8cb188af1fbede1c88c82c02ce7b4d248\",\"dweb:/ipfs/QmYKPyTRYNEmFi1vKVUwhgxL839c5vSR7MDhQbZend6vcd\"]},\"project:/contracts/CRClinicalAssessment.sol\":{\"keccak256\":\"0xd68e395f91bb7872bde0444e4543a7ef70bfa204114e121ee2a09af58f898ad2\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://992a5fd3ee558879370b62d97377a35be38d999b7704ab500decf117c6a5caf8\",\"dweb:/ipfs/QmZLSX3s3Zxud6XC55yV79sC2Kjnp3CS4VXM9SvHGfDmB3\"]},\"project:/contracts/CRCommentary.sol\":{\"keccak256\":\"0x9cd99e19627f33aeea5939c3346268e9018d54fae069ab0ad787fa62caf9457c\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://d816de3f7daff55628a9e7696e823d3a39a346d2f3d028800a60fab342206773\",\"dweb:/ipfs/QmQKzmjHyJBF8Ga1hAjen9sxZy3Z21n6UVqioxBoLH8EnJ\"]},\"project:/contracts/CRPatologicalHistory.sol\":{\"keccak256\":\"0xf1719c3ab0cb1f366fe7b36feb6717277872241f3ce6ace961b60889493e5ea4\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5f95c364b3bb44200f036992068a9a570228cf4b0a040b8f0366f351fec8c8d0\",\"dweb:/ipfs/QmXJRya4LcfKmDQm7qtihjmBdvMttVf5oNxHQnkYEGZ5FN\"]},\"project:/contracts/CRPhysicalExam.sol\":{\"keccak256\":\"0x01f6282b2500f6ed48a2bb5c45ebed215e73e0aa2b884398961106b77b063a75\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://2d6d82ec8d9229569d7771e9cb1867d6dbcd075e0abe7793789382ed7720a1b2\",\"dweb:/ipfs/QmQD9G3bd1MjBUCQuHhfSwQCQc5i7w76i8w2EF3zbXUxj8\"]},\"project:/contracts/CRSickness.sol\":{\"keccak256\":\"0x8c0a9d554ab31891fb9aa28e467c65bf1edd4c7f374c4ffa18d6b11a3415882a\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://85647eec6a2b5ccfa595c86e897247fd33179d76a38cbca42f4b66f75972f253\",\"dweb:/ipfs/QmPuF4rnMKEeQPaGemmDM8auECoZRZk8sjerBs4qeYiQiN\"]},\"project:/contracts/CRSyndromesGeriatricProblems.sol\":{\"keccak256\":\"0xdf92521081f173a9db055517cdf649e94bd9ae44da746efa39810146c609e114\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://3710ba5a0a168ced7427f995b445f1882a7e455c4588dafb0e6b4ff6f8aa347e\",\"dweb:/ipfs/QmNh7b4XAenVKBpgEXLSHNXHjJCGXyb8gG4zXDQwvRc35m\"]},\"project:/contracts/Controller.sol\":{\"keccak256\":\"0x53e8ba90573ef185bf23fbe2d1b0cbae71008eba75e327bc4e1af11691b558a8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a8f55ec346c91d8460d1a36b9ec360cd42b6ecd6cb914802e94b3e5f8d88f391\",\"dweb:/ipfs/QmXd66ysEYXsqt3cTmo3LCkZmhy12bzr1CsvCkM5xsGeU4\"]},\"project:/contracts/Ownable.sol\":{\"keccak256\":\"0x1aeed8b61f24bff40102add7287a31dc44d77651019f9fd9888aaa801dfb42b4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4b36cf358a224ad025930f0b4093aef86ee5c155134b2acc14909a06b09d3c21\",\"dweb:/ipfs/QmRyHoPgerBYF9wSwC6E4n9SN7G6WvdCmvrFjAG6v5Pi7p\"]},\"project:/contracts/ProfileModifier.sol\":{\"keccak256\":\"0x7b6866ecb7e34f77b32ef6b0b2f9d57db3e7e8b650e8db65654ec788c8754b41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6eea6e407d1c5a06224577b3bf752203630ce256411399c7aa0157a35b9ea83\",\"dweb:/ipfs/Qmak4ED9tNLmTNLKp4w9Ft7AAPW6du7YwqRLNM2KL3kv4Q\"]},\"project:/contracts/RoleTypes.sol\":{\"keccak256\":\"0xd0071b3c60d31d752b026ef9a249cd19b588b8e0702f9f4a02750ed4a8004593\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a333c38b49598c4fc9f048689d8a52c7192fef31a914dcc31aa37e771133ef1c\",\"dweb:/ipfs/QmRZtr7SWnWUFAADqgFFYJg6kjBZnmCakrNXah37AHMYqE\"]},\"project:/contracts/SessionContract.sol\":{\"keccak256\":\"0x7d187d8fd7d430aeabfe8d75935276e88bc02f27b35f0a6f73775c9a28d41a3e\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://572dd8158d15b71ea3fdc9799a01eef278100784a97085236e3e03e220d04ea5\",\"dweb:/ipfs/QmPv88enB4rPYSekRAt2guhCpfy3ZZi23bwkUMYb3qQuwk\"]},\"project:/contracts/UsersInformation.sol\":{\"keccak256\":\"0xfea6ede0162605c698614382a89402b8f314a7c3ffe19723e105e028c508f2b3\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://aab2f57f5753dfb6bd5541df2d930564555c6f90818382475f3e9411272ca6e2\",\"dweb:/ipfs/QmZr2w18EzaQED8wWhqpAQbtBpfV1hb4Tu3LiWqexW2wyz\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161029438038061029483398101604081905261002f916100f5565b6000805433600160a060020a031991821617909155600180548216600160a060020a039b8c16179055600280548216998b1699909917909855600380548916978a1697909717909655600480548816958916959095179094556005805487169388169390931790925560068054861691871691909117905560078054851691861691909117905560088054841691851691909117905560098054909216921691909117905561019d565b8051600160a060020a03811681146100f057600080fd5b919050565b60008060008060008060008060006101208a8c03121561011457600080fd5b61011d8a6100d9565b985061012b60208b016100d9565b975061013960408b016100d9565b965061014760608b016100d9565b955061015560808b016100d9565b945061016360a08b016100d9565b935061017160c08b016100d9565b925061017f60e08b016100d9565b915061018e6101008b016100d9565b90509295985092959850929598565b60e9806101ab6000396000f3fe6080604052348015600f57600080fd5b5060043610604e577c01000000000000000000000000000000000000000000000000000000006000350463282b46ce81146053578063afae03ef146096575b600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff165b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60025473ffffffffffffffffffffffffffffffffffffffff16606d56fea26469706673582212207ff02fd3261abac547657cdb652a1b3d7c5d095d5a201b9bd4a25a3d87ecb35764736f6c63430008070033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610604e577c01000000000000000000000000000000000000000000000000000000006000350463282b46ce81146053578063afae03ef146096575b600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff165b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60025473ffffffffffffffffffffffffffffffffffffffff16606d56fea26469706673582212207ff02fd3261abac547657cdb652a1b3d7c5d095d5a201b9bd4a25a3d87ecb35764736f6c63430008070033",
+  "immutableReferences": {},
+  "generatedSources": [
+    {
+      "ast": {
+        "nodeType": "YulBlock",
+        "src": "0:1092:14",
+        "statements": [
+          {
+            "nodeType": "YulBlock",
+            "src": "6:3:14",
+            "statements": []
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "74:117:14",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "84:22:14",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "offset",
+                        "nodeType": "YulIdentifier",
+                        "src": "99:6:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mload",
+                      "nodeType": "YulIdentifier",
+                      "src": "93:5:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "93:13:14"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value",
+                      "nodeType": "YulIdentifier",
+                      "src": "84:5:14"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "nodeType": "YulBlock",
+                    "src": "169:16:14",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "178:1:14",
+                              "type": "",
+                              "value": "0"
+                            },
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "181:1:14",
+                              "type": "",
+                              "value": "0"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "revert",
+                            "nodeType": "YulIdentifier",
+                            "src": "171:6:14"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "171:12:14"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "171:12:14"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "nodeType": "YulIdentifier",
+                            "src": "128:5:14"
+                          },
+                          {
+                            "arguments": [
+                              {
+                                "name": "value",
+                                "nodeType": "YulIdentifier",
+                                "src": "139:5:14"
+                              },
+                              {
+                                "arguments": [
+                                  {
+                                    "arguments": [
+                                      {
+                                        "kind": "number",
+                                        "nodeType": "YulLiteral",
+                                        "src": "154:1:14",
+                                        "type": "",
+                                        "value": "2"
+                                      },
+                                      {
+                                        "kind": "number",
+                                        "nodeType": "YulLiteral",
+                                        "src": "157:3:14",
+                                        "type": "",
+                                        "value": "160"
+                                      }
+                                    ],
+                                    "functionName": {
+                                      "name": "exp",
+                                      "nodeType": "YulIdentifier",
+                                      "src": "150:3:14"
+                                    },
+                                    "nodeType": "YulFunctionCall",
+                                    "src": "150:11:14"
+                                  },
+                                  {
+                                    "kind": "number",
+                                    "nodeType": "YulLiteral",
+                                    "src": "163:1:14",
+                                    "type": "",
+                                    "value": "1"
+                                  }
+                                ],
+                                "functionName": {
+                                  "name": "sub",
+                                  "nodeType": "YulIdentifier",
+                                  "src": "146:3:14"
+                                },
+                                "nodeType": "YulFunctionCall",
+                                "src": "146:19:14"
+                              }
+                            ],
+                            "functionName": {
+                              "name": "and",
+                              "nodeType": "YulIdentifier",
+                              "src": "135:3:14"
+                            },
+                            "nodeType": "YulFunctionCall",
+                            "src": "135:31:14"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "eq",
+                          "nodeType": "YulIdentifier",
+                          "src": "125:2:14"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "125:42:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "iszero",
+                      "nodeType": "YulIdentifier",
+                      "src": "118:6:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "118:50:14"
+                  },
+                  "nodeType": "YulIf",
+                  "src": "115:70:14"
+                }
+              ]
+            },
+            "name": "abi_decode_address_fromMemory",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "offset",
+                "nodeType": "YulTypedName",
+                "src": "53:6:14",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "64:5:14",
+                "type": ""
+              }
+            ],
+            "src": "14:177:14"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "413:677:14",
+              "statements": [
+                {
+                  "body": {
+                    "nodeType": "YulBlock",
+                    "src": "460:16:14",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "469:1:14",
+                              "type": "",
+                              "value": "0"
+                            },
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "472:1:14",
+                              "type": "",
+                              "value": "0"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "revert",
+                            "nodeType": "YulIdentifier",
+                            "src": "462:6:14"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "462:12:14"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "462:12:14"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "dataEnd",
+                            "nodeType": "YulIdentifier",
+                            "src": "434:7:14"
+                          },
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "443:9:14"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "sub",
+                          "nodeType": "YulIdentifier",
+                          "src": "430:3:14"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "430:23:14"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "455:3:14",
+                        "type": "",
+                        "value": "288"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "slt",
+                      "nodeType": "YulIdentifier",
+                      "src": "426:3:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "426:33:14"
+                  },
+                  "nodeType": "YulIf",
+                  "src": "423:53:14"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "485:50:14",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "525:9:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_decode_address_fromMemory",
+                      "nodeType": "YulIdentifier",
+                      "src": "495:29:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "495:40:14"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value0",
+                      "nodeType": "YulIdentifier",
+                      "src": "485:6:14"
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "544:59:14",
+                  "value": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "588:9:14"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "599:2:14",
+                            "type": "",
+                            "value": "32"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "584:3:14"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "584:18:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_decode_address_fromMemory",
+                      "nodeType": "YulIdentifier",
+                      "src": "554:29:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "554:49:14"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value1",
+                      "nodeType": "YulIdentifier",
+                      "src": "544:6:14"
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "612:59:14",
+                  "value": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "656:9:14"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "667:2:14",
+                            "type": "",
+                            "value": "64"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "652:3:14"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "652:18:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_decode_address_fromMemory",
+                      "nodeType": "YulIdentifier",
+                      "src": "622:29:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "622:49:14"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value2",
+                      "nodeType": "YulIdentifier",
+                      "src": "612:6:14"
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "680:59:14",
+                  "value": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "724:9:14"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "735:2:14",
+                            "type": "",
+                            "value": "96"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "720:3:14"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "720:18:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_decode_address_fromMemory",
+                      "nodeType": "YulIdentifier",
+                      "src": "690:29:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "690:49:14"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value3",
+                      "nodeType": "YulIdentifier",
+                      "src": "680:6:14"
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "748:60:14",
+                  "value": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "792:9:14"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "803:3:14",
+                            "type": "",
+                            "value": "128"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "788:3:14"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "788:19:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_decode_address_fromMemory",
+                      "nodeType": "YulIdentifier",
+                      "src": "758:29:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "758:50:14"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value4",
+                      "nodeType": "YulIdentifier",
+                      "src": "748:6:14"
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "817:60:14",
+                  "value": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "861:9:14"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "872:3:14",
+                            "type": "",
+                            "value": "160"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "857:3:14"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "857:19:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_decode_address_fromMemory",
+                      "nodeType": "YulIdentifier",
+                      "src": "827:29:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "827:50:14"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value5",
+                      "nodeType": "YulIdentifier",
+                      "src": "817:6:14"
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "886:60:14",
+                  "value": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "930:9:14"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "941:3:14",
+                            "type": "",
+                            "value": "192"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "926:3:14"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "926:19:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_decode_address_fromMemory",
+                      "nodeType": "YulIdentifier",
+                      "src": "896:29:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "896:50:14"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value6",
+                      "nodeType": "YulIdentifier",
+                      "src": "886:6:14"
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "955:60:14",
+                  "value": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "999:9:14"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "1010:3:14",
+                            "type": "",
+                            "value": "224"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "995:3:14"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "995:19:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_decode_address_fromMemory",
+                      "nodeType": "YulIdentifier",
+                      "src": "965:29:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "965:50:14"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value7",
+                      "nodeType": "YulIdentifier",
+                      "src": "955:6:14"
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1024:60:14",
+                  "value": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "1068:9:14"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "1079:3:14",
+                            "type": "",
+                            "value": "256"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "1064:3:14"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "1064:19:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_decode_address_fromMemory",
+                      "nodeType": "YulIdentifier",
+                      "src": "1034:29:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1034:50:14"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value8",
+                      "nodeType": "YulIdentifier",
+                      "src": "1024:6:14"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "abi_decode_tuple_t_addresst_addresst_addresst_addresst_addresst_addresst_addresst_addresst_address_fromMemory",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "315:9:14",
+                "type": ""
+              },
+              {
+                "name": "dataEnd",
+                "nodeType": "YulTypedName",
+                "src": "326:7:14",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "value0",
+                "nodeType": "YulTypedName",
+                "src": "338:6:14",
+                "type": ""
+              },
+              {
+                "name": "value1",
+                "nodeType": "YulTypedName",
+                "src": "346:6:14",
+                "type": ""
+              },
+              {
+                "name": "value2",
+                "nodeType": "YulTypedName",
+                "src": "354:6:14",
+                "type": ""
+              },
+              {
+                "name": "value3",
+                "nodeType": "YulTypedName",
+                "src": "362:6:14",
+                "type": ""
+              },
+              {
+                "name": "value4",
+                "nodeType": "YulTypedName",
+                "src": "370:6:14",
+                "type": ""
+              },
+              {
+                "name": "value5",
+                "nodeType": "YulTypedName",
+                "src": "378:6:14",
+                "type": ""
+              },
+              {
+                "name": "value6",
+                "nodeType": "YulTypedName",
+                "src": "386:6:14",
+                "type": ""
+              },
+              {
+                "name": "value7",
+                "nodeType": "YulTypedName",
+                "src": "394:6:14",
+                "type": ""
+              },
+              {
+                "name": "value8",
+                "nodeType": "YulTypedName",
+                "src": "402:6:14",
+                "type": ""
+              }
+            ],
+            "src": "196:894:14"
+          }
+        ]
+      },
+      "contents": "{\n    { }\n    function abi_decode_address_fromMemory(offset) -> value\n    {\n        value := mload(offset)\n        if iszero(eq(value, and(value, sub(exp(2, 160), 1)))) { revert(0, 0) }\n    }\n    function abi_decode_tuple_t_addresst_addresst_addresst_addresst_addresst_addresst_addresst_addresst_address_fromMemory(headStart, dataEnd) -> value0, value1, value2, value3, value4, value5, value6, value7, value8\n    {\n        if slt(sub(dataEnd, headStart), 288) { revert(0, 0) }\n        value0 := abi_decode_address_fromMemory(headStart)\n        value1 := abi_decode_address_fromMemory(add(headStart, 32))\n        value2 := abi_decode_address_fromMemory(add(headStart, 64))\n        value3 := abi_decode_address_fromMemory(add(headStart, 96))\n        value4 := abi_decode_address_fromMemory(add(headStart, 128))\n        value5 := abi_decode_address_fromMemory(add(headStart, 160))\n        value6 := abi_decode_address_fromMemory(add(headStart, 192))\n        value7 := abi_decode_address_fromMemory(add(headStart, 224))\n        value8 := abi_decode_address_fromMemory(add(headStart, 256))\n    }\n}",
+      "id": 14,
+      "language": "Yul",
+      "name": "#utility.yul"
+    }
+  ],
+  "deployedGeneratedSources": [
+    {
+      "ast": {
+        "nodeType": "YulBlock",
+        "src": "0:242:14",
+        "statements": [
+          {
+            "nodeType": "YulBlock",
+            "src": "6:3:14",
+            "statements": []
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "115:125:14",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "125:26:14",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "137:9:14"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "148:2:14",
+                        "type": "",
+                        "value": "32"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "add",
+                      "nodeType": "YulIdentifier",
+                      "src": "133:3:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "133:18:14"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "tail",
+                      "nodeType": "YulIdentifier",
+                      "src": "125:4:14"
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "167:9:14"
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "name": "value0",
+                            "nodeType": "YulIdentifier",
+                            "src": "182:6:14"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "190:42:14",
+                            "type": "",
+                            "value": "0xffffffffffffffffffffffffffffffffffffffff"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "and",
+                          "nodeType": "YulIdentifier",
+                          "src": "178:3:14"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "178:55:14"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mstore",
+                      "nodeType": "YulIdentifier",
+                      "src": "160:6:14"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "160:74:14"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "160:74:14"
+                }
+              ]
+            },
+            "name": "abi_encode_tuple_t_address__to_t_address__fromStack_reversed",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "84:9:14",
+                "type": ""
+              },
+              {
+                "name": "value0",
+                "nodeType": "YulTypedName",
+                "src": "95:6:14",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "tail",
+                "nodeType": "YulTypedName",
+                "src": "106:4:14",
+                "type": ""
+              }
+            ],
+            "src": "14:226:14"
+          }
+        ]
+      },
+      "contents": "{\n    { }\n    function abi_encode_tuple_t_address__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, 0xffffffffffffffffffffffffffffffffffffffff))\n    }\n}",
+      "id": 14,
+      "language": "Yul",
+      "name": "#utility.yul"
+    }
+  ],
+  "sourceMap": "644:1854:7:-:0;;;1228:1018;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;294:12:9;:28;;1588:10:7;-1:-1:-1;;;;;;294:28:9;;;;;;;-1:-1:-1;1611:51:7;;;::::1;-1:-1:-1::0;;;;;1611:51:7;;::::1;;::::0;;1673:16:::1;:54:::0;;;::::1;::::0;;::::1;::::0;;;::::1;::::0;;;1738:10:::1;:36:::0;;;::::1;::::0;;::::1;::::0;;;::::1;::::0;;;1785:19:::1;:63:::0;;;::::1;::::0;;::::1;::::0;;;::::1;::::0;;;1859:20:::1;:66:::0;;;::::1;::::0;;::::1;::::0;;;::::1;::::0;;;1936:14:::1;:48:::0;;;::::1;::::0;;::::1;::::0;;;::::1;::::0;;1995:28:::1;:113:::0;;;::::1;::::0;;::::1;::::0;;;::::1;::::0;;2119:20:::1;:66:::0;;;::::1;::::0;;::::1;::::0;;;::::1;::::0;;2196:12:::1;:42:::0;;;;::::1;::::0;::::1;::::0;;;::::1;::::0;;644:1854;;14:177:14;93:13;;-1:-1:-1;;;;;135:31:14;;125:42;;115:70;;181:1;178;171:12;115:70;14:177;;;:::o;196:894::-;338:6;346;354;362;370;378;386;394;402;455:3;443:9;434:7;430:23;426:33;423:53;;;472:1;469;462:12;423:53;495:40;525:9;495:40;:::i;:::-;485:50;;554:49;599:2;588:9;584:18;554:49;:::i;:::-;544:59;;622:49;667:2;656:9;652:18;622:49;:::i;:::-;612:59;;690:49;735:2;724:9;720:18;690:49;:::i;:::-;680:59;;758:50;803:3;792:9;788:19;758:50;:::i;:::-;748:60;;827:50;872:3;861:9;857:19;827:50;:::i;:::-;817:60;;896:50;941:3;930:9;926:19;896:50;:::i;:::-;886:60;;965:50;1010:3;999:9;995:19;965:50;:::i;:::-;955:60;;1034:50;1079:3;1068:9;1064:19;1034:50;:::i;:::-;1024:60;;196:894;;;;;;;;;;;:::o;:::-;644:1854:7;;;;;;",
+  "deployedSourceMap": "644:1854:7:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2254:119;2349:15;;;;2254:119;;;190:42:14;178:55;;;160:74;;148:2;133:18;2254:119:7;;;;;;;2381:114;2470:16;;;;2381:114;",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.7;\r\n\r\nimport \"./Ownable.sol\";\r\nimport \"./SessionContract.sol\";\r\nimport \"./ProfileModifier.sol\";\r\nimport \"./UsersInformation.sol\";\r\nimport \"./CRSickness.sol\";\r\nimport \"./CRBiologicFunctions.sol\";\r\nimport \"./CRPatologicalHistory.sol\";\r\nimport \"./CRPhysicalExam.sol\";\r\nimport \"./CRSyndromesGeriatricProblems.sol\";\r\nimport \"./CRClinicalAssessment.sol\";\r\nimport \"./CRCommentary.sol\";\r\n\r\n/**\r\n * @author Blockchain Clinic Records Team\r\n * @dev inherits from Ownable to use modifiers\r\n * @title Controller\r\n * @notice Contract to mantain the deployed contract addresses on the environment\r\n */\r\ncontract Controller is Ownable {\r\n    SessionContract sessionContract;\r\n    UsersInformation usersInformation;\r\n    CRSickness crSickness;\r\n    CRBiologicFunctions crBiologicFunctions;\r\n    CRPatologicalHistory crPatologicalHistory;\r\n    CRPhysicalExam crPhysicalExam;\r\n    CRSyndromesGeriatricProblems crSyndromesGeriatricProblems;\r\n    CRClinicalAssessment crClinicalAssessment;\r\n    CRCommentary crCommentary;\r\n\r\n    // constructor() Ownable(msg.sender) {\r\n    //     sessionContract = new SessionContract();\r\n    //     usersInformation = new UsersInformation();\r\n    // }\r\n\r\n    constructor(\r\n        address _sessionContract,\r\n        address _usersInformation,\r\n        address _crSickness,\r\n        address _crBiologicFunctions,\r\n        address _crPatologicalHistory,\r\n        address _crPhysicalExam,\r\n        address _crSyndromeGeriatricProblems,\r\n        address _crClinicalAssessment,\r\n        address _crCommentary\r\n    ) Ownable(msg.sender) {\r\n        sessionContract = SessionContract(_sessionContract);\r\n        usersInformation = UsersInformation(_usersInformation);\r\n        crSickness = CRSickness(_crSickness);\r\n        crBiologicFunctions = CRBiologicFunctions(_crBiologicFunctions);\r\n        crPatologicalHistory = CRPatologicalHistory(_crPatologicalHistory);\r\n        crPhysicalExam = CRPhysicalExam(_crPhysicalExam);\r\n        crSyndromesGeriatricProblems = CRSyndromesGeriatricProblems(\r\n            _crSyndromeGeriatricProblems\r\n        );\r\n        crClinicalAssessment = CRClinicalAssessment(_crClinicalAssessment);\r\n        crCommentary = CRCommentary(_crCommentary);\r\n    }\r\n\r\n    function getSessionContractAddress() external view returns (address) {\r\n        return address(sessionContract);\r\n    }\r\n\r\n    function getUsersInfoAddress() external view returns (address) {\r\n        return address(usersInformation);\r\n    }\r\n}\r\n",
+  "sourcePath": "D:\\Documents\\React\\Tesis Historias Clinicas\\contracts\\Controller.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Controller.sol",
+    "exportedSymbols": {
+      "BiologicFunctions": [
+        17
+      ],
+      "CRBiologicFunctions": [
+        90
+      ],
+      "CRClinicalAssessment": [
+        181
+      ],
+      "CRCommentary": [
+        327
+      ],
+      "CRPatologicalHistory": [
+        422
+      ],
+      "CRPhysicalExam": [
+        535
+      ],
+      "CRSickness": [
+        772
+      ],
+      "CRSyndromesGeriatricProblems": [
+        872
+      ],
+      "ClinicalAssessment": [
+        108
+      ],
+      "Commentary": [
+        189
+      ],
+      "Controller": [
+        1018
+      ],
+      "Exam": [
+        562
+      ],
+      "Medical": [
+        2596
+      ],
+      "Module": [
+        1219
+      ],
+      "ModuleIdentificator": [
+        1279
+      ],
+      "ModulePermissions": [
+        1248
+      ],
+      "Ownable": [
+        1079
+      ],
+      "Patient": [
+        2590
+      ],
+      "PatologicalHistory": [
+        349
+      ],
+      "Permisions": [
+        1214
+      ],
+      "PersonalInformation": [
+        2576
+      ],
+      "PhysicalExam": [
+        462
+      ],
+      "ProfileModifier": [
+        1197
+      ],
+      "Result": [
+        569
+      ],
+      "Role": [
+        1226
+      ],
+      "RoleModules": [
+        1255
+      ],
+      "RoleTypes": [
+        1204
+      ],
+      "Session": [
+        1264
+      ],
+      "SessionContract": [
+        2564
+      ],
+      "Sickness": [
+        555
+      ],
+      "SyndromesGeriatricProblems": [
+        800
+      ],
+      "User": [
+        1237
+      ],
+      "UserRole": [
+        1242
+      ],
+      "UsersInformation": [
+        2898
+      ]
+    },
+    "id": 1019,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 874,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".7"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:7"
+      },
+      {
+        "absolutePath": "project:/contracts/Ownable.sol",
+        "file": "./Ownable.sol",
+        "id": 875,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1019,
+        "sourceUnit": 1080,
+        "src": "62:23:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/SessionContract.sol",
+        "file": "./SessionContract.sol",
+        "id": 876,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1019,
+        "sourceUnit": 2565,
+        "src": "87:31:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/ProfileModifier.sol",
+        "file": "./ProfileModifier.sol",
+        "id": 877,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1019,
+        "sourceUnit": 1198,
+        "src": "120:31:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/UsersInformation.sol",
+        "file": "./UsersInformation.sol",
+        "id": 878,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1019,
+        "sourceUnit": 2899,
+        "src": "153:32:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/CRSickness.sol",
+        "file": "./CRSickness.sol",
+        "id": 879,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1019,
+        "sourceUnit": 773,
+        "src": "187:26:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/CRBiologicFunctions.sol",
+        "file": "./CRBiologicFunctions.sol",
+        "id": 880,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1019,
+        "sourceUnit": 91,
+        "src": "215:35:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/CRPatologicalHistory.sol",
+        "file": "./CRPatologicalHistory.sol",
+        "id": 881,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1019,
+        "sourceUnit": 423,
+        "src": "252:36:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/CRPhysicalExam.sol",
+        "file": "./CRPhysicalExam.sol",
+        "id": 882,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1019,
+        "sourceUnit": 536,
+        "src": "290:30:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/CRSyndromesGeriatricProblems.sol",
+        "file": "./CRSyndromesGeriatricProblems.sol",
+        "id": 883,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1019,
+        "sourceUnit": 873,
+        "src": "322:44:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/CRClinicalAssessment.sol",
+        "file": "./CRClinicalAssessment.sol",
+        "id": 884,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1019,
+        "sourceUnit": 182,
+        "src": "368:36:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/CRCommentary.sol",
+        "file": "./CRCommentary.sol",
+        "id": 885,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1019,
+        "sourceUnit": 328,
+        "src": "406:28:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 887,
+              "name": "Ownable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1079,
+              "src": "667:7:7"
+            },
+            "id": 888,
+            "nodeType": "InheritanceSpecifier",
+            "src": "667:7:7"
+          }
+        ],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 886,
+          "nodeType": "StructuredDocumentation",
+          "src": "438:204:7",
+          "text": " @author Blockchain Clinic Records Team\n @dev inherits from Ownable to use modifiers\n @title Controller\n @notice Contract to mantain the deployed contract addresses on the environment"
+        },
+        "fullyImplemented": true,
+        "id": 1018,
+        "linearizedBaseContracts": [
+          1018,
+          1079
+        ],
+        "name": "Controller",
+        "nameLocation": "653:10:7",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 891,
+            "mutability": "mutable",
+            "name": "sessionContract",
+            "nameLocation": "698:15:7",
+            "nodeType": "VariableDeclaration",
+            "scope": 1018,
+            "src": "682:31:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_SessionContract_$2564",
+              "typeString": "contract SessionContract"
+            },
+            "typeName": {
+              "id": 890,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 889,
+                "name": "SessionContract",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 2564,
+                "src": "682:15:7"
+              },
+              "referencedDeclaration": 2564,
+              "src": "682:15:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SessionContract_$2564",
+                "typeString": "contract SessionContract"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 894,
+            "mutability": "mutable",
+            "name": "usersInformation",
+            "nameLocation": "737:16:7",
+            "nodeType": "VariableDeclaration",
+            "scope": 1018,
+            "src": "720:33:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_UsersInformation_$2898",
+              "typeString": "contract UsersInformation"
+            },
+            "typeName": {
+              "id": 893,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 892,
+                "name": "UsersInformation",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 2898,
+                "src": "720:16:7"
+              },
+              "referencedDeclaration": 2898,
+              "src": "720:16:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UsersInformation_$2898",
+                "typeString": "contract UsersInformation"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 897,
+            "mutability": "mutable",
+            "name": "crSickness",
+            "nameLocation": "771:10:7",
+            "nodeType": "VariableDeclaration",
+            "scope": 1018,
+            "src": "760:21:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CRSickness_$772",
+              "typeString": "contract CRSickness"
+            },
+            "typeName": {
+              "id": 896,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 895,
+                "name": "CRSickness",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 772,
+                "src": "760:10:7"
+              },
+              "referencedDeclaration": 772,
+              "src": "760:10:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CRSickness_$772",
+                "typeString": "contract CRSickness"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 900,
+            "mutability": "mutable",
+            "name": "crBiologicFunctions",
+            "nameLocation": "808:19:7",
+            "nodeType": "VariableDeclaration",
+            "scope": 1018,
+            "src": "788:39:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CRBiologicFunctions_$90",
+              "typeString": "contract CRBiologicFunctions"
+            },
+            "typeName": {
+              "id": 899,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 898,
+                "name": "CRBiologicFunctions",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 90,
+                "src": "788:19:7"
+              },
+              "referencedDeclaration": 90,
+              "src": "788:19:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CRBiologicFunctions_$90",
+                "typeString": "contract CRBiologicFunctions"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 903,
+            "mutability": "mutable",
+            "name": "crPatologicalHistory",
+            "nameLocation": "855:20:7",
+            "nodeType": "VariableDeclaration",
+            "scope": 1018,
+            "src": "834:41:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CRPatologicalHistory_$422",
+              "typeString": "contract CRPatologicalHistory"
+            },
+            "typeName": {
+              "id": 902,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 901,
+                "name": "CRPatologicalHistory",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 422,
+                "src": "834:20:7"
+              },
+              "referencedDeclaration": 422,
+              "src": "834:20:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CRPatologicalHistory_$422",
+                "typeString": "contract CRPatologicalHistory"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 906,
+            "mutability": "mutable",
+            "name": "crPhysicalExam",
+            "nameLocation": "897:14:7",
+            "nodeType": "VariableDeclaration",
+            "scope": 1018,
+            "src": "882:29:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CRPhysicalExam_$535",
+              "typeString": "contract CRPhysicalExam"
+            },
+            "typeName": {
+              "id": 905,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 904,
+                "name": "CRPhysicalExam",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 535,
+                "src": "882:14:7"
+              },
+              "referencedDeclaration": 535,
+              "src": "882:14:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CRPhysicalExam_$535",
+                "typeString": "contract CRPhysicalExam"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 909,
+            "mutability": "mutable",
+            "name": "crSyndromesGeriatricProblems",
+            "nameLocation": "947:28:7",
+            "nodeType": "VariableDeclaration",
+            "scope": 1018,
+            "src": "918:57:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$872",
+              "typeString": "contract CRSyndromesGeriatricProblems"
+            },
+            "typeName": {
+              "id": 908,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 907,
+                "name": "CRSyndromesGeriatricProblems",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 872,
+                "src": "918:28:7"
+              },
+              "referencedDeclaration": 872,
+              "src": "918:28:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$872",
+                "typeString": "contract CRSyndromesGeriatricProblems"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 912,
+            "mutability": "mutable",
+            "name": "crClinicalAssessment",
+            "nameLocation": "1003:20:7",
+            "nodeType": "VariableDeclaration",
+            "scope": 1018,
+            "src": "982:41:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CRClinicalAssessment_$181",
+              "typeString": "contract CRClinicalAssessment"
+            },
+            "typeName": {
+              "id": 911,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 910,
+                "name": "CRClinicalAssessment",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 181,
+                "src": "982:20:7"
+              },
+              "referencedDeclaration": 181,
+              "src": "982:20:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CRClinicalAssessment_$181",
+                "typeString": "contract CRClinicalAssessment"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 915,
+            "mutability": "mutable",
+            "name": "crCommentary",
+            "nameLocation": "1043:12:7",
+            "nodeType": "VariableDeclaration",
+            "scope": 1018,
+            "src": "1030:25:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CRCommentary_$327",
+              "typeString": "contract CRCommentary"
+            },
+            "typeName": {
+              "id": 914,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 913,
+                "name": "CRCommentary",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 327,
+                "src": "1030:12:7"
+              },
+              "referencedDeclaration": 327,
+              "src": "1030:12:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CRCommentary_$327",
+                "typeString": "contract CRCommentary"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 994,
+              "nodeType": "Block",
+              "src": "1600:646:7",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 944,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 940,
+                      "name": "sessionContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 891,
+                      "src": "1611:15:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SessionContract_$2564",
+                        "typeString": "contract SessionContract"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 942,
+                          "name": "_sessionContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 917,
+                          "src": "1645:16:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 941,
+                        "name": "SessionContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2564,
+                        "src": "1629:15:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_SessionContract_$2564_$",
+                          "typeString": "type(contract SessionContract)"
+                        }
+                      },
+                      "id": 943,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1629:33:7",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SessionContract_$2564",
+                        "typeString": "contract SessionContract"
+                      }
+                    },
+                    "src": "1611:51:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SessionContract_$2564",
+                      "typeString": "contract SessionContract"
+                    }
+                  },
+                  "id": 945,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1611:51:7"
+                },
+                {
+                  "expression": {
+                    "id": 950,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 946,
+                      "name": "usersInformation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 894,
+                      "src": "1673:16:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_UsersInformation_$2898",
+                        "typeString": "contract UsersInformation"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 948,
+                          "name": "_usersInformation",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 919,
+                          "src": "1709:17:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 947,
+                        "name": "UsersInformation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2898,
+                        "src": "1692:16:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_UsersInformation_$2898_$",
+                          "typeString": "type(contract UsersInformation)"
+                        }
+                      },
+                      "id": 949,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1692:35:7",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_UsersInformation_$2898",
+                        "typeString": "contract UsersInformation"
+                      }
+                    },
+                    "src": "1673:54:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_UsersInformation_$2898",
+                      "typeString": "contract UsersInformation"
+                    }
+                  },
+                  "id": 951,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1673:54:7"
+                },
+                {
+                  "expression": {
+                    "id": 956,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 952,
+                      "name": "crSickness",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 897,
+                      "src": "1738:10:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRSickness_$772",
+                        "typeString": "contract CRSickness"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 954,
+                          "name": "_crSickness",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 921,
+                          "src": "1762:11:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 953,
+                        "name": "CRSickness",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 772,
+                        "src": "1751:10:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_CRSickness_$772_$",
+                          "typeString": "type(contract CRSickness)"
+                        }
+                      },
+                      "id": 955,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1751:23:7",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRSickness_$772",
+                        "typeString": "contract CRSickness"
+                      }
+                    },
+                    "src": "1738:36:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CRSickness_$772",
+                      "typeString": "contract CRSickness"
+                    }
+                  },
+                  "id": 957,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1738:36:7"
+                },
+                {
+                  "expression": {
+                    "id": 962,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 958,
+                      "name": "crBiologicFunctions",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 900,
+                      "src": "1785:19:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRBiologicFunctions_$90",
+                        "typeString": "contract CRBiologicFunctions"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 960,
+                          "name": "_crBiologicFunctions",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 923,
+                          "src": "1827:20:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 959,
+                        "name": "CRBiologicFunctions",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 90,
+                        "src": "1807:19:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_CRBiologicFunctions_$90_$",
+                          "typeString": "type(contract CRBiologicFunctions)"
+                        }
+                      },
+                      "id": 961,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1807:41:7",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRBiologicFunctions_$90",
+                        "typeString": "contract CRBiologicFunctions"
+                      }
+                    },
+                    "src": "1785:63:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CRBiologicFunctions_$90",
+                      "typeString": "contract CRBiologicFunctions"
+                    }
+                  },
+                  "id": 963,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1785:63:7"
+                },
+                {
+                  "expression": {
+                    "id": 968,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 964,
+                      "name": "crPatologicalHistory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 903,
+                      "src": "1859:20:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRPatologicalHistory_$422",
+                        "typeString": "contract CRPatologicalHistory"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 966,
+                          "name": "_crPatologicalHistory",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 925,
+                          "src": "1903:21:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 965,
+                        "name": "CRPatologicalHistory",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 422,
+                        "src": "1882:20:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_CRPatologicalHistory_$422_$",
+                          "typeString": "type(contract CRPatologicalHistory)"
+                        }
+                      },
+                      "id": 967,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1882:43:7",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRPatologicalHistory_$422",
+                        "typeString": "contract CRPatologicalHistory"
+                      }
+                    },
+                    "src": "1859:66:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CRPatologicalHistory_$422",
+                      "typeString": "contract CRPatologicalHistory"
+                    }
+                  },
+                  "id": 969,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1859:66:7"
+                },
+                {
+                  "expression": {
+                    "id": 974,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 970,
+                      "name": "crPhysicalExam",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 906,
+                      "src": "1936:14:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRPhysicalExam_$535",
+                        "typeString": "contract CRPhysicalExam"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 972,
+                          "name": "_crPhysicalExam",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 927,
+                          "src": "1968:15:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 971,
+                        "name": "CRPhysicalExam",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 535,
+                        "src": "1953:14:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_CRPhysicalExam_$535_$",
+                          "typeString": "type(contract CRPhysicalExam)"
+                        }
+                      },
+                      "id": 973,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1953:31:7",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRPhysicalExam_$535",
+                        "typeString": "contract CRPhysicalExam"
+                      }
+                    },
+                    "src": "1936:48:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CRPhysicalExam_$535",
+                      "typeString": "contract CRPhysicalExam"
+                    }
+                  },
+                  "id": 975,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1936:48:7"
+                },
+                {
+                  "expression": {
+                    "id": 980,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 976,
+                      "name": "crSyndromesGeriatricProblems",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 909,
+                      "src": "1995:28:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$872",
+                        "typeString": "contract CRSyndromesGeriatricProblems"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 978,
+                          "name": "_crSyndromeGeriatricProblems",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 929,
+                          "src": "2069:28:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 977,
+                        "name": "CRSyndromesGeriatricProblems",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 872,
+                        "src": "2026:28:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_CRSyndromesGeriatricProblems_$872_$",
+                          "typeString": "type(contract CRSyndromesGeriatricProblems)"
+                        }
+                      },
+                      "id": 979,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "2026:82:7",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$872",
+                        "typeString": "contract CRSyndromesGeriatricProblems"
+                      }
+                    },
+                    "src": "1995:113:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$872",
+                      "typeString": "contract CRSyndromesGeriatricProblems"
+                    }
+                  },
+                  "id": 981,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1995:113:7"
+                },
+                {
+                  "expression": {
+                    "id": 986,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 982,
+                      "name": "crClinicalAssessment",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 912,
+                      "src": "2119:20:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRClinicalAssessment_$181",
+                        "typeString": "contract CRClinicalAssessment"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 984,
+                          "name": "_crClinicalAssessment",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 931,
+                          "src": "2163:21:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 983,
+                        "name": "CRClinicalAssessment",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 181,
+                        "src": "2142:20:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_CRClinicalAssessment_$181_$",
+                          "typeString": "type(contract CRClinicalAssessment)"
+                        }
+                      },
+                      "id": 985,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "2142:43:7",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRClinicalAssessment_$181",
+                        "typeString": "contract CRClinicalAssessment"
+                      }
+                    },
+                    "src": "2119:66:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CRClinicalAssessment_$181",
+                      "typeString": "contract CRClinicalAssessment"
+                    }
+                  },
+                  "id": 987,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2119:66:7"
+                },
+                {
+                  "expression": {
+                    "id": 992,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 988,
+                      "name": "crCommentary",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 915,
+                      "src": "2196:12:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRCommentary_$327",
+                        "typeString": "contract CRCommentary"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 990,
+                          "name": "_crCommentary",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 933,
+                          "src": "2224:13:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 989,
+                        "name": "CRCommentary",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 327,
+                        "src": "2211:12:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_CRCommentary_$327_$",
+                          "typeString": "type(contract CRCommentary)"
+                        }
+                      },
+                      "id": 991,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "2211:27:7",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CRCommentary_$327",
+                        "typeString": "contract CRCommentary"
+                      }
+                    },
+                    "src": "2196:42:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CRCommentary_$327",
+                      "typeString": "contract CRCommentary"
+                    }
+                  },
+                  "id": 993,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2196:42:7"
+                }
+              ]
+            },
+            "id": 995,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "expression": {
+                      "id": 936,
+                      "name": "msg",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967281,
+                      "src": "1588:3:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_message",
+                        "typeString": "msg"
+                      }
+                    },
+                    "id": 937,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "sender",
+                    "nodeType": "MemberAccess",
+                    "src": "1588:10:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 938,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 935,
+                  "name": "Ownable",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1079,
+                  "src": "1580:7:7"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1580:19:7"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 934,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 917,
+                  "mutability": "mutable",
+                  "name": "_sessionContract",
+                  "nameLocation": "1258:16:7",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 995,
+                  "src": "1250:24:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 916,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1250:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 919,
+                  "mutability": "mutable",
+                  "name": "_usersInformation",
+                  "nameLocation": "1293:17:7",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 995,
+                  "src": "1285:25:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 918,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1285:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 921,
+                  "mutability": "mutable",
+                  "name": "_crSickness",
+                  "nameLocation": "1329:11:7",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 995,
+                  "src": "1321:19:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 920,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1321:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 923,
+                  "mutability": "mutable",
+                  "name": "_crBiologicFunctions",
+                  "nameLocation": "1359:20:7",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 995,
+                  "src": "1351:28:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 922,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1351:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 925,
+                  "mutability": "mutable",
+                  "name": "_crPatologicalHistory",
+                  "nameLocation": "1398:21:7",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 995,
+                  "src": "1390:29:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 924,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1390:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 927,
+                  "mutability": "mutable",
+                  "name": "_crPhysicalExam",
+                  "nameLocation": "1438:15:7",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 995,
+                  "src": "1430:23:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 926,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1430:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 929,
+                  "mutability": "mutable",
+                  "name": "_crSyndromeGeriatricProblems",
+                  "nameLocation": "1472:28:7",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 995,
+                  "src": "1464:36:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 928,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1464:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 931,
+                  "mutability": "mutable",
+                  "name": "_crClinicalAssessment",
+                  "nameLocation": "1519:21:7",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 995,
+                  "src": "1511:29:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 930,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1511:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 933,
+                  "mutability": "mutable",
+                  "name": "_crCommentary",
+                  "nameLocation": "1559:13:7",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 995,
+                  "src": "1551:21:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 932,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1551:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1239:340:7"
+            },
+            "returnParameters": {
+              "id": 939,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1600:0:7"
+            },
+            "scope": 1018,
+            "src": "1228:1018:7",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1005,
+              "nodeType": "Block",
+              "src": "2323:50:7",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 1002,
+                        "name": "sessionContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 891,
+                        "src": "2349:15:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SessionContract_$2564",
+                          "typeString": "contract SessionContract"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_SessionContract_$2564",
+                          "typeString": "contract SessionContract"
+                        }
+                      ],
+                      "id": 1001,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "2341:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": {
+                        "id": 1000,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2341:7:7",
+                        "typeDescriptions": {}
+                      }
+                    },
+                    "id": 1003,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2341:24:7",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 999,
+                  "id": 1004,
+                  "nodeType": "Return",
+                  "src": "2334:31:7"
+                }
+              ]
+            },
+            "functionSelector": "282b46ce",
+            "id": 1006,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getSessionContractAddress",
+            "nameLocation": "2263:25:7",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 996,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2288:2:7"
+            },
+            "returnParameters": {
+              "id": 999,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 998,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1006,
+                  "src": "2314:7:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 997,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2314:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2313:9:7"
+            },
+            "scope": 1018,
+            "src": "2254:119:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1016,
+              "nodeType": "Block",
+              "src": "2444:51:7",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 1013,
+                        "name": "usersInformation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 894,
+                        "src": "2470:16:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_UsersInformation_$2898",
+                          "typeString": "contract UsersInformation"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_UsersInformation_$2898",
+                          "typeString": "contract UsersInformation"
+                        }
+                      ],
+                      "id": 1012,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "2462:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": {
+                        "id": 1011,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2462:7:7",
+                        "typeDescriptions": {}
+                      }
+                    },
+                    "id": 1014,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2462:25:7",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 1010,
+                  "id": 1015,
+                  "nodeType": "Return",
+                  "src": "2455:32:7"
+                }
+              ]
+            },
+            "functionSelector": "afae03ef",
+            "id": 1017,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUsersInfoAddress",
+            "nameLocation": "2390:19:7",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1007,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2409:2:7"
+            },
+            "returnParameters": {
+              "id": 1010,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1009,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1017,
+                  "src": "2435:7:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1008,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2435:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2434:9:7"
+            },
+            "scope": 1018,
+            "src": "2381:114:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1019,
+        "src": "644:1854:7",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:2465:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-10-08T07:25:54.889Z",
+  "devdoc": {
+    "author": "Blockchain Clinic Records Team",
+    "details": "inherits from Ownable to use modifiers",
+    "kind": "dev",
+    "methods": {},
+    "title": "Controller",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Contract to mantain the deployed contract addresses on the environment",
+    "version": 1
+  }
+}
