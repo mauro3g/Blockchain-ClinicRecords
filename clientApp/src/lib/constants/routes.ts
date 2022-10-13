@@ -1,0 +1,21 @@
+export const PATH = {
+  root: "",
+  dashboard: "/dashboard",
+  error: "/error",
+  address_not_found: "/address-not-found",
+  new: "/new",
+  login: "/login",
+  users: "/users",
+  doctors: "/doctors",
+  nurses: "/nurses",
+  clinicRecords: "/clinic-records",
+  medicalInfo: "/medical-info",
+  sickness:"/sickness",
+  examResult: "/exam-result",
+  biologicFunctions: "/biologic-functions",
+  patologicalHistory: "/patological",
+  physicalExam: "/physical-exam",
+  syndromesGeriatric: "/syndromes",
+  clinicalAssessment: "/clinical-assessment",
+  commentary: "/commentary"
+};
