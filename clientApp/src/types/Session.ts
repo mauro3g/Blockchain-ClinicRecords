@@ -4,24 +4,32 @@ export interface IPermisions {
     visualize: boolean
 }
 export interface IModule {
-    id: number;
+    id: string;
     name: string;
 }
 export interface IRole {
-    id: number;
+    id: string;
     name: string;
     description: string;
 }
 export interface IUser {
     userAddress: string;
-    id: number;
+    id: string;
     username: string;
     state: boolean;
 }
 
+export interface IAddUser {
+    userAddress: string;
+    id: string;
+    username: string;
+    password: string;
+    roleType: string
+}
+
 export interface IUserRole {
-    userId: number;
-    roleId: number;
+    userId: string;
+    roleId: string;
 }
 
 export interface IModulePermissions {

@@ -1,6 +1,6 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
-import { EthNetworkProvider, SessionProvider } from "context";
+import { EthNetworkProvider, SessionProvider, AppDataProvider } from "context";
 import React from "react";
 import { Routes } from "routes";
 import { theme } from "styles";
@@ -13,7 +13,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <EthNetworkProvider>
           <SessionProvider>
-            <Routes />
+            <AppDataProvider>
+              <Routes />
+            </AppDataProvider>
           </SessionProvider>
         </EthNetworkProvider>
       </ThemeProvider>

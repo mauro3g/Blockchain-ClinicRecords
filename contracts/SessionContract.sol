@@ -88,7 +88,9 @@ contract SessionContract {
     mapping(uint256 => uint256) userRoleMap;
 
     //initialUser first user address
-    address constant initialUser = address(0x4ECbd9540F79A38f58d79336D16eC59a0dA247E8);
+    address constant initialUser =
+        address(0x4ECbd9540F79A38f58d79336D16eC59a0dA247E8);
+
     /**
      * @dev initialize the Modules, Roles and a first Administrator User
      * @dev first user initializes with the param address and uses admin as a encrypted password, to change it please modify @initialUser values
@@ -439,6 +441,10 @@ contract SessionContract {
     function getUsers() external view returns (User[] memory) {
         require(isAdmin(), "sender is not an admin");
         return users;
+    }
+
+    function getSender() external view returns (address) {
+        return msg.sender;
     }
 
     /**

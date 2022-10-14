@@ -2,7 +2,7 @@ import { Nav } from "components";
 import { EthNetworkContext } from "context";
 import { ROLE_IDENTIFICATOR } from "lib/constants/roles";
 import { PATH } from "lib/constants/routes";
-import { ErrorPage } from "pages";
+import { ErrorPage, Users } from "pages";
 import Login from "pages/Login/Login";
 import React from "react";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
@@ -24,7 +24,7 @@ const adminRouter = createBrowserRouter([
     children: [
       {
         path: PATH.dashboard,
-        element: <div>admin Page</div>,
+        element: <Users/>,
       },
     ],
   },

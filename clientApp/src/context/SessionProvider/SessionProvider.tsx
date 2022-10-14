@@ -13,7 +13,6 @@ import { MENU_NAVIGATION } from "lib/constants/navigation";
 interface Props {
   modules: IModule[];
   roles: IRole[];
-  userRoles: IUserRole[];
   roleModules: IRoleModules[];
   navigation: INavigation[];
   openNav: boolean;
@@ -27,7 +26,6 @@ export const SessionContext = React.createContext({} as Props);
 const SessionProvider = ({ children }) => {
   const [modules, setModules] = React.useState<IModule[]>([]);
   const [roles, setRoles] = React.useState<IRole[]>([]);
-  const [userRoles, setUserRoles] = React.useState<IUserRole[]>([]);
   const [roleModules, setRoleModules] = React.useState<IRoleModules[]>([]);
   const [navigation, setNavigation] = React.useState<INavigation[]>([]);
   const [openNav, setOpenNav] = React.useState<boolean>(false);
@@ -61,18 +59,7 @@ const SessionProvider = ({ children }) => {
     }
   };
 
-  const getUserRoles = async () => {
-    console.log("Get User Roles");
-    const _userRoles: IUserRole[] = await sessionContract.methods
-      .getUserRoles()
-      .call();
-    if (_userRoles !== undefined) {
-      console.log("obtained user roles ", _userRoles);
-      setUserRoles(_userRoles);
-    } else {
-      console.log("no se pudieron obtener usuarios y roles");
-    }
-  };
+  
 
   const getRoleModules = async () => {
     console.log("Get Role Modules");
@@ -119,7 +106,6 @@ const SessionProvider = ({ children }) => {
   React.useEffect(() => {
     getModules();
     getRoles();
-    //getUserRoles();
     getRoleModules();
   }, [sessionContract]);
 
@@ -134,7 +120,6 @@ const SessionProvider = ({ children }) => {
       value={{
         modules,
         roles,
-        userRoles,
         roleModules,
         navigation,
         openNav,

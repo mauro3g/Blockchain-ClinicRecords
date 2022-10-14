@@ -1,6 +1,7 @@
 import getWeb3 from "getWeb3";
 import React from "react";
 import SessionContract from "../../__compiled_contracts/SessionContract.json";
+
 import UsersInformationContract from "../../__compiled_contracts/UsersInformation.json";
 import CRSyndromesGeriatricProblems from "../../__compiled_contracts/CRSyndromesGeriatricProblems.json";
 import CRSickness from "../../__compiled_contracts/CRSickness.json";
@@ -79,16 +80,22 @@ const EthNetworkProvider = ({ children }) => {
 
         // Get the contract instance.
         const networkId = await _web3.eth.net.getId(); //obtiene con el metamask
-        //5777-ganache 4-rinkeby
-        const deployedNetwork = SessionContract.networks[5777];
+        //5777-ganache 4-rinkeby 1337-metamask localhost
+        const deployedNetwork = SessionContract.networks[networkId];
+        console.log("networkId ", networkId)
+        console.log("deployedNetwork.address ", deployedNetwork.address)
         const sessionContractInstance = new _web3.eth.Contract(
           SessionContract.abi,
           deployedNetwork && deployedNetwork.address
         );
+        console.log("sessionContractInstance ", sessionContractInstance.options.address)
+        //sessionContractInstance.options.address = "0xB06F8d31B54A59Be6c6d0420594855EBe29EdeAa"
+        
         const usersInformationContractInstance = new _web3.eth.Contract(
           UsersInformationContract.abi,
           deployedNetwork && deployedNetwork.address
         );
+        console.log("usersInformationContract ", usersInformationContractInstance.options.address)
         const cRSyndromesGeriatricProblemsInstance = new _web3.eth.Contract(
           CRSyndromesGeriatricProblems.abi,
           deployedNetwork && deployedNetwork.address
@@ -131,6 +138,13 @@ const EthNetworkProvider = ({ children }) => {
         setCRCommentaryContract(cRCommentaryInstance);
         setCRClinicalAssessmentContract(cRClinicalAssessmentInstance);
         setCRBiologicFunctionsContract(cRBiologicFunctionsInstance);
+
+        //test
+        console.log("test get users ", sessionContractInstance);
+        let res = await sessionContractInstance.methods
+          .getUserRoles()
+          .call({from: _accounts[0]});
+        console.log("res test: ", res);
       } catch (error) {
         // Catch any errors for any of the above operations.
         alert(

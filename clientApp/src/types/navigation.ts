@@ -5,6 +5,6 @@ export interface INavigation {
 }
 
 export interface IMenuOption {
-    moduleId: number,
+    moduleId: string,
     navigation: INavigation
 }

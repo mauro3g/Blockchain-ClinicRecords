@@ -7,9 +7,9 @@
       "type": "constructor"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"author\":\"Blockchain Clinic Records Team\",\"kind\":\"dev\",\"methods\":{},\"title\":\"ProfileModifier\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Contract to use modifiers which validates users roles\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ProfileModifier.sol\":\"ProfileModifier\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ProfileModifier.sol\":{\"keccak256\":\"0x7b6866ecb7e34f77b32ef6b0b2f9d57db3e7e8b650e8db65654ec788c8754b41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6eea6e407d1c5a06224577b3bf752203630ce256411399c7aa0157a35b9ea83\",\"dweb:/ipfs/Qmak4ED9tNLmTNLKp4w9Ft7AAPW6du7YwqRLNM2KL3kv4Q\"]},\"project:/contracts/RoleTypes.sol\":{\"keccak256\":\"0xd0071b3c60d31d752b026ef9a249cd19b588b8e0702f9f4a02750ed4a8004593\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a333c38b49598c4fc9f048689d8a52c7192fef31a914dcc31aa37e771133ef1c\",\"dweb:/ipfs/QmRZtr7SWnWUFAADqgFFYJg6kjBZnmCakrNXah37AHMYqE\"]},\"project:/contracts/SessionContract.sol\":{\"keccak256\":\"0x7d187d8fd7d430aeabfe8d75935276e88bc02f27b35f0a6f73775c9a28d41a3e\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://572dd8158d15b71ea3fdc9799a01eef278100784a97085236e3e03e220d04ea5\",\"dweb:/ipfs/QmPv88enB4rPYSekRAt2guhCpfy3ZZi23bwkUMYb3qQuwk\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220b913477839ecb1af4d28144f3b24b1e90c6af61409b4350fe0c577155732b5ee64736f6c63430008070033",
-  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220b913477839ecb1af4d28144f3b24b1e90c6af61409b4350fe0c577155732b5ee64736f6c63430008070033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"author\":\"Blockchain Clinic Records Team\",\"kind\":\"dev\",\"methods\":{},\"title\":\"ProfileModifier\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Contract to use modifiers which validates users roles\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ProfileModifier.sol\":\"ProfileModifier\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ProfileModifier.sol\":{\"keccak256\":\"0x7b6866ecb7e34f77b32ef6b0b2f9d57db3e7e8b650e8db65654ec788c8754b41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6eea6e407d1c5a06224577b3bf752203630ce256411399c7aa0157a35b9ea83\",\"dweb:/ipfs/Qmak4ED9tNLmTNLKp4w9Ft7AAPW6du7YwqRLNM2KL3kv4Q\"]},\"project:/contracts/RoleTypes.sol\":{\"keccak256\":\"0xd0071b3c60d31d752b026ef9a249cd19b588b8e0702f9f4a02750ed4a8004593\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a333c38b49598c4fc9f048689d8a52c7192fef31a914dcc31aa37e771133ef1c\",\"dweb:/ipfs/QmRZtr7SWnWUFAADqgFFYJg6kjBZnmCakrNXah37AHMYqE\"]},\"project:/contracts/SessionContract.sol\":{\"keccak256\":\"0x773588f6b29b903499201ca9ff5086744907a03b9adeef79f97a85ac4aa00ea2\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://7294fbad5e4827ea4b71ca7446e50aea41ba14ecc0f66effbe6e6b01b00cfc34\",\"dweb:/ipfs/QmS6pmZ7LDGeDHZJiLk8HRn7kQ3abBAs8dBzu3imfshvok\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122076f8c92d8c3ad96d23f5ccf66e35a3669a5b49c203f7adadb368ba0205c1ae7b64736f6c63430008070033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122076f8c92d8c3ad96d23f5ccf66e35a3669a5b49c203f7adadb368ba0205c1ae7b64736f6c63430008070033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
@@ -48,7 +48,7 @@
         1264
       ],
       "SessionContract": [
-        2564
+        2573
       ],
       "User": [
         1237
@@ -91,7 +91,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 1198,
-        "sourceUnit": 2565,
+        "sourceUnit": 2574,
         "src": "89:31:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -280,10 +280,10 @@
                               "name": "SessionContract",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2564,
+                              "referencedDeclaration": 2573,
                               "src": "632:15:10",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_SessionContract_$2564_$",
+                                "typeIdentifier": "t_type$_t_contract$_SessionContract_$2573_$",
                                 "typeString": "type(contract SessionContract)"
                               }
                             },
@@ -298,7 +298,7 @@
                             "src": "632:32:10",
                             "tryCall": false,
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_SessionContract_$2564",
+                              "typeIdentifier": "t_contract$_SessionContract_$2573",
                               "typeString": "contract SessionContract"
                             }
                           },
@@ -608,10 +608,10 @@
                               "name": "SessionContract",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2564,
+                              "referencedDeclaration": 2573,
                               "src": "1138:15:10",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_SessionContract_$2564_$",
+                                "typeIdentifier": "t_type$_t_contract$_SessionContract_$2573_$",
                                 "typeString": "type(contract SessionContract)"
                               }
                             },
@@ -626,7 +626,7 @@
                             "src": "1138:32:10",
                             "tryCall": false,
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_SessionContract_$2564",
+                              "typeIdentifier": "t_contract$_SessionContract_$2573",
                               "typeString": "contract SessionContract"
                             }
                           },
@@ -936,10 +936,10 @@
                               "name": "SessionContract",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2564,
+                              "referencedDeclaration": 2573,
                               "src": "1643:15:10",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_SessionContract_$2564_$",
+                                "typeIdentifier": "t_type$_t_contract$_SessionContract_$2573_$",
                                 "typeString": "type(contract SessionContract)"
                               }
                             },
@@ -954,7 +954,7 @@
                             "src": "1643:32:10",
                             "tryCall": false,
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_SessionContract_$2564",
+                              "typeIdentifier": "t_contract$_SessionContract_$2573",
                               "typeString": "contract SessionContract"
                             }
                           },
@@ -1274,10 +1274,10 @@
                                 "name": "SessionContract",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2564,
+                                "referencedDeclaration": 2573,
                                 "src": "2158:15:10",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_type$_t_contract$_SessionContract_$2564_$",
+                                  "typeIdentifier": "t_type$_t_contract$_SessionContract_$2573_$",
                                   "typeString": "type(contract SessionContract)"
                                 }
                               },
@@ -1292,7 +1292,7 @@
                               "src": "2158:32:10",
                               "tryCall": false,
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_SessionContract_$2564",
+                                "typeIdentifier": "t_contract$_SessionContract_$2573",
                                 "typeString": "contract SessionContract"
                               }
                             },
@@ -1450,10 +1450,10 @@
                                 "name": "SessionContract",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2564,
+                                "referencedDeclaration": 2573,
                                 "src": "2309:15:10",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_type$_t_contract$_SessionContract_$2564_$",
+                                  "typeIdentifier": "t_type$_t_contract$_SessionContract_$2573_$",
                                   "typeString": "type(contract SessionContract)"
                                 }
                               },
@@ -1468,7 +1468,7 @@
                               "src": "2309:32:10",
                               "tryCall": false,
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_SessionContract_$2564",
+                                "typeIdentifier": "t_contract$_SessionContract_$2573",
                                 "typeString": "contract SessionContract"
                               }
                             },
@@ -1666,7 +1666,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-10-08T07:25:54.895Z",
+  "updatedAt": "2022-10-14T05:38:25.939Z",
   "devdoc": {
     "author": "Blockchain Clinic Records Team",
     "kind": "dev",
