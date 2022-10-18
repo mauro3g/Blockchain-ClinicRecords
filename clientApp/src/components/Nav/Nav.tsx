@@ -77,8 +77,8 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-const Nav = () => {
-  const { loggedUser, navigation, openNav, setOpenNav } =
+const Nav = ({ children }) => {
+  const { loggedUser, navigation, openNav, setOpenNav, logout } =
     React.useContext(SessionContext);
   const theme = useTheme();
   const location = useLocation();
@@ -89,15 +89,17 @@ const Nav = () => {
     null
   );
 
-  const redirectHome = () => {
+  const redirectDashboard = () => {
     navigate(`${PATH.root}${PATH.dashboard}`);
   };
 
+  const redirectHome = () => {
+    navigate(`${PATH.root}`);
+  };
+
   React.useEffect(() => {
-    if (Boolean(loggedUser)) {
-      redirectHome();
-    }
-  }, [loggedUser]);
+    console.log(navigation)
+  }, [navigation]);
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -134,13 +136,15 @@ const Nav = () => {
                     </Button>
                   </Box>
                 </div>
-                <div className="flex">
+                <div className="flex items-center">
                   <div className="mr-4">
                     <Typography color="white">
                       {loggedUser?.username}
                     </Typography>
                   </div>
-                  <Icon style={{ color: "white" }}>account_circle</Icon>
+                  <IconButton onClick={(e) => setAnchorEl(e.currentTarget)}>
+                    <Icon style={{ color: "white" }}>account_circle</Icon>
+                  </IconButton>
                 </div>
               </Box>
             </Toolbar>
@@ -193,7 +197,8 @@ const Nav = () => {
             onClose={() => setAnchorEl(null)}
           >
             <Paper>
-              {/* <div className="flex m-4">
+              {
+                /* <div className="flex m-4">
                                     <div className="mr-3 flex items-center">
                                         <Avatar style={{ backgroundColor: "#009688", color: "white" }}>{user?.name?.charAt(0)?.toUpperCase()}</Avatar>
                                     </div>
@@ -209,16 +214,19 @@ const Nav = () => {
                                         </Typography>
                                     </div>
                                 </div>
-                                <Divider />
-                                <ListItem onClick={() => handleLogout()} dense button>
-                                    <ListItemIcon><Icon>exit_to_app</Icon></ListItemIcon>
-                                    <ListItemText primary="Cerrar sesión" />
-                                </ListItem> */}
+                                <Divider />*/
+                <ListItem onClick={() => logout()} dense button>
+                  <ListItemIcon>
+                    <Icon>exit_to_app</Icon>
+                  </ListItemIcon>
+                  <ListItemText primary="Cerrar sesión" />
+                </ListItem>
+              }
             </Paper>
           </Popover>
           <Main open={openNav}>
             <DrawerHeader />
-            <Outlet />
+            {children}
           </Main>
         </React.Fragment>
       ) : (

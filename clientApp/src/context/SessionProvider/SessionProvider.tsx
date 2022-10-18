@@ -9,6 +9,14 @@ import {
   IUserRole,
 } from "types/Session";
 import { MENU_NAVIGATION } from "lib/constants/navigation";
+import { useStorage } from "hooks";
+import {
+  LOCAL_STORAGE_USER_KEY,
+  SESSION_DATE_KEY,
+} from "lib/constants/storage";
+import { PERMISSION_TYPE } from "lib/constants/modules";
+import { ConstructionOutlined } from "@mui/icons-material";
+import { IModulePermissions } from "../../types/Session";
 
 interface Props {
   modules: IModule[];
@@ -16,9 +24,12 @@ interface Props {
   roleModules: IRoleModules[];
   navigation: INavigation[];
   openNav: boolean;
+  sessionValuesActive: boolean;
   setOpenNav: React.Dispatch<boolean>;
   loggedUser: ISession | undefined;
-  login: (username: string, password: string) => Promise<void>
+  login: (username: string, password: string) => Promise<void>;
+  logout: () => void;
+  hasPermissions: (moduleId: string, permission: string) => boolean;
 }
 
 export const SessionContext = React.createContext({} as Props);
@@ -32,16 +43,25 @@ const SessionProvider = ({ children }) => {
   const [loggedUser, setLoggedUser] = React.useState<ISession | undefined>(
     undefined
   );
+  const [permissionsIndex, setPermissionsIndex] = React.useState<number>(-1);
+  const [sessionValuesActive, setSessionValuesActive] =
+    React.useState<boolean>(false);
 
-  const { sessionContract } = React.useContext(EthNetworkContext);
+  const { saveItem, deleteItem, getItem } = useStorage();
+
+  const {
+    sessionContract,
+    connectedContracts,
+    handleOpenBackdrop,
+    handleCloseBackdrop,
+  } = React.useContext(EthNetworkContext);
 
   const getModules = async () => {
-    console.log("Get Modules");
     const _modules: IModule[] = await sessionContract.methods
       .getModules()
       .call();
     if (_modules !== undefined) {
-      console.log("obtained modules ", _modules);
+      //console.log("obtained modules ", _modules);
       setModules(_modules);
     } else {
       console.log("no se pudieron obtener modulos");
@@ -49,25 +69,21 @@ const SessionProvider = ({ children }) => {
   };
 
   const getRoles = async () => {
-    console.log("Get Roles");
     const _roles: IRole[] = await sessionContract.methods.getRoles().call();
     if (_roles !== undefined) {
-      console.log("obtained roles ", _roles);
+      //console.log("obtained roles ", _roles);
       setRoles(_roles);
     } else {
       console.log("no se pudieron obtener roles");
     }
   };
 
-  
-
   const getRoleModules = async () => {
-    console.log("Get Role Modules");
     const _roleModules: IRoleModules[] = await sessionContract.methods
       .getRoleModules()
       .call();
     if (_roleModules !== undefined) {
-      console.log("obtained role modules ", _roleModules);
+      //console.log("obtained role modules ", _roleModules);
       setRoleModules(_roleModules);
     } else {
       console.log("no se pudieron obtener modulos y roles");
@@ -75,9 +91,7 @@ const SessionProvider = ({ children }) => {
   };
 
   const createNavigation = (roleId: string) => {
-    const _roleModule = roleModules.find(
-      (rm) => rm.roleId === roleId
-    );
+    const _roleModule = roleModules.find((rm) => rm.roleId === roleId);
     const _navigation: INavigation[] = [];
     _roleModule?.modulePermissions.forEach((mp) => {
       let menuNavigation = MENU_NAVIGATION.find(
@@ -90,30 +104,78 @@ const SessionProvider = ({ children }) => {
     setNavigation(_navigation);
   };
 
-  const login = async(username: string, password: string) => {
-    console.log("Login");
+  const hasPermissions = (moduleId: string, permission: string): boolean => {
+    const _modulePermissions: IModulePermissions | undefined = roleModules[
+      permissionsIndex
+    ].modulePermissions.find((mp) => mp.moduleId === moduleId);
+    const _permission: boolean = _modulePermissions?.permisions[permission];
+    console.log(_permission);
+    return _permission;
+  };
+
+  const login = async (username: string, password: string) => {
     const _session: ISession = await sessionContract.methods
       .login(username, password)
       .call();
     if (_session !== undefined) {
       console.log("obtained session values ", _session);
       setLoggedUser(_session);
+      saveItem(LOCAL_STORAGE_USER_KEY, _session);
+      saveItem(SESSION_DATE_KEY, new Date());
     } else {
       console.log("no se pudo obtener informacion de sesion");
     }
-  }
+  };
+
+  const logout = () => {
+    console.log("logout");
+    deleteItem(LOCAL_STORAGE_USER_KEY);
+    deleteItem(SESSION_DATE_KEY);
+    setLoggedUser(undefined);
+  };
 
   React.useEffect(() => {
-    getModules();
-    getRoles();
-    getRoleModules();
+    if (sessionContract) {
+      handleOpenBackdrop();
+      getModules();
+      getRoles();
+      getRoleModules();
+    }
   }, [sessionContract]);
 
   React.useEffect(() => {
-    if (roleModules.length > 0 && Boolean(loggedUser)) {
-      createNavigation(loggedUser?.roleId as string);
+    if (connectedContracts && roleModules.length > 0) {
+      if (Boolean(loggedUser)) {
+        const _permissionsIndex = roleModules.findIndex(
+          (rm) => rm.roleId === loggedUser?.roleId
+        );
+        createNavigation(loggedUser?.roleId as string);
+        setPermissionsIndex(_permissionsIndex);
+      } else {
+        const _storedSession = getItem(LOCAL_STORAGE_USER_KEY);
+        if (Boolean(_storedSession)) {
+          setLoggedUser({
+            userId: _storedSession[0],
+            username: _storedSession[1],
+            state: _storedSession[2],
+            roleId: _storedSession[3],
+          });
+        }
+      }
     }
-  }, [loggedUser]);
+  }, [loggedUser, roleModules, connectedContracts]);
+
+  React.useEffect(() => {
+    if (
+      roleModules.length > 0 &&
+      modules.length > 0 &&
+      roles.length > 0 &&
+      navigation.length > 0
+    ) {
+      handleCloseBackdrop();
+      setSessionValuesActive(true);
+    }
+  }, [roleModules, modules, roles, navigation]);
 
   return (
     <SessionContext.Provider
@@ -123,9 +185,12 @@ const SessionProvider = ({ children }) => {
         roleModules,
         navigation,
         openNav,
+        sessionValuesActive,
         setOpenNav,
         loggedUser,
-        login
+        login,
+        logout,
+        hasPermissions,
       }}
     >
       {children}

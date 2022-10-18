@@ -1,6 +1,7 @@
 export const PATH = {
   root: "",
   dashboard: "/dashboard",
+  administration: "/administration",
   error: "/error",
   address_not_found: "/address-not-found",
   new: "/new",

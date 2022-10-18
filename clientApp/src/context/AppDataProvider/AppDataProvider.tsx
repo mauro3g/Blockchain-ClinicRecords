@@ -1,6 +1,8 @@
 import { EthNetworkContext } from "context";
+import { MODULE_IDENTIFICATOR, PERMISSION_TYPE } from "lib/constants/modules";
 import React from "react";
 import { IAddUser, IUser, IUserRole } from "types/Session";
+import { SessionContext } from "../SessionProvider/SessionProvider";
 
 interface Props {
   users: IUser[];
@@ -14,6 +16,7 @@ export const AppDataContext = React.createContext({} as Props);
 const AppDataProvider = ({ children }) => {
   const { sessionContract, currentAccount } =
     React.useContext(EthNetworkContext);
+  const { hasPermissions } = React.useContext(SessionContext);
   const [users, setUsers] = React.useState<IUser[]>([]);
   const [userRoles, setUserRoles] = React.useState<IUserRole[]>([]);
 
@@ -47,24 +50,32 @@ const AppDataProvider = ({ children }) => {
 
   const getUsers = async () => {
     console.log("Get Users from: ", currentAccount);
-    const _user = await sessionContract.methods
-      .getUsers()
-      .call({ from: currentAccount });
-    if (_user !== undefined) {
-      console.log("obtained users ", _user);
-      setUsers(_user);
-    } else {
-      console.log("no se pudieron obtener usuarios");
+    if (
+      hasPermissions(
+        MODULE_IDENTIFICATOR.USERS_MANAGE,
+        PERMISSION_TYPE.VISUALIZE
+      )
+    ) {
+      const _user = await sessionContract.methods
+        .getUsers()
+        .call({ from: currentAccount });
+      if (_user !== undefined) {
+        console.log("obtained users ", _user);
+        setUsers(_user);
+      } else {
+        console.log("no se pudieron obtener usuarios");
+      }
+    }else{
+      throw new Error("No tienes permisos para usar esta opción")
     }
   };
 
   const getUserRoles = async () => {
-    console.log("Get User Roles");
     const _userRoles: IUserRole[] = await sessionContract.methods
       .getUserRoles()
       .call();
     if (_userRoles !== undefined) {
-      console.log("obtained user roles ", _userRoles);
+      //console.log("obtained user roles ", _userRoles);
       setUserRoles(_userRoles);
     } else {
       console.log("no se pudieron obtener usuarios y roles");

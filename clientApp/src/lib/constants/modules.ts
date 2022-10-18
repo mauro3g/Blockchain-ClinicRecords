@@ -13,3 +13,9 @@ export const MODULE_IDENTIFICATOR = {
   CR_CLINICAL_ASSESSMENT: "12",
   CR_COMMENTARY: "13",
 };
+
+export const PERMISSION_TYPE = {
+  CREATE: "create",
+  MODIFY: "modify",
+  VISUALIZE: "visualize",
+};

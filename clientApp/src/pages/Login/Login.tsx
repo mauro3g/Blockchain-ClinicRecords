@@ -64,9 +64,14 @@ const LoginTextField = styled(TextField)`
   }
 `;
 
+const initialFormValues = {
+  username: "",
+  password: "",
+};
+
 const Login = () => {
   const { login } = React.useContext(SessionContext);
-  const { values: credentials, updateValue: handleChange } = useValues();
+  const { values: credentials, updateValue: handleChange } = useValues(initialFormValues);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [messageConfig, setMessageConfig] = React.useState<IMessageConfig>({
     open: false,

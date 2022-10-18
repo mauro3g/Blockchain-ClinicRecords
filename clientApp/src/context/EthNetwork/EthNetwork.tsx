@@ -10,6 +10,7 @@ import CRPatologicalHistory from "../../__compiled_contracts/CRPatologicalHistor
 import CRCommentary from "../../__compiled_contracts/CRCommentary.json";
 import CRClinicalAssessment from "../../__compiled_contracts/CRClinicalAssessment.json";
 import CRBiologicFunctions from "../../__compiled_contracts/CRBiologicFunctions.json";
+import { Backdrop, CircularProgress } from "@mui/material";
 
 interface Props {
   currentAccount: any;
@@ -22,6 +23,9 @@ interface Props {
   cRCommentaryContract: any;
   cRClinicalAssessmentContract: any;
   cRBiologicFunctionsContract: any;
+  connectedContracts: boolean;
+  handleOpenBackdrop: () => void;
+  handleCloseBackdrop: () => void;
 }
 
 export const EthNetworkContext = React.createContext({} as Props);
@@ -46,15 +50,23 @@ const EthNetworkProvider = ({ children }) => {
     React.useState<any>(undefined);
   const [cRBiologicFunctionsContract, setCRBiologicFunctionsContract] =
     React.useState<any>(undefined);
+  const [connectedContracts, setConnectedContracts] =
+    React.useState<boolean>(false);
+  const [openBackdrop, setOpenBackdrop] = React.useState<boolean>(false);
+
+  const handleOpenBackdrop = () => {
+    setOpenBackdrop(true);
+  };
+  const handleCloseBackdrop = () => {
+    setOpenBackdrop(false);
+  };
 
   React.useEffect(() => {
     if (web3 !== undefined) {
       //account change listener
       if (window.ethereum !== undefined) {
-        console.log(window.ethereum);
         try {
           window.ethereum.on("accountsChanged", async () => {
-            console.log("bef change", web3);
             if (web3) {
               console.log("change");
               const _accounts = await web3.eth.getAccounts();
@@ -70,32 +82,28 @@ const EthNetworkProvider = ({ children }) => {
   }, [web3]);
 
   React.useEffect(() => {
-    const initializeData = async () => {
+    const initializeNetwork = async () => {
+      handleOpenBackdrop();
       try {
         // Get network provider and web3 instance.
         const _web3: any = await getWeb3();
 
         const _accounts = await _web3.eth.getAccounts();
-        console.log(_accounts);
 
         // Get the contract instance.
         const networkId = await _web3.eth.net.getId(); //obtiene con el metamask
         //5777-ganache 4-rinkeby 1337-metamask localhost
         const deployedNetwork = SessionContract.networks[networkId];
-        console.log("networkId ", networkId)
-        console.log("deployedNetwork.address ", deployedNetwork.address)
         const sessionContractInstance = new _web3.eth.Contract(
           SessionContract.abi,
           deployedNetwork && deployedNetwork.address
         );
-        console.log("sessionContractInstance ", sessionContractInstance.options.address)
         //sessionContractInstance.options.address = "0xB06F8d31B54A59Be6c6d0420594855EBe29EdeAa"
-        
+
         const usersInformationContractInstance = new _web3.eth.Contract(
           UsersInformationContract.abi,
           deployedNetwork && deployedNetwork.address
         );
-        console.log("usersInformationContract ", usersInformationContractInstance.options.address)
         const cRSyndromesGeriatricProblemsInstance = new _web3.eth.Contract(
           CRSyndromesGeriatricProblems.abi,
           deployedNetwork && deployedNetwork.address
@@ -138,13 +146,7 @@ const EthNetworkProvider = ({ children }) => {
         setCRCommentaryContract(cRCommentaryInstance);
         setCRClinicalAssessmentContract(cRClinicalAssessmentInstance);
         setCRBiologicFunctionsContract(cRBiologicFunctionsInstance);
-
-        //test
-        console.log("test get users ", sessionContractInstance);
-        let res = await sessionContractInstance.methods
-          .getUserRoles()
-          .call({from: _accounts[0]});
-        console.log("res test: ", res);
+        setConnectedContracts(true);
       } catch (error) {
         // Catch any errors for any of the above operations.
         alert(
@@ -152,10 +154,13 @@ const EthNetworkProvider = ({ children }) => {
         );
         console.error(error);
       }
+      handleCloseBackdrop();
     };
+    
     if (Boolean(!web3)) {
-      initializeData();
+      initializeNetwork();
     }
+    
   }, []);
 
   return (
@@ -171,9 +176,19 @@ const EthNetworkProvider = ({ children }) => {
         cRCommentaryContract,
         cRClinicalAssessmentContract,
         cRBiologicFunctionsContract,
+        connectedContracts,
+        handleOpenBackdrop,
+        handleCloseBackdrop,
       }}
     >
       {children}
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={openBackdrop}
+        onClick={handleCloseBackdrop}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </EthNetworkContext.Provider>
   );
 };

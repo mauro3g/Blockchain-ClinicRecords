@@ -37,10 +37,18 @@
   }
 }
 
-.flex{
+.flex {
   display: flex;
 }
 
-.mr-4{
+.mr-4 {
   margin-right: 4pt;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
 }
