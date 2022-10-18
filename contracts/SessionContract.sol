@@ -107,7 +107,7 @@ contract SessionContract {
         );
         Module memory nurseModule = Module(
             uint256(ModuleIdentificator.NURSE_MANAGE),
-            "Doctores"
+            "Enfermeras"
         );
         Module memory patientsModule = Module(
             uint256(ModuleIdentificator.PATIENTS_INFO),
@@ -115,7 +115,7 @@ contract SessionContract {
         );
         Module memory medicalsModule = Module(
             uint256(ModuleIdentificator.MEDICALS_INFO),
-            "Medicos Info"
+            "Informacion de Medicos"
         );
         Module memory examResultModule = Module(
             uint256(ModuleIdentificator.CR_EXAM_RESULT),
@@ -139,11 +139,11 @@ contract SessionContract {
         );
         Module memory syndromeResultModule = Module(
             uint256(ModuleIdentificator.CR_SYNDROMES_GERIATRIC),
-            "Sindromes - problemas geriatricos"
+            "Sindromes y problemas geriatricos"
         );
         Module memory clinicalResultModule = Module(
             uint256(ModuleIdentificator.CR_CLINICAL_ASSESSMENT),
-            "Registro CLinico"
+            "Registro Clinico"
         );
         Module memory commentaryResultModule = Module(
             uint256(ModuleIdentificator.CR_COMMENTARY),
