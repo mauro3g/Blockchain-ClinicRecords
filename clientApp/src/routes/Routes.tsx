@@ -70,14 +70,29 @@ const Routes = () => {
             {
               path: `${PATH.dashboard}${PATH.users}`,
               element: <Users />,
+              children: [
+                {
+                  path: `${PATH.dashboard}${PATH.users}${PATH.new}`,
+                },
+              ],
             },
             {
               path: `${PATH.dashboard}${PATH.doctors}`,
               element: <Doctors />,
+              children: [
+                {
+                  path: `${PATH.dashboard}${PATH.doctors}${PATH.new}`,
+                },
+              ],
             },
             {
               path: `${PATH.dashboard}${PATH.nurses}`,
               element: <Nurses />,
+              children: [
+                {
+                  path: `${PATH.dashboard}${PATH.nurses}${PATH.new}`,
+                },
+              ],
             },
           ],
         },

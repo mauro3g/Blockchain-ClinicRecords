@@ -9,15 +9,21 @@ import {
 import {
   Alert,
   Box,
+  Button,
   CircularProgress,
+  Dialog,
   Icon,
   IconButton,
   Menu,
   MenuItem,
   Snackbar,
+  Typography,
 } from "@mui/material";
 import { IUser } from "types/Session";
 import { IMessageConfig } from "types/feedback";
+import { PATH } from "lib/constants/routes";
+import { Transition, UsersForm } from "components";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface IUserTable {
   id: string;
@@ -29,13 +35,19 @@ interface IUserTable {
 }
 
 const Users = () => {
-  const { users, userRoles, getUsers, getUserRoles } =
-    React.useContext(AppDataContext);
-
-  const { roles, sessionValuesActive } = React.useContext(SessionContext);
-
+  const {
+    users,
+    userRoles,
+    getUsers,
+    getUserRoles,
+    requestDisableUser,
+    requestEnableUser,
+  } = React.useContext(AppDataContext);
+  const { roles, sessionValuesActive, openNav } =
+    React.useContext(SessionContext);
   const [actionsAnchorEl, setActionsAnchorEl] =
     React.useState<null | HTMLElement>(null);
+
   const [selectedUser, setSelectedUser] = React.useState<IUser | undefined>(
     undefined
   );
@@ -45,6 +57,9 @@ const Users = () => {
     message: "",
     severity: "info",
   });
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const columns: GridColDef[] = [
     {
@@ -93,13 +108,46 @@ const Users = () => {
     },
   ];
 
-  const searchRoleValues = (userId: string) => {
-    const userRole = userRoles.find((ur) => ur.userId === userId);
-    const role = roles.find((r) => r.id === userRole?.roleId);
-    return role;
+  const searchRoleValues = React.useCallback(
+    (userId: string) => {
+      const userRole = userRoles.find((ur) => ur.userId === userId);
+      const role = roles.find((r) => r.id === userRole?.roleId);
+      return role;
+    },
+    [userRoles, roles]
+  );
+
+  const handleChangeState = async () => {
+    try {
+      let message = "";
+      if (selectedUser?.state) {
+        await requestDisableUser(selectedUser.userAddress);
+        message = "Usuario desactivado";
+      } else {
+        await requestEnableUser(selectedUser?.userAddress as string);
+        message = "Usuario activado";
+      }
+      await getUsers();
+      setMessageConfig({
+        open: true,
+        message: message,
+        severity: "success",
+      });
+    } catch (error: any) {
+      setMessageConfig({
+        open: true,
+        message: `No se pudo registrar el usuario...\n ${error.message}`,
+        severity: "error",
+      });
+      console.log(error);
+    }
   };
 
-  const buildTableRows = React.useMemo(() => {
+  const handleNew = () => {
+    navigate(`${PATH.dashboard}${PATH.users}${PATH.new}`);
+  };
+
+  const buildTableRows = React.useCallback(() => {
     const rows: Array<IUserTable> = [];
     users.forEach((user) => {
       const role = searchRoleValues(user.id);
@@ -113,9 +161,7 @@ const Users = () => {
       });
     });
     return rows;
-  }, [users]);
-
-  const handleChangeState = () => {};
+  }, [users, searchRoleValues]);
 
   React.useEffect(() => {
     const initializeData = () => {
@@ -138,9 +184,26 @@ const Users = () => {
 
   return (
     <div>
-      <Box sx={{ height: 600, width: "100%" }}>
+      <div className="flex items-center">
+        <div className="flex-grow flex items-center">
+          <Typography variant="subtitle1" color="textSecondary">
+            {"Usuarios"}
+          </Typography>
+        </div>
+        <Button
+          disableElevation
+          variant="contained"
+          color="primary"
+          onClick={handleNew}
+          size="small"
+        >
+          <Icon className="mr-2">add</Icon>
+          {"Nuevo"}
+        </Button>
+      </div>
+      <Box sx={{ height: 600, width: "100%", mt: 3 }}>
         <DataGrid
-          rows={buildTableRows}
+          rows={buildTableRows()}
           columns={columns}
           pageSize={5}
           rowsPerPageOptions={[5]}
@@ -170,6 +233,21 @@ const Users = () => {
           </MenuItem>
         )}
       </Menu>
+      <Dialog
+        fullScreen
+        open={location.pathname.includes(
+          `${PATH.dashboard}${PATH.users}${PATH.new}`
+        )}
+        onClose={() => navigate(-1)}
+        TransitionComponent={Transition}
+        style={{
+          width: `calc(100vw - ${openNav ? "240px" : "0"})`,
+          marginLeft: openNav ? 240 : 0,
+        }}
+        classes={{ paper: "dialog-paper-full-width" }}
+      >
+        <UsersForm />
+      </Dialog>
       <Snackbar
         open={messageConfig.open}
         autoHideDuration={8000}
