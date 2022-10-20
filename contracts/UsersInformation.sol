@@ -20,6 +20,7 @@ struct Patient {
 }
 
 struct Medical {
+    uint256 userId;
     PersonalInformation personalInformation;
     string speciality;
 }
@@ -168,6 +169,7 @@ contract UsersInformation is ProfileModifier {
         string memory _speciality
     ) external isAdmin(msg.sender, sessionContractAddress) {
         Medical memory _medical;
+        _medical.userId = userId;
         _medical.personalInformation = putPersonalInformation(
             _name,
             _identificationNumber,
