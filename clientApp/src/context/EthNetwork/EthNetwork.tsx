@@ -1,8 +1,7 @@
 import getWeb3 from "getWeb3";
 import React from "react";
 import SessionContract from "../../__compiled_contracts/SessionContract.json";
-
-import UsersInformationContract from "../../__compiled_contracts/UsersInformation.json";
+import UsersInformation from "../../__compiled_contracts/UsersInformation.json";
 import CRSyndromesGeriatricProblems from "../../__compiled_contracts/CRSyndromesGeriatricProblems.json";
 import CRSickness from "../../__compiled_contracts/CRSickness.json";
 import CRPhysicalExam from "../../__compiled_contracts/CRPhysicalExam.json";
@@ -11,6 +10,7 @@ import CRCommentary from "../../__compiled_contracts/CRCommentary.json";
 import CRClinicalAssessment from "../../__compiled_contracts/CRClinicalAssessment.json";
 import CRBiologicFunctions from "../../__compiled_contracts/CRBiologicFunctions.json";
 import { Backdrop, CircularProgress } from "@mui/material";
+import Web3 from "web3";
 
 interface Props {
   currentAccount: any;
@@ -86,52 +86,79 @@ const EthNetworkProvider = ({ children }) => {
       handleOpenBackdrop();
       try {
         // Get network provider and web3 instance.
-        const _web3: any = await getWeb3();
+        //const _web3: any = await getWeb3();
+        const _web3: any = new Web3(
+          Web3.givenProvider || "http://localhost:8545"
+        );
 
-        const _accounts = await _web3.eth.getAccounts();
+        //const _accounts = await _web3.eth.getAccounts();
+        const _accounts = await _web3.eth.requestAccounts();
 
         // Get the contract instance.
         const networkId = await _web3.eth.net.getId(); //obtiene con el metamask
-        //5777-ganache 4-rinkeby 1337-metamask localhost
-        const deployedNetwork = SessionContract.networks[networkId];
+        //5777-ganache 4-rinkeby
+        let deployedNetwork = SessionContract.networks[networkId];
         const sessionContractInstance = new _web3.eth.Contract(
           SessionContract.abi,
           deployedNetwork && deployedNetwork.address
         );
         //sessionContractInstance.options.address = "0xB06F8d31B54A59Be6c6d0420594855EBe29EdeAa"
 
+        deployedNetwork = UsersInformation.networks[networkId];
         const usersInformationContractInstance = new _web3.eth.Contract(
-          UsersInformationContract.abi,
+          UsersInformation.abi,
           deployedNetwork && deployedNetwork.address
         );
-        const cRSyndromesGeriatricProblemsInstance = new _web3.eth.Contract(
-          CRSyndromesGeriatricProblems.abi,
-          deployedNetwork && deployedNetwork.address
-        );
-        const cRSicknessInstance = new _web3.eth.Contract(
-          CRSickness.abi,
-          deployedNetwork && deployedNetwork.address
-        );
-        const cRPhysicalExamInstance = new _web3.eth.Contract(
-          CRPhysicalExam.abi,
-          deployedNetwork && deployedNetwork.address
-        );
-        const cRPatologicalHistoryInstance = new _web3.eth.Contract(
-          CRPatologicalHistory.abi,
-          deployedNetwork && deployedNetwork.address
-        );
-        const cRCommentaryInstance = new _web3.eth.Contract(
-          CRCommentary.abi,
-          deployedNetwork && deployedNetwork.address
-        );
-        const cRClinicalAssessmentInstance = new _web3.eth.Contract(
-          CRClinicalAssessment.abi,
-          deployedNetwork && deployedNetwork.address
-        );
-        const cRBiologicFunctionsInstance = new _web3.eth.Contract(
-          CRBiologicFunctions.abi,
-          deployedNetwork && deployedNetwork.address
-        );
+        // const cRSyndromesGeriatricProblemsInstance = new _web3.eth.Contract(
+        //   CRSyndromesGeriatricProblems.abi,
+        //   deployedNetwork && deployedNetwork.address
+        // );
+        // const cRSicknessInstance = new _web3.eth.Contract(
+        //   CRSickness.abi,
+        //   deployedNetwork && deployedNetwork.address
+        // );
+        // const cRPhysicalExamInstance = new _web3.eth.Contract(
+        //   CRPhysicalExam.abi,
+        //   deployedNetwork && deployedNetwork.address
+        // );
+        // const cRPatologicalHistoryInstance = new _web3.eth.Contract(
+        //   CRPatologicalHistory.abi,
+        //   deployedNetwork && deployedNetwork.address
+        // );
+        // const cRCommentaryInstance = new _web3.eth.Contract(
+        //   CRCommentary.abi,
+        //   deployedNetwork && deployedNetwork.address
+        // );
+        // const cRClinicalAssessmentInstance = new _web3.eth.Contract(
+        //   CRClinicalAssessment.abi,
+        //   deployedNetwork && deployedNetwork.address
+        // );
+        // const cRBiologicFunctionsInstance = new _web3.eth.Contract(
+        //   CRBiologicFunctions.abi,
+        //   deployedNetwork && deployedNetwork.address
+        // );
+
+        console.log("tests ", usersInformationContractInstance.options.address);
+        // let r = await usersInformationContractInstance.methods
+        //   .addMedical(
+        //     sessionContractInstance.options.address.toString(),
+        //     1,
+        //     "mauro",
+        //     1723502231,
+        //     1,
+        //     "male",
+        //     "medico"
+        //   )
+        //   .send({ from: _accounts[0] });
+        let r2 = await usersInformationContractInstance.methods
+          .getMedicals(sessionContractInstance.options.address.toString())
+          .call({ from: _accounts[0] });
+        console.log(r2);
+
+        // let r3 = await usersInformationContractInstance.methods
+        //   .getMedical(sessionContractInstance.options.address.toString(), 4)
+        //   .call({ from: _accounts[0] });
+        // console.log("get medical ", r3);
 
         // Set web3, accounts, and contract to the state, and then proceed with an
         // example of interacting with the contract's methods.
@@ -139,13 +166,13 @@ const EthNetworkProvider = ({ children }) => {
         setCurrentAccount(_accounts[0]);
         setSessionContract(sessionContractInstance);
         setUsersInformationContract(usersInformationContractInstance);
-        setCRSyndromesGeriatricContract(cRSyndromesGeriatricProblemsInstance);
-        setCRSicknessContract(cRSicknessInstance);
-        setCRPhysicalExamContract(cRPhysicalExamInstance);
-        setCRPatologicalHistoryContract(cRPatologicalHistoryInstance);
-        setCRCommentaryContract(cRCommentaryInstance);
-        setCRClinicalAssessmentContract(cRClinicalAssessmentInstance);
-        setCRBiologicFunctionsContract(cRBiologicFunctionsInstance);
+        // setCRSyndromesGeriatricContract(cRSyndromesGeriatricProblemsInstance);
+        // setCRSicknessContract(cRSicknessInstance);
+        // setCRPhysicalExamContract(cRPhysicalExamInstance);
+        // setCRPatologicalHistoryContract(cRPatologicalHistoryInstance);
+        // setCRCommentaryContract(cRCommentaryInstance);
+        // setCRClinicalAssessmentContract(cRClinicalAssessmentInstance);
+        // setCRBiologicFunctionsContract(cRBiologicFunctionsInstance);
         setConnectedContracts(true);
       } catch (error) {
         // Catch any errors for any of the above operations.
@@ -156,11 +183,10 @@ const EthNetworkProvider = ({ children }) => {
       }
       handleCloseBackdrop();
     };
-    
+
     if (Boolean(!web3)) {
       initializeNetwork();
     }
-    
   }, []);
 
   return (

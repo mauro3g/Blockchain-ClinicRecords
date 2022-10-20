@@ -79,9 +79,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sessionContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_usersInformation\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crSickness\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crBiologicFunctions\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crPatologicalHistory\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crPhysicalExam\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crSyndromeGeriatricProblems\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crClinicalAssessment\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crCommentary\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getSessionContractAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUsersInfoAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Blockchain Clinic Records Team\",\"details\":\"inherits from Ownable to use modifiers\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Controller\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Contract to mantain the deployed contract addresses on the environment\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Controller.sol\":\"Controller\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CRBiologicFunctions.sol\":{\"keccak256\":\"0x14bc8014abd6094bb40b2cd45930015a7042545d4cc0e6bafee19783a0159683\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://b023ce477b7b15302e2c0d2395c757f8cb188af1fbede1c88c82c02ce7b4d248\",\"dweb:/ipfs/QmYKPyTRYNEmFi1vKVUwhgxL839c5vSR7MDhQbZend6vcd\"]},\"project:/contracts/CRClinicalAssessment.sol\":{\"keccak256\":\"0xd68e395f91bb7872bde0444e4543a7ef70bfa204114e121ee2a09af58f898ad2\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://992a5fd3ee558879370b62d97377a35be38d999b7704ab500decf117c6a5caf8\",\"dweb:/ipfs/QmZLSX3s3Zxud6XC55yV79sC2Kjnp3CS4VXM9SvHGfDmB3\"]},\"project:/contracts/CRCommentary.sol\":{\"keccak256\":\"0x9cd99e19627f33aeea5939c3346268e9018d54fae069ab0ad787fa62caf9457c\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://d816de3f7daff55628a9e7696e823d3a39a346d2f3d028800a60fab342206773\",\"dweb:/ipfs/QmQKzmjHyJBF8Ga1hAjen9sxZy3Z21n6UVqioxBoLH8EnJ\"]},\"project:/contracts/CRPatologicalHistory.sol\":{\"keccak256\":\"0xf1719c3ab0cb1f366fe7b36feb6717277872241f3ce6ace961b60889493e5ea4\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5f95c364b3bb44200f036992068a9a570228cf4b0a040b8f0366f351fec8c8d0\",\"dweb:/ipfs/QmXJRya4LcfKmDQm7qtihjmBdvMttVf5oNxHQnkYEGZ5FN\"]},\"project:/contracts/CRPhysicalExam.sol\":{\"keccak256\":\"0x01f6282b2500f6ed48a2bb5c45ebed215e73e0aa2b884398961106b77b063a75\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://2d6d82ec8d9229569d7771e9cb1867d6dbcd075e0abe7793789382ed7720a1b2\",\"dweb:/ipfs/QmQD9G3bd1MjBUCQuHhfSwQCQc5i7w76i8w2EF3zbXUxj8\"]},\"project:/contracts/CRSickness.sol\":{\"keccak256\":\"0x8c0a9d554ab31891fb9aa28e467c65bf1edd4c7f374c4ffa18d6b11a3415882a\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://85647eec6a2b5ccfa595c86e897247fd33179d76a38cbca42f4b66f75972f253\",\"dweb:/ipfs/QmPuF4rnMKEeQPaGemmDM8auECoZRZk8sjerBs4qeYiQiN\"]},\"project:/contracts/CRSyndromesGeriatricProblems.sol\":{\"keccak256\":\"0xdf92521081f173a9db055517cdf649e94bd9ae44da746efa39810146c609e114\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://3710ba5a0a168ced7427f995b445f1882a7e455c4588dafb0e6b4ff6f8aa347e\",\"dweb:/ipfs/QmNh7b4XAenVKBpgEXLSHNXHjJCGXyb8gG4zXDQwvRc35m\"]},\"project:/contracts/Controller.sol\":{\"keccak256\":\"0x53e8ba90573ef185bf23fbe2d1b0cbae71008eba75e327bc4e1af11691b558a8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a8f55ec346c91d8460d1a36b9ec360cd42b6ecd6cb914802e94b3e5f8d88f391\",\"dweb:/ipfs/QmXd66ysEYXsqt3cTmo3LCkZmhy12bzr1CsvCkM5xsGeU4\"]},\"project:/contracts/Ownable.sol\":{\"keccak256\":\"0x1aeed8b61f24bff40102add7287a31dc44d77651019f9fd9888aaa801dfb42b4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4b36cf358a224ad025930f0b4093aef86ee5c155134b2acc14909a06b09d3c21\",\"dweb:/ipfs/QmRyHoPgerBYF9wSwC6E4n9SN7G6WvdCmvrFjAG6v5Pi7p\"]},\"project:/contracts/ProfileModifier.sol\":{\"keccak256\":\"0x7b6866ecb7e34f77b32ef6b0b2f9d57db3e7e8b650e8db65654ec788c8754b41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6eea6e407d1c5a06224577b3bf752203630ce256411399c7aa0157a35b9ea83\",\"dweb:/ipfs/Qmak4ED9tNLmTNLKp4w9Ft7AAPW6du7YwqRLNM2KL3kv4Q\"]},\"project:/contracts/RoleTypes.sol\":{\"keccak256\":\"0xd0071b3c60d31d752b026ef9a249cd19b588b8e0702f9f4a02750ed4a8004593\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a333c38b49598c4fc9f048689d8a52c7192fef31a914dcc31aa37e771133ef1c\",\"dweb:/ipfs/QmRZtr7SWnWUFAADqgFFYJg6kjBZnmCakrNXah37AHMYqE\"]},\"project:/contracts/SessionContract.sol\":{\"keccak256\":\"0x773588f6b29b903499201ca9ff5086744907a03b9adeef79f97a85ac4aa00ea2\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://7294fbad5e4827ea4b71ca7446e50aea41ba14ecc0f66effbe6e6b01b00cfc34\",\"dweb:/ipfs/QmS6pmZ7LDGeDHZJiLk8HRn7kQ3abBAs8dBzu3imfshvok\"]},\"project:/contracts/UsersInformation.sol\":{\"keccak256\":\"0xfea6ede0162605c698614382a89402b8f314a7c3ffe19723e105e028c508f2b3\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://aab2f57f5753dfb6bd5541df2d930564555c6f90818382475f3e9411272ca6e2\",\"dweb:/ipfs/QmZr2w18EzaQED8wWhqpAQbtBpfV1hb4Tu3LiWqexW2wyz\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060405161029438038061029483398101604081905261002f916100f5565b6000805433600160a060020a031991821617909155600180548216600160a060020a039b8c16179055600280548216998b1699909917909855600380548916978a1697909717909655600480548816958916959095179094556005805487169388169390931790925560068054861691871691909117905560078054851691861691909117905560088054841691851691909117905560098054909216921691909117905561019d565b8051600160a060020a03811681146100f057600080fd5b919050565b60008060008060008060008060006101208a8c03121561011457600080fd5b61011d8a6100d9565b985061012b60208b016100d9565b975061013960408b016100d9565b965061014760608b016100d9565b955061015560808b016100d9565b945061016360a08b016100d9565b935061017160c08b016100d9565b925061017f60e08b016100d9565b915061018e6101008b016100d9565b90509295985092959850929598565b60e9806101ab6000396000f3fe6080604052348015600f57600080fd5b5060043610604e577c01000000000000000000000000000000000000000000000000000000006000350463282b46ce81146053578063afae03ef146096575b600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff165b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60025473ffffffffffffffffffffffffffffffffffffffff16606d56fea2646970667358221220e5c175051dd5685b6255dbfcafde2f618e10c8ee9ce86fd472f6572d9818b78464736f6c63430008070033",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610604e577c01000000000000000000000000000000000000000000000000000000006000350463282b46ce81146053578063afae03ef146096575b600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff165b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60025473ffffffffffffffffffffffffffffffffffffffff16606d56fea2646970667358221220e5c175051dd5685b6255dbfcafde2f618e10c8ee9ce86fd472f6572d9818b78464736f6c63430008070033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sessionContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_usersInformation\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crSickness\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crBiologicFunctions\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crPatologicalHistory\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crPhysicalExam\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crSyndromeGeriatricProblems\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crClinicalAssessment\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crCommentary\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getSessionContractAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUsersInfoAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Blockchain Clinic Records Team\",\"details\":\"inherits from Ownable to use modifiers\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Controller\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Contract to mantain the deployed contract addresses on the environment\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Controller.sol\":\"Controller\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CRBiologicFunctions.sol\":{\"keccak256\":\"0x14bc8014abd6094bb40b2cd45930015a7042545d4cc0e6bafee19783a0159683\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://b023ce477b7b15302e2c0d2395c757f8cb188af1fbede1c88c82c02ce7b4d248\",\"dweb:/ipfs/QmYKPyTRYNEmFi1vKVUwhgxL839c5vSR7MDhQbZend6vcd\"]},\"project:/contracts/CRClinicalAssessment.sol\":{\"keccak256\":\"0xd68e395f91bb7872bde0444e4543a7ef70bfa204114e121ee2a09af58f898ad2\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://992a5fd3ee558879370b62d97377a35be38d999b7704ab500decf117c6a5caf8\",\"dweb:/ipfs/QmZLSX3s3Zxud6XC55yV79sC2Kjnp3CS4VXM9SvHGfDmB3\"]},\"project:/contracts/CRCommentary.sol\":{\"keccak256\":\"0x9cd99e19627f33aeea5939c3346268e9018d54fae069ab0ad787fa62caf9457c\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://d816de3f7daff55628a9e7696e823d3a39a346d2f3d028800a60fab342206773\",\"dweb:/ipfs/QmQKzmjHyJBF8Ga1hAjen9sxZy3Z21n6UVqioxBoLH8EnJ\"]},\"project:/contracts/CRPatologicalHistory.sol\":{\"keccak256\":\"0xf1719c3ab0cb1f366fe7b36feb6717277872241f3ce6ace961b60889493e5ea4\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5f95c364b3bb44200f036992068a9a570228cf4b0a040b8f0366f351fec8c8d0\",\"dweb:/ipfs/QmXJRya4LcfKmDQm7qtihjmBdvMttVf5oNxHQnkYEGZ5FN\"]},\"project:/contracts/CRPhysicalExam.sol\":{\"keccak256\":\"0x01f6282b2500f6ed48a2bb5c45ebed215e73e0aa2b884398961106b77b063a75\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://2d6d82ec8d9229569d7771e9cb1867d6dbcd075e0abe7793789382ed7720a1b2\",\"dweb:/ipfs/QmQD9G3bd1MjBUCQuHhfSwQCQc5i7w76i8w2EF3zbXUxj8\"]},\"project:/contracts/CRSickness.sol\":{\"keccak256\":\"0x8c0a9d554ab31891fb9aa28e467c65bf1edd4c7f374c4ffa18d6b11a3415882a\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://85647eec6a2b5ccfa595c86e897247fd33179d76a38cbca42f4b66f75972f253\",\"dweb:/ipfs/QmPuF4rnMKEeQPaGemmDM8auECoZRZk8sjerBs4qeYiQiN\"]},\"project:/contracts/CRSyndromesGeriatricProblems.sol\":{\"keccak256\":\"0xdf92521081f173a9db055517cdf649e94bd9ae44da746efa39810146c609e114\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://3710ba5a0a168ced7427f995b445f1882a7e455c4588dafb0e6b4ff6f8aa347e\",\"dweb:/ipfs/QmNh7b4XAenVKBpgEXLSHNXHjJCGXyb8gG4zXDQwvRc35m\"]},\"project:/contracts/Controller.sol\":{\"keccak256\":\"0x53e8ba90573ef185bf23fbe2d1b0cbae71008eba75e327bc4e1af11691b558a8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a8f55ec346c91d8460d1a36b9ec360cd42b6ecd6cb914802e94b3e5f8d88f391\",\"dweb:/ipfs/QmXd66ysEYXsqt3cTmo3LCkZmhy12bzr1CsvCkM5xsGeU4\"]},\"project:/contracts/Ownable.sol\":{\"keccak256\":\"0x1aeed8b61f24bff40102add7287a31dc44d77651019f9fd9888aaa801dfb42b4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4b36cf358a224ad025930f0b4093aef86ee5c155134b2acc14909a06b09d3c21\",\"dweb:/ipfs/QmRyHoPgerBYF9wSwC6E4n9SN7G6WvdCmvrFjAG6v5Pi7p\"]},\"project:/contracts/ProfileModifier.sol\":{\"keccak256\":\"0x7b6866ecb7e34f77b32ef6b0b2f9d57db3e7e8b650e8db65654ec788c8754b41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6eea6e407d1c5a06224577b3bf752203630ce256411399c7aa0157a35b9ea83\",\"dweb:/ipfs/Qmak4ED9tNLmTNLKp4w9Ft7AAPW6du7YwqRLNM2KL3kv4Q\"]},\"project:/contracts/RoleTypes.sol\":{\"keccak256\":\"0xd0071b3c60d31d752b026ef9a249cd19b588b8e0702f9f4a02750ed4a8004593\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a333c38b49598c4fc9f048689d8a52c7192fef31a914dcc31aa37e771133ef1c\",\"dweb:/ipfs/QmRZtr7SWnWUFAADqgFFYJg6kjBZnmCakrNXah37AHMYqE\"]},\"project:/contracts/SessionContract.sol\":{\"keccak256\":\"0x227851a6a3be4b859ac687025102440814cea99cdf3392f28631bc87ee763807\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://37defbbf0896b925901064037be41f81dac042425e572979c72ccf971db3b4c9\",\"dweb:/ipfs/QmZYSoH4NNQZbhecTzhE21cFuZbAa7AxeKDrNsvYRmGKr1\"]},\"project:/contracts/UsersInformation.sol\":{\"keccak256\":\"0x4eef714641d80427e50a855fc2533cff0b0eab67697d38230b63d793246fdaa1\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://109e5ff6a405c47917aa74ebb5959ae119c6402db6bac394e98d8acb9a6968b0\",\"dweb:/ipfs/Qme5e3joX8t5k6NmTiCxLr37DSsRaNEyQPZ4hsrJiswJr9\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161029438038061029483398101604081905261002f916100f5565b6000805433600160a060020a031991821617909155600180548216600160a060020a039b8c16179055600280548216998b1699909917909855600380548916978a1697909717909655600480548816958916959095179094556005805487169388169390931790925560068054861691871691909117905560078054851691861691909117905560088054841691851691909117905560098054909216921691909117905561019d565b8051600160a060020a03811681146100f057600080fd5b919050565b60008060008060008060008060006101208a8c03121561011457600080fd5b61011d8a6100d9565b985061012b60208b016100d9565b975061013960408b016100d9565b965061014760608b016100d9565b955061015560808b016100d9565b945061016360a08b016100d9565b935061017160c08b016100d9565b925061017f60e08b016100d9565b915061018e6101008b016100d9565b90509295985092959850929598565b60e9806101ab6000396000f3fe6080604052348015600f57600080fd5b5060043610604e577c01000000000000000000000000000000000000000000000000000000006000350463282b46ce81146053578063afae03ef146096575b600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff165b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60025473ffffffffffffffffffffffffffffffffffffffff16606d56fea26469706673582212202dd585b61a60f9df169eedc033aad83c489a530d7d98ea3ceb423b6347a5f05a64736f6c63430008070033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610604e577c01000000000000000000000000000000000000000000000000000000006000350463282b46ce81146053578063afae03ef146096575b600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff165b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60025473ffffffffffffffffffffffffffffffffffffffff16606d56fea26469706673582212202dd585b61a60f9df169eedc033aad83c489a530d7d98ea3ceb423b6347a5f05a64736f6c63430008070033",
   "immutableReferences": {},
   "generatedSources": [
     {
@@ -1000,7 +1000,7 @@
         562
       ],
       "Medical": [
-        2605
+        2607
       ],
       "Module": [
         1219
@@ -1063,7 +1063,7 @@
         1242
       ],
       "UsersInformation": [
-        2907
+        2915
       ]
     },
     "id": 1019,
@@ -1124,7 +1124,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 1019,
-        "sourceUnit": 2908,
+        "sourceUnit": 2916,
         "src": "153:32:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1293,7 +1293,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_UsersInformation_$2907",
+              "typeIdentifier": "t_contract$_UsersInformation_$2915",
               "typeString": "contract UsersInformation"
             },
             "typeName": {
@@ -1303,13 +1303,13 @@
                 "id": 892,
                 "name": "UsersInformation",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 2907,
+                "referencedDeclaration": 2915,
                 "src": "720:16:7"
               },
-              "referencedDeclaration": 2907,
+              "referencedDeclaration": 2915,
               "src": "720:16:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_UsersInformation_$2907",
+                "typeIdentifier": "t_contract$_UsersInformation_$2915",
                 "typeString": "contract UsersInformation"
               }
             },
@@ -1653,7 +1653,7 @@
                       "referencedDeclaration": 894,
                       "src": "1673:16:7",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_UsersInformation_$2907",
+                        "typeIdentifier": "t_contract$_UsersInformation_$2915",
                         "typeString": "contract UsersInformation"
                       }
                     },
@@ -1685,10 +1685,10 @@
                         "name": "UsersInformation",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2907,
+                        "referencedDeclaration": 2915,
                         "src": "1692:16:7",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_UsersInformation_$2907_$",
+                          "typeIdentifier": "t_type$_t_contract$_UsersInformation_$2915_$",
                           "typeString": "type(contract UsersInformation)"
                         }
                       },
@@ -1703,13 +1703,13 @@
                       "src": "1692:35:7",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_UsersInformation_$2907",
+                        "typeIdentifier": "t_contract$_UsersInformation_$2915",
                         "typeString": "contract UsersInformation"
                       }
                     },
                     "src": "1673:54:7",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_UsersInformation_$2907",
+                      "typeIdentifier": "t_contract$_UsersInformation_$2915",
                       "typeString": "contract UsersInformation"
                     }
                   },
@@ -2734,7 +2734,7 @@
                         "referencedDeclaration": 894,
                         "src": "2470:16:7",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_UsersInformation_$2907",
+                          "typeIdentifier": "t_contract$_UsersInformation_$2915",
                           "typeString": "contract UsersInformation"
                         }
                       }
@@ -2742,7 +2742,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_UsersInformation_$2907",
+                          "typeIdentifier": "t_contract$_UsersInformation_$2915",
                           "typeString": "contract UsersInformation"
                         }
                       ],
@@ -2856,7 +2856,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-10-14T05:38:25.936Z",
+  "updatedAt": "2022-10-20T08:21:37.002Z",
   "devdoc": {
     "author": "Blockchain Clinic Records Team",
     "details": "inherits from Ownable to use modifiers",

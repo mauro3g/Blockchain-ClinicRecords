@@ -81,7 +81,7 @@ const Routes = () => {
               element: <Doctors />,
               children: [
                 {
-                  path: `${PATH.dashboard}${PATH.doctors}${PATH.new}`,
+                  path: `${PATH.dashboard}${PATH.doctors}${PATH.medicalInfo}`,
                 },
               ],
             },
@@ -90,7 +90,7 @@ const Routes = () => {
               element: <Nurses />,
               children: [
                 {
-                  path: `${PATH.dashboard}${PATH.nurses}${PATH.new}`,
+                  path: `${PATH.dashboard}${PATH.nurses}${PATH.medicalInfo}`,
                 },
               ],
             },

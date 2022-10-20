@@ -14,7 +14,18 @@ export interface IPatient {
   phone: string;
 }
 
-export interface Medical {
+export interface IMedical {
+  userId: string;
   personalInformation: IPersonalInformation;
+  speciality: string;
+}
+
+export interface IMedicalRequest {
+  sessionContractAddress: string;
+  userId: number;
+  name: string;
+  identificationNumber: number;
+  birthDate: number;
+  gender: string;
   speciality: string;
 }

@@ -8,7 +8,7 @@ export const MENU_NAVIGATION: IMenuOption[] = [
     navigation: {
       text: "Usuarios",
       to: `${PATH.dashboard}${PATH.users}`,
-      icon: "card_membership",
+      icon: "account_circle",
     },
   },
   {
@@ -16,23 +16,15 @@ export const MENU_NAVIGATION: IMenuOption[] = [
     navigation: {
       text: "Doctores",
       to: `${PATH.dashboard}${PATH.doctors}`,
-      icon: "card_membership",
+      icon: "medical_information",
     },
   },
   {
     moduleId: MODULE_IDENTIFICATOR.NURSE_MANAGE,
     navigation: {
       text: "Enfermeras",
-      to: `${PATH.dashboard}${PATH.users}`,
-      icon: "card_membership",
-    },
-  },
-  {
-    moduleId: MODULE_IDENTIFICATOR.MEDICALS_INFO,
-    navigation: {
-      text: "Información médica",
-      to: `${PATH.dashboard}${PATH.medicalInfo}`,
-      icon: "card_membership",
+      to: `${PATH.dashboard}${PATH.nurses}`,
+      icon: "vaccines",
     },
   },
   {

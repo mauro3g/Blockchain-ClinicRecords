@@ -6,7 +6,6 @@ import {
   IRole,
   IRoleModules,
   ISession,
-  IUserRole,
 } from "types/Session";
 import { MENU_NAVIGATION } from "lib/constants/navigation";
 import { useStorage } from "hooks";
@@ -14,8 +13,6 @@ import {
   LOCAL_STORAGE_USER_KEY,
   SESSION_DATE_KEY,
 } from "lib/constants/storage";
-import { PERMISSION_TYPE } from "lib/constants/modules";
-import { ConstructionOutlined } from "@mui/icons-material";
 import { IModulePermissions } from "../../types/Session";
 
 interface Props {
