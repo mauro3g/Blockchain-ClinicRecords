@@ -4,6 +4,7 @@ import { ROLE_IDENTIFICATOR } from "lib/constants/roles";
 import { PATH } from "lib/constants/routes";
 import { Doctors, ErrorPage, Nurses, Users } from "pages";
 import Login from "pages/Login/Login";
+import Patients from "pages/Patients/Patients";
 import React from "react";
 import {
   createBrowserRouter,
@@ -62,6 +63,10 @@ const Routes = () => {
                   }
                 />
               ),
+            },
+            {
+              path: `${PATH.dashboard}${PATH.patients}`,
+              element: <Patients />,
             },
             {
               path: `${PATH.dashboard}${PATH.clinicRecords}`,

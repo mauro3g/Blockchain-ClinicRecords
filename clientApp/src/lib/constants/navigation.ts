@@ -30,9 +30,17 @@ export const MENU_NAVIGATION: IMenuOption[] = [
   {
     moduleId: MODULE_IDENTIFICATOR.PATIENTS_INFO,
     navigation: {
+      text: "Pacientes",
+      to: `${PATH.dashboard}${PATH.patients}`,
+      icon: "person_search",
+    },
+  },
+  {
+    moduleId: MODULE_IDENTIFICATOR.CR_SICKNESS,
+    navigation: {
       text: "Historias Clinicas",
       to: `${PATH.dashboard}${PATH.clinicRecords}`,
-      icon: "card_membership",
+      icon: "medical_information",
     },
   },
 ];

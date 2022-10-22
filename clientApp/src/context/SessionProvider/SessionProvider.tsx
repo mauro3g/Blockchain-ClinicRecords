@@ -1,12 +1,7 @@
 import React from "react";
 import { EthNetworkContext } from "context";
 import { INavigation } from "types/navigation";
-import {
-  IModule,
-  IRole,
-  IRoleModules,
-  ISession,
-} from "types/Session";
+import { IModule, IRole, IRoleModules, ISession } from "types/Session";
 import { MENU_NAVIGATION } from "lib/constants/navigation";
 import { useStorage } from "hooks";
 import {
@@ -111,16 +106,24 @@ const SessionProvider = ({ children }) => {
   };
 
   const login = async (username: string, password: string) => {
-    const _session: ISession = await sessionContract.methods
-      .login(username, password)
-      .call();
-    if (_session !== undefined) {
-      console.log("obtained session values ", _session);
-      setLoggedUser(_session);
-      saveItem(LOCAL_STORAGE_USER_KEY, _session);
-      saveItem(SESSION_DATE_KEY, new Date());
-    } else {
-      console.log("no se pudo obtener informacion de sesion");
+    try {
+      const _session: ISession = await sessionContract.methods
+        .login(username, password)
+        .call();
+      if (_session !== undefined) {
+        console.log("obtained session values ", _session);
+        setLoggedUser(_session);
+        saveItem(LOCAL_STORAGE_USER_KEY, _session);
+        saveItem(SESSION_DATE_KEY, new Date());
+      } else {
+        console.log("no se pudo obtener informacion de sesion");
+      }
+    } catch (e: any) {
+      console.log("error al iniciar sesion")
+      console.log(e.message)
+      if(e.message.toString().includes("Invalid username or password")){
+        throw new Error("Nombre de usuario o contraseña inválidos")
+      }
     }
   };
 

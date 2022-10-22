@@ -71,7 +71,8 @@ const initialFormValues = {
 
 const Login = () => {
   const { login } = React.useContext(SessionContext);
-  const { values: credentials, updateValue: handleChange } = useValues(initialFormValues);
+  const { values: credentials, updateValue: handleChange } =
+    useValues(initialFormValues);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [messageConfig, setMessageConfig] = React.useState<IMessageConfig>({
     open: false,
@@ -81,7 +82,15 @@ const Login = () => {
 
   const handleSubmit = async () => {
     setLoading(true);
-    await login(credentials["username"], credentials["password"]);
+    try {
+      await login(credentials["username"], credentials["password"]);
+    } catch (e: any) {
+      setMessageConfig({
+        open: true,
+        message: `No se pudo iniciar sesión...\n ${e.message}`,
+        severity: "error",
+      });
+    }
     setLoading(false);
   };
 

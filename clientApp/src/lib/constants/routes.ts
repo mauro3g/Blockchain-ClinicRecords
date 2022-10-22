@@ -9,6 +9,7 @@ export const PATH = {
   users: "/users",
   doctors: "/doctors",
   nurses: "/nurses",
+  patients: "/patients",
   clinicRecords: "/clinic-records",
   medicalInfo: "/medical-info",
   sickness:"/sickness",
