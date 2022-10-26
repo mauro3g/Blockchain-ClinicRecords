@@ -212,7 +212,7 @@ contract SessionContract {
         roleModulesMap[doctorRole.id].push(
             ModulePermissions(
                 uint256(ModuleIdentificator.PATIENTS_INFO),
-                Permisions(false, true, true)
+                Permisions(true, true, true)
             )
         );
         roleModulesMap[nurseRole.id].push(
@@ -251,9 +251,10 @@ contract SessionContract {
         roleModulesMap[doctorRole.id].push(
             ModulePermissions(
                 uint256(ModuleIdentificator.CR_BIOLOGIC_FUNCTIONS),
-                Permisions(false, false, true)
+                Permisions(true, true, true)
             )
         );
+
         roleModulesMap[nurseRole.id].push(
             ModulePermissions(
                 uint256(ModuleIdentificator.CR_BIOLOGIC_FUNCTIONS),
@@ -267,6 +268,7 @@ contract SessionContract {
                 Permisions(true, true, true)
             )
         );
+
         roleModulesMap[nurseRole.id].push(
             ModulePermissions(
                 uint256(ModuleIdentificator.CR_PATOLOGICAL_HISTORY),
@@ -277,9 +279,10 @@ contract SessionContract {
         roleModulesMap[doctorRole.id].push(
             ModulePermissions(
                 uint256(ModuleIdentificator.CR_PHYSYCAL_EXAM),
-                Permisions(false, false, true)
+                Permisions(true, true, true)
             )
         );
+
         roleModulesMap[nurseRole.id].push(
             ModulePermissions(
                 uint256(ModuleIdentificator.CR_PHYSYCAL_EXAM),
@@ -293,6 +296,7 @@ contract SessionContract {
                 Permisions(true, true, true)
             )
         );
+        
         roleModulesMap[nurseRole.id].push(
             ModulePermissions(
                 uint256(ModuleIdentificator.CR_SYNDROMES_GERIATRIC),

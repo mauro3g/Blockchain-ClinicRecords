@@ -28,8 +28,8 @@ interface IDoctorTable {
   username: string;
   name: string;
   speciality: string;
-  identificationNumber: number;
-  birthDate: number;
+  identificationNumber: string;
+  birthDate: string;
   gender: string;
   options: string | undefined;
 }
@@ -156,7 +156,7 @@ const Doctors = () => {
           return role?.id === ROLE_IDENTIFICATOR.DOCTOR;
         });
         if (Boolean(medicalUsers) && medicalUsers.length > 0) {
-          await getMedicals(medicalUsers);
+          await getMedicals();
         }
       } catch (error: any) {
         setMessageConfig({
@@ -180,15 +180,17 @@ const Doctors = () => {
           let medicalInfo: IMedical | undefined = _medicals.find(
             (m) => m.userId === user.id
           );
-          
+
           rows.push({
             id: user.id,
             username: user.username,
             name: medicalInfo?.personalInformation.name as string,
             speciality: medicalInfo?.speciality as string,
             identificationNumber: medicalInfo?.personalInformation
-              .identificationNumber as number,
-            birthDate: medicalInfo?.personalInformation.birthDate as number,
+              .identificationNumber as string,
+            birthDate: new Date(
+              parseInt(medicalInfo?.personalInformation.birthDate as string)
+            ).toLocaleDateString(),
             gender: medicalInfo?.personalInformation.gender as string,
             options: user.id,
           });

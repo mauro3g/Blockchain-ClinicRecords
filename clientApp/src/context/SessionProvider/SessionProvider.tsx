@@ -96,14 +96,18 @@ const SessionProvider = ({ children }) => {
     setNavigation(_navigation);
   };
 
-  const hasPermissions = (moduleId: string, permission: string): boolean => {
-    const _modulePermissions: IModulePermissions | undefined = roleModules[
-      permissionsIndex
-    ].modulePermissions.find((mp) => mp.moduleId === moduleId);
-    const _permission: boolean = _modulePermissions?.permisions[permission];
-    console.log(_permission);
-    return _permission;
-  };
+  const hasPermissions = React.useCallback(
+    (moduleId: string, permission: string): boolean => {
+      console.log("rolmod", roleModules);
+      console.log("pi", permissionsIndex);
+      const _modulePermissions: IModulePermissions | undefined = roleModules[
+        permissionsIndex
+      ].modulePermissions.find((mp) => mp.moduleId === moduleId);
+      const _permission: boolean = _modulePermissions?.permisions[permission];
+      return _permission;
+    },
+    [permissionsIndex]
+  );
 
   const login = async (username: string, password: string) => {
     try {
@@ -119,10 +123,10 @@ const SessionProvider = ({ children }) => {
         console.log("no se pudo obtener informacion de sesion");
       }
     } catch (e: any) {
-      console.log("error al iniciar sesion")
-      console.log(e.message)
-      if(e.message.toString().includes("Invalid username or password")){
-        throw new Error("Nombre de usuario o contraseña inválidos")
+      console.log("error al iniciar sesion");
+      console.log(e.message);
+      if (e.message.toString().includes("Invalid username or password")) {
+        throw new Error("Nombre de usuario o contraseña inválidos");
       }
     }
   };
@@ -144,13 +148,21 @@ const SessionProvider = ({ children }) => {
   }, [sessionContract]);
 
   React.useEffect(() => {
-    if (connectedContracts && roleModules.length > 0) {
+    if (
+      connectedContracts &&
+      roleModules.length > 0 &&
+      modules.length > 0 &&
+      roles.length > 0
+    ) {
+      handleCloseBackdrop();
       if (Boolean(loggedUser)) {
         const _permissionsIndex = roleModules.findIndex(
           (rm) => rm.roleId === loggedUser?.roleId
         );
+        console.log(_permissionsIndex);
         createNavigation(loggedUser?.roleId as string);
         setPermissionsIndex(_permissionsIndex);
+        setSessionValuesActive(true);
       } else {
         const _storedSession = getItem(LOCAL_STORAGE_USER_KEY);
         if (Boolean(_storedSession)) {
@@ -163,19 +175,7 @@ const SessionProvider = ({ children }) => {
         }
       }
     }
-  }, [loggedUser, roleModules, connectedContracts]);
-
-  React.useEffect(() => {
-    if (
-      roleModules.length > 0 &&
-      modules.length > 0 &&
-      roles.length > 0 &&
-      navigation.length > 0
-    ) {
-      handleCloseBackdrop();
-      setSessionValuesActive(true);
-    }
-  }, [roleModules, modules, roles, navigation]);
+  }, [loggedUser, roleModules, modules, roles, connectedContracts]);
 
   return (
     <SessionContext.Provider

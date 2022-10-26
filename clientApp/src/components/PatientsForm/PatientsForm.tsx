@@ -1,39 +1,41 @@
-import styled from "@emotion/styled";
 import {
-  TextField,
-  Box,
+  Alert,
   AppBar,
-  Toolbar,
-  Typography,
-  Tooltip,
-  IconButton,
-  Icon,
-  Paper,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
+  Box,
   Button,
   CircularProgress,
+  FormControl,
+  Icon,
+  IconButton,
+  InputLabel,
+  MenuItem,
+  Paper,
+  Select,
   Snackbar,
-  Alert,
+  TextField,
+  Toolbar,
+  Tooltip,
+  Typography,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { AppDataContext } from "context";
+import { Dayjs } from "dayjs";
 import { useValues } from "hooks";
-import { ROLES_ARRAY } from "lib/constants/roles";
+import { MARITAL_STATUS } from "lib/constants/inputs";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { IMessageConfig } from "types/feedback";
-import { IUser, IAddUser } from "types/Session";
-import { Dayjs } from "dayjs";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { IMedicalRequest } from "types/UsersInformation";
+import {
+  IMedicalRequest,
+  IPatient,
+  IPatientRequest,
+} from "../../types/UsersInformation";
 
 interface Props {
   edit?: boolean;
-  savedUser: IUser;
+  savedPatient: IPatient;
 }
 
 const initialFormValues = {
@@ -41,7 +43,11 @@ const initialFormValues = {
   identificationNumber: "",
   birthDate: 1,
   gender: "",
-  speciality: "",
+  maritalStatus: "",
+  occupation: "",
+  direction: "",
+  contactPerson: "",
+  phone: "",
 };
 
 const TextFieldLarge = styled(TextField)`
@@ -54,9 +60,9 @@ const ContainerLarge = styled(Box)`
   margin-top: 20px;
 `;
 
-const MedicalForm = (props: Props) => {
-  const { edit, savedUser } = props;
-  const { requestRegisterMedicalsInfo, getMedicals } =
+const PatientsForm = (props: Props) => {
+  const { edit, savedPatient } = props;
+  const { requestRegisterPatientsInfo, getPatients } =
     React.useContext(AppDataContext);
   const [messageConfig, setMessageConfig] = React.useState<IMessageConfig>({
     open: false,
@@ -74,21 +80,21 @@ const MedicalForm = (props: Props) => {
   } = useValues(initialFormValues);
 
   const handleSubmit = async () => {
-    console.log("handleSubmit register medical ", savedUser.id);
     try {
       setLoading(true);
-      const newUser: IMedicalRequest = {
-        userId: parseInt(savedUser.id),
+      const newPatient: IPatientRequest = {
         name: values["name"],
         identificationNumber: values["identificationNumber"],
         birthDate: values["birthDate"],
         gender: values["gender"],
-        speciality: values["speciality"],
-        sessionContractAddress: "",
+        maritalStatus: values["maritalStatus"],
+        occupation: values["occupation"],
+        direction: values["direction"],
+        contactPerson: values["contactPerson"],
+        phone: values["phone"],
       };
-
-      await requestRegisterMedicalsInfo(newUser);
-      await getMedicals();
+      await requestRegisterPatientsInfo(newPatient);
+      await getPatients();
       updateValues(initialFormValues);
       setMessageConfig({
         open: true,
@@ -109,10 +115,10 @@ const MedicalForm = (props: Props) => {
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-center">
-      <AppBar position="static" color="transparent">
+      <AppBar position="fixed" color="inherit">
         <Toolbar>
           <Typography variant="h6" noWrap className="flex-grow">
-            {edit ? "Editar Médico" : "Nuevo Médico"}
+            {edit ? "Editar Paciente" : "Nuevo Paciente"}
           </Typography>
           <Tooltip title="Cerrar formulario" arrow>
             <IconButton onClick={() => navigate(-1)}>
@@ -133,6 +139,8 @@ const MedicalForm = (props: Props) => {
           className={"flex justify-center items-center"}
           style={{
             minWidth: 300,
+            marginTop: 200,
+            marginBottom: 20,
             width: "calc(50vw - 12px)",
             padding: 8,
             flexWrap: "wrap",
@@ -171,10 +179,49 @@ const MedicalForm = (props: Props) => {
             value={values["gender"]}
             required
           />
+          <ContainerLarge>
+            <FormControl fullWidth>
+              <InputLabel id="marital-status-lbl">Estado civil</InputLabel>
+              <Select
+                labelId="marital-status-lbl"
+                id="marital-status-select"
+                value={MARITAL_STATUS.findIndex(
+                  (ms) => ms === values["maritalStatus"]
+                )}
+                label="maritalStatus"
+                onChange={(e) =>
+                  handleChange("maritalStatus", MARITAL_STATUS[e.target.value])
+                }
+              >
+                {MARITAL_STATUS.map((status, index) => (
+                  <MenuItem value={index}>{status}</MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </ContainerLarge>
           <TextFieldLarge
-            label={"Especialidad Médica"}
-            onChange={(e) => handleChange("speciality", e.target.value)}
-            value={values["speciality"]}
+            label={"Ocupación"}
+            onChange={(e) => handleChange("occupation", e.target.value)}
+            value={values["occupation"]}
+            required
+          />
+          <TextFieldLarge
+            label={"Dirección"}
+            onChange={(e) => handleChange("direction", e.target.value)}
+            value={values["direction"]}
+            required
+          />
+          <TextFieldLarge
+            label={"Contácto"}
+            onChange={(e) => handleChange("contactPerson", e.target.value)}
+            value={values["contactPerson"]}
+            required
+          />
+          <TextFieldLarge
+            label={"Teléfono"}
+            type={"number"}
+            onChange={(e) => handleChange("phone", e.target.value)}
+            value={values["phone"]}
             required
           />
           <ContainerLarge className="w-full flex justify-center">
@@ -218,4 +265,4 @@ const MedicalForm = (props: Props) => {
   );
 };
 
-export default MedicalForm;
+export default PatientsForm;

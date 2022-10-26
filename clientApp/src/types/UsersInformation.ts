@@ -1,7 +1,7 @@
 export interface IPersonalInformation {
   name: string;
-  identificationNumber: number;
-  birthDate: number;
+  identificationNumber: string;
+  birthDate: string;
   gender: string;
 }
 
@@ -28,4 +28,16 @@ export interface IMedicalRequest {
   birthDate: number;
   gender: string;
   speciality: string;
+}
+
+export interface IPatientRequest {
+  name: string;
+  identificationNumber: number;
+  birthDate: number;
+  gender: string;
+  maritalStatus: string;
+  occupation: string;
+  direction: string;
+  contactPerson: string;
+  phone: string;
 }

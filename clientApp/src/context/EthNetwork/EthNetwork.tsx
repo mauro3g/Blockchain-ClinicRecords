@@ -69,7 +69,7 @@ const EthNetworkProvider = ({ children }) => {
           window.ethereum.on("accountsChanged", async () => {
             if (web3) {
               console.log("change");
-              const _accounts = await web3.eth.getAccounts();
+              const _accounts = await web3.eth.requestAccounts();
               //setAccounts(_accounts);
               setCurrentAccount(_accounts[0]);
             }
@@ -138,7 +138,7 @@ const EthNetworkProvider = ({ children }) => {
         //   deployedNetwork && deployedNetwork.address
         // );
 
-        console.log("tests ", usersInformationContractInstance.options.address);
+        //console.log("tests ", usersInformationContractInstance.options.address);
         // let r = await usersInformationContractInstance.methods
         //   .addMedical(
         //     sessionContractInstance.options.address.toString(),
@@ -150,10 +150,10 @@ const EthNetworkProvider = ({ children }) => {
         //     "medico"
         //   )
         //   .send({ from: _accounts[0] });
-        let r2 = await usersInformationContractInstance.methods
-          .getMedicals(sessionContractInstance.options.address.toString())
-          .call({ from: _accounts[0] });
-        console.log(r2);
+        // let r2 = await usersInformationContractInstance.methods
+        //   .getMedicals(sessionContractInstance.options.address.toString())
+        //   .call({ from: _accounts[0] });
+        // console.log(r2);
 
         // let r3 = await usersInformationContractInstance.methods
         //   .getMedical(sessionContractInstance.options.address.toString(), 4)

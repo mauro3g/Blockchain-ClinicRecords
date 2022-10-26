@@ -206,7 +206,7 @@ const Users = () => {
           rows={buildTableRows()}
           columns={columns}
           pageSize={5}
-          rowsPerPageOptions={[5]}
+          rowsPerPageOptions={[8]}
           disableSelectionOnClick
         />
       </Box>

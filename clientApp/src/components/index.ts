@@ -6,3 +6,9 @@ export * from "./UsersForm/UsersForm";
 
 export { default as Transition } from "./Transition/Transition";
 export * from "./Transition/Transition";
+
+export { default as PatientsForm } from "./PatientsForm/PatientsForm";
+export * from "./PatientsForm/PatientsForm";
+
+export { default as MedicalForm } from "./MedicalForm/MedicalForm";
+export * from "./MedicalForm/MedicalForm";

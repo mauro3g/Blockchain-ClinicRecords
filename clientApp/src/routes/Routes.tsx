@@ -12,6 +12,7 @@ import {
   Route,
   useNavigate,
   Navigate,
+  Outlet,
 } from "react-router-dom";
 import { SessionContext } from "../context/SessionProvider/SessionProvider";
 import ClinicRecords from "../pages/ClinicRecords/ClinicRecords";
@@ -67,6 +68,12 @@ const Routes = () => {
             {
               path: `${PATH.dashboard}${PATH.patients}`,
               element: <Patients />,
+              children: [
+                {
+                  path: `${PATH.dashboard}${PATH.patients}${PATH.new}`,
+                  element: <Outlet/>
+                },
+              ],
             },
             {
               path: `${PATH.dashboard}${PATH.clinicRecords}`,
@@ -78,6 +85,7 @@ const Routes = () => {
               children: [
                 {
                   path: `${PATH.dashboard}${PATH.users}${PATH.new}`,
+                  element: <Outlet/>
                 },
               ],
             },
@@ -87,6 +95,7 @@ const Routes = () => {
               children: [
                 {
                   path: `${PATH.dashboard}${PATH.doctors}${PATH.medicalInfo}`,
+                  element: <Outlet/>
                 },
               ],
             },
@@ -96,6 +105,7 @@ const Routes = () => {
               children: [
                 {
                   path: `${PATH.dashboard}${PATH.nurses}${PATH.medicalInfo}`,
+                  element: <Outlet/>
                 },
               ],
             },

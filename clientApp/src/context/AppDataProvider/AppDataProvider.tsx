@@ -2,20 +2,28 @@ import { EthNetworkContext } from "context";
 import { MODULE_IDENTIFICATOR, PERMISSION_TYPE } from "lib/constants/modules";
 import React from "react";
 import { IAddUser, IUser, IUserRole } from "types/Session";
-import { IMedical, IMedicalRequest } from "types/UsersInformation";
+import {
+  IMedical,
+  IMedicalRequest,
+  IPatient,
+  IPatientRequest,
+} from "types/UsersInformation";
 import { SessionContext } from "../SessionProvider/SessionProvider";
 
 interface Props {
   users: IUser[];
   userRoles: IUserRole[];
   medicals: IMedical[];
+  patients: IPatient[];
   getUsers: () => Promise<void>;
+  getPatients: () => Promise<void>;
   getUserRoles: () => Promise<void>;
-  getMedicals: (medicalUsers: IUser[]) => void;
+  getMedicals: () => void;
   requestRegisterUser: (newUser: IAddUser) => Promise<void>;
   requestDisableUser: (userAddress: string) => Promise<void>;
   requestEnableUser: (userAddress: string) => Promise<void>;
   requestRegisterMedicalsInfo: (newMedical: IMedicalRequest) => Promise<void>;
+  requestRegisterPatientsInfo: (newMedical: IPatientRequest) => Promise<void>;
 }
 
 export const AppDataContext = React.createContext({} as Props);
@@ -25,6 +33,7 @@ const AppDataProvider = ({ children }) => {
     React.useContext(EthNetworkContext);
   const { hasPermissions } = React.useContext(SessionContext);
   const [users, setUsers] = React.useState<IUser[]>([]);
+  const [patients, setPatiens] = React.useState<IPatient[]>([]);
   const [userRoles, setUserRoles] = React.useState<IUserRole[]>([]);
   const [medicals, setMedicals] = React.useState<IMedical[]>([]);
 
@@ -48,13 +57,11 @@ const AppDataProvider = ({ children }) => {
         if (e.message.includes("sender is not an admin")) {
           throw new Error("La dirección Ethereum ingresada no es válida");
         } else {
-          const errorData = e.message.toString();
-          const jsonIndex = errorData.indexOf("{");
-          const jsonString = errorData.slice(jsonIndex, errorData.length - 1);
-          const jsonError = JSON.parse(jsonString);
-          const txHash = Object.keys(jsonError.value.data)[0];
-          console.log(jsonError.value.data[txHash]);
-          throw new Error(jsonError.value.data[txHash]);
+          if (e.message.includes("sender is not an admin")) {
+            throw new Error("La dirección Ethereum ingresada no es válida");
+          } else {
+            console.log(e.message);
+          }
         }
       }
     } else {
@@ -75,13 +82,11 @@ const AppDataProvider = ({ children }) => {
         if (e.message.includes("sender is not an admin")) {
           throw new Error("La dirección Ethereum ingresada no es válida");
         } else {
-          const errorData = e.message.toString();
-          const jsonIndex = errorData.indexOf("{");
-          const jsonString = errorData.slice(jsonIndex, errorData.length - 1);
-          const jsonError = JSON.parse(jsonString);
-          const txHash = Object.keys(jsonError.value.data)[0];
-          console.log(jsonError.value.data[txHash]);
-          throw new Error(jsonError.value.data[txHash]);
+          if (e.message.includes("sender is not an admin")) {
+            throw new Error("La dirección Ethereum ingresada no es válida");
+          } else {
+            console.log(e.message);
+          }
         }
       }
     } else {
@@ -102,13 +107,11 @@ const AppDataProvider = ({ children }) => {
         if (e.message.includes("sender is not an admin")) {
           throw new Error("La dirección Ethereum ingresada no es válida");
         } else {
-          const errorData = e.message.toString();
-          const jsonIndex = errorData.indexOf("{");
-          const jsonString = errorData.slice(jsonIndex, errorData.length - 1);
-          const jsonError = JSON.parse(jsonString);
-          const txHash = Object.keys(jsonError.value.data)[0];
-          console.log(jsonError.value.data[txHash]);
-          throw new Error(jsonError.value.data[txHash]);
+          if (e.message.includes("sender is not an admin")) {
+            throw new Error("La dirección Ethereum ingresada no es válida");
+          } else {
+            console.log(e.message);
+          }
         }
       }
     } else {
@@ -124,14 +127,22 @@ const AppDataProvider = ({ children }) => {
         PERMISSION_TYPE.VISUALIZE
       )
     ) {
-      const _user = await sessionContract.methods
-        .getUsers()
-        .call({ from: currentAccount });
-      if (_user !== undefined) {
-        console.log("obtained users ", _user);
-        setUsers(_user);
-      } else {
-        console.log("no se pudieron obtener usuarios");
+      try {
+        const _user = await sessionContract.methods
+          .getUsers()
+          .call({ from: currentAccount });
+        if (_user !== undefined) {
+          console.log("obtained users ", _user);
+          setUsers(_user);
+        } else {
+          console.log("no se pudieron obtener usuarios");
+        }
+      } catch (e: any) {
+        if (e.message.includes("sender is not an admin")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log(e.message);
+        }
       }
     } else {
       throw new Error("No tienes permisos para usar esta opción");
@@ -150,7 +161,7 @@ const AppDataProvider = ({ children }) => {
     }
   };
 
-  const getMedicals = async (medicalUsers: IUser[]) => {
+  const getMedicals = async () => {
     if (
       hasPermissions(
         MODULE_IDENTIFICATOR.MEDICALS_INFO,
@@ -158,28 +169,9 @@ const AppDataProvider = ({ children }) => {
       )
     ) {
       try {
-        console.log("medicalUsers", medicalUsers);
         let _medicals: IMedical[] = await usersInformationContract.methods
           .getMedicals(sessionContract.options.address.toString())
           .call({ from: currentAccount });
-
-        //const _medicals: IMedical[] = [];
-        // if (medicalUsers.length > 0) {
-        //   for (let index = 0; index < medicalUsers.length; index++) {
-        //     let mu = medicalUsers[index];
-        //     console.log("si", mu);
-        //     let info: IMedical = await usersInformationContract.methods
-        //       .getMedical(
-        //         sessionContract.options.address.toString(),
-        //         parseInt(mu.id)
-        //       )
-        //       .call({ from: currentAccount });
-        //     console.log("minfo ", info);
-        //     if (Boolean(info)) {
-        //       _medicals.push({ ...info, userId: mu.id });
-        //     }
-        //   }
-        // }
         console.log("_medicals ", _medicals);
         if (_medicals !== undefined) {
           console.log("obtained medicals ", _medicals);
@@ -196,12 +188,44 @@ const AppDataProvider = ({ children }) => {
     }
   };
 
+  const getPatients = async () => {
+    if (
+      hasPermissions(
+        MODULE_IDENTIFICATOR.PATIENTS_INFO,
+        PERMISSION_TYPE.VISUALIZE
+      )
+    ) {
+      try {
+        console.log();
+        let _patients: IPatient[] = await usersInformationContract.methods
+          .getPatients(sessionContract.options.address.toString())
+          .call({ from: currentAccount });
+        console.log("_patients ", _patients);
+        if (_patients !== undefined) {
+          console.log("obtained patients ", _patients);
+          setPatiens(_patients);
+        } else {
+          console.log("no se pudieron obtener pacientes");
+        }
+      } catch (e: any) {
+        if (e.message.includes("sender is not")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log("Error al consultar pacientes");
+          console.log(e.message);
+        }
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
   const requestRegisterMedicalsInfo = async (newMedical: IMedicalRequest) => {
     if (
       hasPermissions(MODULE_IDENTIFICATOR.MEDICALS_INFO, PERMISSION_TYPE.CREATE)
     ) {
       try {
-        console.log("requestRegisterUser");
+        console.log("requestRegisterMedicalsInfo");
         const res = await usersInformationContract.methods
           .addMedical(
             sessionContract.options.address.toString(),
@@ -219,13 +243,39 @@ const AppDataProvider = ({ children }) => {
           throw new Error("La dirección Ethereum ingresada no es válida");
         } else {
           console.log(e.message);
-          // const errorData = e.message.toString();
-          // const jsonIndex = errorData.indexOf("{");
-          // const jsonString = errorData.slice(jsonIndex, errorData.length - 1);
-          // const jsonError = JSON.parse(jsonString);
-          // const txHash = Object.keys(jsonError.value.data)[0];
-          // console.log(jsonError.value.data[txHash]);
-          //throw new Error(jsonError.value.data[txHash]);
+        }
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
+  const requestRegisterPatientsInfo = async (newPatient: IPatientRequest) => {
+    if (
+      hasPermissions(MODULE_IDENTIFICATOR.PATIENTS_INFO, PERMISSION_TYPE.CREATE)
+    ) {
+      try {
+        console.log("requestRegisterPatientsInfo");
+        const res = await usersInformationContract.methods
+          .addPatient(
+            sessionContract.options.address.toString(),
+            newPatient.identificationNumber,
+            newPatient.name,
+            newPatient.birthDate,
+            newPatient.gender,
+            newPatient.maritalStatus,
+            newPatient.occupation,
+            newPatient.direction,
+            newPatient.contactPerson,
+            newPatient.phone
+          )
+          .send({ from: currentAccount });
+        console.log("patient creation res: ", res);
+      } catch (e: any) {
+        if (e.message.includes("sender is not")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log(e.message);
         }
       }
     } else {
@@ -239,13 +289,16 @@ const AppDataProvider = ({ children }) => {
         users,
         userRoles,
         medicals,
+        patients,
         getUsers,
         getUserRoles,
         getMedicals,
+        getPatients,
         requestRegisterUser,
         requestDisableUser,
         requestEnableUser,
         requestRegisterMedicalsInfo,
+        requestRegisterPatientsInfo,
       }}
     >
       {children}
