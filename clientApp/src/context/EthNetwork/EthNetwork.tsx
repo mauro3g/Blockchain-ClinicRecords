@@ -109,34 +109,48 @@ const EthNetworkProvider = ({ children }) => {
           UsersInformation.abi,
           deployedNetwork && deployedNetwork.address
         );
-        // const cRSyndromesGeriatricProblemsInstance = new _web3.eth.Contract(
-        //   CRSyndromesGeriatricProblems.abi,
-        //   deployedNetwork && deployedNetwork.address
-        // );
-        // const cRSicknessInstance = new _web3.eth.Contract(
-        //   CRSickness.abi,
-        //   deployedNetwork && deployedNetwork.address
-        // );
-        // const cRPhysicalExamInstance = new _web3.eth.Contract(
-        //   CRPhysicalExam.abi,
-        //   deployedNetwork && deployedNetwork.address
-        // );
-        // const cRPatologicalHistoryInstance = new _web3.eth.Contract(
-        //   CRPatologicalHistory.abi,
-        //   deployedNetwork && deployedNetwork.address
-        // );
-        // const cRCommentaryInstance = new _web3.eth.Contract(
-        //   CRCommentary.abi,
-        //   deployedNetwork && deployedNetwork.address
-        // );
-        // const cRClinicalAssessmentInstance = new _web3.eth.Contract(
-        //   CRClinicalAssessment.abi,
-        //   deployedNetwork && deployedNetwork.address
-        // );
-        // const cRBiologicFunctionsInstance = new _web3.eth.Contract(
-        //   CRBiologicFunctions.abi,
-        //   deployedNetwork && deployedNetwork.address
-        // );
+
+        deployedNetwork = CRSyndromesGeriatricProblems.networks[networkId];
+        const cRSyndromesGeriatricProblemsInstance = new _web3.eth.Contract(
+          CRSyndromesGeriatricProblems.abi,
+          deployedNetwork && deployedNetwork.address
+        );
+
+        deployedNetwork = CRSickness.networks[networkId];
+        const cRSicknessInstance = new _web3.eth.Contract(
+          CRSickness.abi,
+          deployedNetwork && deployedNetwork.address
+        );
+
+        deployedNetwork = CRPhysicalExam.networks[networkId];
+        const cRPhysicalExamInstance = new _web3.eth.Contract(
+          CRPhysicalExam.abi,
+          deployedNetwork && deployedNetwork.address
+        );
+
+        deployedNetwork = CRPatologicalHistory.networks[networkId];
+        const cRPatologicalHistoryInstance = new _web3.eth.Contract(
+          CRPatologicalHistory.abi,
+          deployedNetwork && deployedNetwork.address
+        );
+
+        deployedNetwork = CRCommentary.networks[networkId];
+        const cRCommentaryInstance = new _web3.eth.Contract(
+          CRCommentary.abi,
+          deployedNetwork && deployedNetwork.address
+        );
+
+        deployedNetwork = CRClinicalAssessment.networks[networkId];
+        const cRClinicalAssessmentInstance = new _web3.eth.Contract(
+          CRClinicalAssessment.abi,
+          deployedNetwork && deployedNetwork.address
+        );
+
+        deployedNetwork = CRBiologicFunctions.networks[networkId];
+        const cRBiologicFunctionsInstance = new _web3.eth.Contract(
+          CRBiologicFunctions.abi,
+          deployedNetwork && deployedNetwork.address
+        );
 
         //console.log("tests ", usersInformationContractInstance.options.address);
         // let r = await usersInformationContractInstance.methods
@@ -166,13 +180,13 @@ const EthNetworkProvider = ({ children }) => {
         setCurrentAccount(_accounts[0]);
         setSessionContract(sessionContractInstance);
         setUsersInformationContract(usersInformationContractInstance);
-        // setCRSyndromesGeriatricContract(cRSyndromesGeriatricProblemsInstance);
-        // setCRSicknessContract(cRSicknessInstance);
-        // setCRPhysicalExamContract(cRPhysicalExamInstance);
-        // setCRPatologicalHistoryContract(cRPatologicalHistoryInstance);
-        // setCRCommentaryContract(cRCommentaryInstance);
-        // setCRClinicalAssessmentContract(cRClinicalAssessmentInstance);
-        // setCRBiologicFunctionsContract(cRBiologicFunctionsInstance);
+        setCRSyndromesGeriatricContract(cRSyndromesGeriatricProblemsInstance);
+        setCRSicknessContract(cRSicknessInstance);
+        setCRPhysicalExamContract(cRPhysicalExamInstance);
+        setCRPatologicalHistoryContract(cRPatologicalHistoryInstance);
+        setCRCommentaryContract(cRCommentaryInstance);
+        setCRClinicalAssessmentContract(cRClinicalAssessmentInstance);
+        setCRBiologicFunctionsContract(cRBiologicFunctionsInstance);
         setConnectedContracts(true);
       } catch (error) {
         // Catch any errors for any of the above operations.

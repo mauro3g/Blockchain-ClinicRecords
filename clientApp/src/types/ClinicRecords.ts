@@ -1,5 +1,5 @@
 export interface IBiologicFunctions {
-    date: number;
+    date: string;
     urination: string;
     stools: string;
     appetite: string;
@@ -9,7 +9,7 @@ export interface IBiologicFunctions {
 }
 
 export interface IClinicalAssessment {
-    date: number;
+    date: string;
     bath: boolean;
     dress: boolean;
     hygienicService: boolean;
@@ -19,12 +19,12 @@ export interface IClinicalAssessment {
 }
 
 export interface ICommentary {
-    date: number;
+    date: string;
     comment:string;
 }
 
 export interface IPatologicalHistory {
-    date: number;
+    date: string;
     congenitalDiseases: string;
     childhoodDiseases: string;
     surgicals: string;
@@ -36,7 +36,7 @@ export interface IPatologicalHistory {
 }
 
 export interface IPhysicalExam {
-    date: number;
+    date: string;
     bloodPressure: string;
     heartRate: string;
     breathingFrequency: string;
@@ -57,7 +57,8 @@ export interface IPhysicalExam {
 }
 
 export interface ISickness {
-    initialDate: number;
+    registerDate: string;
+    initialDate: string;
     sicknessName: string;
     diagnostic: string;
     startWay: string;
@@ -68,19 +69,19 @@ export interface ISickness {
 }
 
 export interface IExam {
-    date: number;
+    date: string;
     examName: string;
     examDetail: string;
 }
 
 export interface IResult {
-    date: number;
+    date: string;
     examName: string;
     resultDetail: string;
 }
 
 export interface ISyndromesGeriatricProblems {
-    date: number;
+    date: string;
     delirium: string;
     vertigo: string;
     syncope: string;

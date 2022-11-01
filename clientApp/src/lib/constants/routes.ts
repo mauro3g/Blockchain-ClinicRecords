@@ -5,6 +5,7 @@ export const PATH = {
   error: "/error",
   address_not_found: "/address-not-found",
   new: "/new",
+  detail: "/detail",
   login: "/login",
   users: "/users",
   doctors: "/doctors",

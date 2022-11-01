@@ -1,9 +1,8 @@
-import React from 'react'
+import { ClinicRecordsNavigator } from "components";
+import React from "react";
 
 const ClinicRecords = () => {
-  return (
-    <div>ClinicRecords</div>
-  )
-}
+  return <ClinicRecordsNavigator></ClinicRecordsNavigator>;
+};
 
-export default ClinicRecords
+export default ClinicRecords;

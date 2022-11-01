@@ -41,20 +41,24 @@
   display: flex;
 }
 
-.flex-grow{
+.flex-grow {
   flex-grow: 1;
 }
 
-.flex-col{
+.flex-col {
   flex-direction: column;
 }
 
-.h-full{
+.h-full {
   height: 100%;
 }
 
-.w-full{
+.w-full {
   width: 100%;
+}
+
+.w-50 {
+  width: 50vw;
 }
 
 .mr-4 {
@@ -65,6 +69,30 @@
   justify-content: center;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .items-center {
   align-items: center;
+}
+
+.react-datepicker__input-container {
+  margin-top: 15px;
+}
+
+.react-datepicker__input-container input {
+  font-size: medium;
+  font-family: "Roboto";
+  border: 0;
+}
+
+.react-datepicker__input-container input :focus {
+  font-size: medium;
+  font-family: "Roboto";
+  border: 0;
+}
+
+.react-datepicker__close-icon {
+  display: none;
 }

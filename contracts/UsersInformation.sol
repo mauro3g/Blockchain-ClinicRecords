@@ -42,7 +42,23 @@ contract UsersInformation is ProfileModifier {
     //index saves the next value to avoid point to zero
     mapping(uint256 => uint256) medicalsMap;
 
-    constructor() {}
+    constructor() {
+        Patient memory _patient;
+        _patient.personalInformation = putPersonalInformation(
+            "Mauro Rivadeneira",
+            1723502231,
+            794034000000,
+            "Masculino"
+        );
+        _patient.maritalStatus = "Soltero";
+        _patient.occupation = "Programador";
+        _patient.direction = "Calle 123";
+        _patient.contactPerson = "Juan Peres";
+        _patient.phone = "0982439497";
+
+        patients.push(_patient);
+        patientsMap[1723502231] = patients.length;
+    }
 
     /**
      * @notice internal function to create a PersonalInformation struct
