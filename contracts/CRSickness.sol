@@ -4,6 +4,7 @@ pragma solidity ^0.8.7;
 import "./ProfileModifier.sol";
 
 struct Sickness {
+    uint256 registerDate;
     uint256 initialDate;
     string sicknessName;
     string diagnostic;
