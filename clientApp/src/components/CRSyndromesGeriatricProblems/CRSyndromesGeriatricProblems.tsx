@@ -52,7 +52,7 @@ const CRSyndromesGeriatricProblems = (props: Props) => {
     ISyndromesGeriatricProblems | undefined
   >(undefined);
   const [syndromesGeriatricProblemsTable, setSyndromesGeriatricProblemsTable] =
-    React.useState<Array<ISyndromesGeriatricProblems>>([]);
+    React.useState<Array<ISyndromesGeriatricProblemsTable>>([]);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -129,7 +129,7 @@ const CRSyndromesGeriatricProblems = (props: Props) => {
         const _crSyndromesGeriatricProblems:
           | ISyndromesGeriatricProblems[]
           | undefined = crSyndromesGeriatricProblems.filter((sn) => {
-          let registryDate: Date = new Date(parseInt(sn.date));
+          let registryDate: Date = new Date(sn.date);
           return registryDate >= startDate && registryDate <= endDate;
         });
         setcrSyndromesGeriatricProblemsFiltered(_crSyndromesGeriatricProblems);

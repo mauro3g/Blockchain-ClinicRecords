@@ -1,5 +1,3 @@
-import { Nav } from "components";
-import { EthNetworkContext } from "context";
 import { ROLE_IDENTIFICATOR } from "lib/constants/roles";
 import { PATH } from "lib/constants/routes";
 import { Doctors, ErrorPage, Nurses, Users } from "pages";
@@ -9,8 +7,6 @@ import React from "react";
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  useNavigate,
   Navigate,
   Outlet,
 } from "react-router-dom";
@@ -71,13 +67,55 @@ const Routes = () => {
               children: [
                 {
                   path: `${PATH.dashboard}${PATH.patients}${PATH.new}`,
-                  element: <Outlet/>
+                  element: <Outlet />,
                 },
               ],
             },
             {
               path: `${PATH.dashboard}${PATH.clinicRecords}`,
               element: <ClinicRecords />,
+              children: [
+                {
+                  path: `${PATH.dashboard}${PATH.clinicRecords}${PATH.sickness}${PATH.examResult}`,
+                  element: <Outlet />,
+                },
+                {
+                  path: `${PATH.dashboard}${PATH.clinicRecords}${PATH.new}`,
+                  element: <Outlet />,
+                },
+                {
+                  path: `${PATH.dashboard}${PATH.clinicRecords}${PATH.new}${PATH.sickness}`,
+                  element: <Outlet />,
+                },
+                {
+                  path: `${PATH.dashboard}${PATH.clinicRecords}${PATH.new}${PATH.examResult}`,
+                  element: <Outlet />,
+                },
+                {
+                  path: `${PATH.dashboard}${PATH.clinicRecords}${PATH.new}${PATH.biologicFunctions}`,
+                  element: <Outlet />,
+                },
+                {
+                  path: `${PATH.dashboard}${PATH.clinicRecords}${PATH.new}${PATH.patologicalHistory}`,
+                  element: <Outlet />,
+                },
+                {
+                  path: `${PATH.dashboard}${PATH.clinicRecords}${PATH.new}${PATH.physicalExam}`,
+                  element: <Outlet />,
+                },
+                {
+                  path: `${PATH.dashboard}${PATH.clinicRecords}${PATH.new}${PATH.syndromesGeriatric}`,
+                  element: <Outlet />,
+                },
+                {
+                  path: `${PATH.dashboard}${PATH.clinicRecords}${PATH.new}${PATH.clinicalAssessment}`,
+                  element: <Outlet />,
+                },
+                {
+                  path: `${PATH.dashboard}${PATH.clinicRecords}${PATH.new}${PATH.commentary}`,
+                  element: <Outlet />,
+                },
+              ],
             },
             {
               path: `${PATH.dashboard}${PATH.users}`,
@@ -85,7 +123,7 @@ const Routes = () => {
               children: [
                 {
                   path: `${PATH.dashboard}${PATH.users}${PATH.new}`,
-                  element: <Outlet/>
+                  element: <Outlet />,
                 },
               ],
             },
@@ -95,7 +133,7 @@ const Routes = () => {
               children: [
                 {
                   path: `${PATH.dashboard}${PATH.doctors}${PATH.medicalInfo}`,
-                  element: <Outlet/>
+                  element: <Outlet />,
                 },
               ],
             },
@@ -105,7 +143,7 @@ const Routes = () => {
               children: [
                 {
                   path: `${PATH.dashboard}${PATH.nurses}${PATH.medicalInfo}`,
-                  element: <Outlet/>
+                  element: <Outlet />,
                 },
               ],
             },

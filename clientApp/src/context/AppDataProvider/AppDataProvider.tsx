@@ -11,6 +11,14 @@ import {
   IPatologicalHistory,
   IExam,
   IResult,
+  ISicknessRequest,
+  IPatologicalHistoryRequest,
+  IPhysicalExamRequest,
+  ISyndromesGeriatricProblemsRequest,
+  IClinicalAssessmentRequest,
+  ICommentaryRequest,
+  IExamRequest,
+  IResultRequest,
 } from "types/ClinicRecords";
 import { IAddUser, IUser, IUserRole } from "types/Session";
 import {
@@ -20,6 +28,7 @@ import {
   IPatientRequest,
 } from "types/UsersInformation";
 import { SessionContext } from "../SessionProvider/SessionProvider";
+import { IBiologicFunctionsRequest } from "../../types/ClinicRecords";
 
 interface Props {
   users: IUser[];
@@ -46,20 +55,58 @@ interface Props {
   requestRegisterMedicalsInfo: (newMedical: IMedicalRequest) => Promise<void>;
   requestRegisterPatientsInfo: (newMedical: IPatientRequest) => Promise<void>;
   getSicknessByIdentification: (identification: string) => Promise<void>;
+  requestRegisterSickness: (
+    newSickness: ISicknessRequest,
+    patientIdentification: string
+  ) => Promise<void>;
   getBiologicFunctionsByIdentification: (
     identification: string
+  ) => Promise<void>;
+  requestRegisterBiologicFunctions: (
+    newBiologicFunctions: IBiologicFunctionsRequest,
+    patientIdentification: string
   ) => Promise<void>;
   getPatologicalHistoryByIdentification: (
     identification: string
   ) => Promise<void>;
+  requestRegisterPatologicalHistory: (
+    newPatologicalHistory: IPatologicalHistoryRequest,
+    patientIdentification: string
+  ) => Promise<void>;
   getPhysicalExamByIdentification: (identification: string) => Promise<void>;
+  requestRegisterPhysicalExam: (
+    newPhysicalExam: IPhysicalExamRequest,
+    patientIdentification: string
+  ) => Promise<void>;
   getSyndromesGeriatricProblemsByIdentification: (
     identification: string
+  ) => Promise<void>;
+  requestRegisterSyndromesGeriatricProblems: (
+    newSyndromesGeriatricProblems: ISyndromesGeriatricProblemsRequest,
+    patientIdentification: string
   ) => Promise<void>;
   getClinicalAssessmentByIdentification: (
     identification: string
   ) => Promise<void>;
+  requestRegisterClinicalAssessment: (
+    newClinicalAssessment: IClinicalAssessmentRequest,
+    patientIdentification: string
+  ) => Promise<void>;
   getCommentaryByIdentification: (identification: string) => Promise<void>;
+  requestRegisterCommentary: (
+    newCommentary: ICommentaryRequest,
+    patientIdentification: string
+  ) => Promise<void>;
+  getExamBysicknessIdentifier: (sicknessIdentifier: string) => Promise<void>;
+  getResultBysicknessIdentifier: (sicknessIdentifier: string) => Promise<void>;
+  requestRegisterExam: (
+    newExam: IExamRequest,
+    patientIdentification: string
+  ) => Promise<void>;
+  requestRegisterResult: (
+    newResult: IResultRequest,
+    patientIdentification: string
+  ) => Promise<void>;
 }
 
 export const AppDataContext = React.createContext({} as Props);
@@ -380,6 +427,45 @@ const AppDataProvider = ({ children }) => {
     }
   };
 
+  const requestRegisterSickness = async (
+    newSickness: ISicknessRequest,
+    patientIdentification: string
+  ) => {
+    if (
+      hasPermissions(MODULE_IDENTIFICATOR.CR_SICKNESS, PERMISSION_TYPE.CREATE)
+    ) {
+      try {
+        console.log("requestRegisterSickness ", newSickness);
+        const res = await cRSicknessContract.methods
+          .addSickness(
+            sessionContract.options.address.toString(),
+            parseInt(patientIdentification),
+            [
+              newSickness.registerDate,
+              newSickness.initialDate,
+              newSickness.sicknessName,
+              newSickness.diagnostic,
+              newSickness.startWay,
+              newSickness.course,
+              newSickness.signsSymtoms,
+              newSickness.treatment,
+              newSickness.sicknessIdentifier,
+            ]
+          )
+          .send({ from: currentAccount });
+        console.log("sickness creation res: ", res);
+      } catch (e: any) {
+        if (e.message.includes("sender is not")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log(e.message);
+        }
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
   const getBiologicFunctionsByIdentification = async (
     identification: string
   ) => {
@@ -407,6 +493,46 @@ const AppDataProvider = ({ children }) => {
       } catch (e: any) {
         console.log("Error al consultar funciones biologicas");
         console.log(e.message);
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
+  const requestRegisterBiologicFunctions = async (
+    newBiologicFunctions: IBiologicFunctionsRequest,
+    patientIdentification: string
+  ) => {
+    if (
+      hasPermissions(
+        MODULE_IDENTIFICATOR.CR_BIOLOGIC_FUNCTIONS,
+        PERMISSION_TYPE.CREATE
+      )
+    ) {
+      try {
+        console.log("requestRegisterBiologicFunctions ", newBiologicFunctions);
+        const res = await cRBiologicFunctionsContract.methods
+          .addBiologicFunctions(
+            sessionContract.options.address.toString(),
+            parseInt(patientIdentification),
+            [
+              newBiologicFunctions.date,
+              newBiologicFunctions.urination,
+              newBiologicFunctions.stools,
+              newBiologicFunctions.appetite,
+              newBiologicFunctions.thirst,
+              newBiologicFunctions.sleep,
+              newBiologicFunctions.other,
+            ]
+          )
+          .send({ from: currentAccount });
+        console.log("BiologicFunctions creation res: ", res);
+      } catch (e: any) {
+        if (e.message.includes("sender is not")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log(e.message);
+        }
       }
     } else {
       throw new Error("No tienes permisos para usar esta opción");
@@ -446,6 +572,51 @@ const AppDataProvider = ({ children }) => {
     }
   };
 
+  const requestRegisterPatologicalHistory = async (
+    newPatologicalHistory: IPatologicalHistoryRequest,
+    patientIdentification: string
+  ) => {
+    if (
+      hasPermissions(
+        MODULE_IDENTIFICATOR.CR_PATOLOGICAL_HISTORY,
+        PERMISSION_TYPE.CREATE
+      )
+    ) {
+      try {
+        console.log(
+          "requestRegisterPatologicalHistory ",
+          newPatologicalHistory
+        );
+        const res = await cRPatologicalHistoryContract.methods
+          .addPatologicalHistory(
+            sessionContract.options.address.toString(),
+            parseInt(patientIdentification),
+            [
+              newPatologicalHistory.date,
+              newPatologicalHistory.congenitalDiseases,
+              newPatologicalHistory.childhoodDiseases,
+              newPatologicalHistory.surgicals,
+              newPatologicalHistory.transfusions,
+              newPatologicalHistory.drugAllergy,
+              newPatologicalHistory.harmfullHabits,
+              newPatologicalHistory.hospitalizations,
+              newPatologicalHistory.other,
+            ]
+          )
+          .send({ from: currentAccount });
+        console.log("requestRegisterPatologicalHistory creation res: ", res);
+      } catch (e: any) {
+        if (e.message.includes("sender is not")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log(e.message);
+        }
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
   const getPhysicalExamByIdentification = async (identification: string) => {
     if (
       hasPermissions(
@@ -470,6 +641,57 @@ const AppDataProvider = ({ children }) => {
       } catch (e: any) {
         console.log("Error al consultar examenes fisicos");
         console.log(e.message);
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
+  const requestRegisterPhysicalExam = async (
+    newPhysicalExam: IPhysicalExamRequest,
+    patientIdentification: string
+  ) => {
+    if (
+      hasPermissions(
+        MODULE_IDENTIFICATOR.CR_PHYSYCAL_EXAM,
+        PERMISSION_TYPE.CREATE
+      )
+    ) {
+      try {
+        console.log("requestRegisterPhysicalExam ", newPhysicalExam);
+        const res = await cRPhysicalExamContract.methods
+          .addPhysicalExam(
+            sessionContract.options.address.toString(),
+            parseInt(patientIdentification),
+            [
+              newPhysicalExam.date,
+              newPhysicalExam.bloodPressure,
+              newPhysicalExam.heartRate,
+              newPhysicalExam.breathingFrequency,
+              newPhysicalExam.weight,
+              newPhysicalExam.size,
+              newPhysicalExam.imc,
+              newPhysicalExam.skin,
+              newPhysicalExam.headNeck,
+              newPhysicalExam.oral,
+              newPhysicalExam.chestLungs,
+              newPhysicalExam.cardiovascular,
+              newPhysicalExam.abdomen,
+              newPhysicalExam.genitourinary,
+              newPhysicalExam.rectalTract,
+              newPhysicalExam.nervousSystem,
+              newPhysicalExam.musculoskeletalSystem,
+              newPhysicalExam.temperature,
+            ]
+          )
+          .send({ from: currentAccount });
+        console.log("requestRegisterPhysicalExam creation res: ", res);
+      } catch (e: any) {
+        if (e.message.includes("sender is not")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log(e.message);
+        }
       }
     } else {
       throw new Error("No tienes permisos para usar esta opción");
@@ -509,6 +731,57 @@ const AppDataProvider = ({ children }) => {
     }
   };
 
+  const requestRegisterSyndromesGeriatricProblems = async (
+    newSyndromesGeriatricProblems: ISyndromesGeriatricProblemsRequest,
+    patientIdentification: string
+  ) => {
+    if (
+      hasPermissions(
+        MODULE_IDENTIFICATOR.CR_SYNDROMES_GERIATRIC,
+        PERMISSION_TYPE.CREATE
+      )
+    ) {
+      try {
+        console.log(
+          "requestRegisterSyndromesGeriatricProblems ",
+          newSyndromesGeriatricProblems
+        );
+        const res = await cRSyndromesGeriatricContract.methods
+          .addSyndromesGeriatricProblems(
+            sessionContract.options.address.toString(),
+            parseInt(patientIdentification),
+            [
+              newSyndromesGeriatricProblems.date,
+              newSyndromesGeriatricProblems.delirium,
+              newSyndromesGeriatricProblems.vertigo,
+              newSyndromesGeriatricProblems.syncope,
+              newSyndromesGeriatricProblems.incontinence,
+              newSyndromesGeriatricProblems.hearingDeprivation,
+              newSyndromesGeriatricProblems.chronicProtraction,
+              newSyndromesGeriatricProblems.insomnia,
+              newSyndromesGeriatricProblems.constipation,
+              newSyndromesGeriatricProblems.falls,
+              newSyndromesGeriatricProblems.prostatism,
+              newSyndromesGeriatricProblems.chronicPain,
+            ]
+          )
+          .send({ from: currentAccount });
+        console.log(
+          "requestRegisterSyndromesGeriatricProblems creation res: ",
+          res
+        );
+      } catch (e: any) {
+        if (e.message.includes("sender is not")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log(e.message);
+        }
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
   const getClinicalAssessmentByIdentification = async (
     identification: string
   ) => {
@@ -536,6 +809,49 @@ const AppDataProvider = ({ children }) => {
       } catch (e: any) {
         console.log("Error al consultar valoraciones clinicas");
         console.log(e.message);
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
+  const requestRegisterClinicalAssessment = async (
+    newClinicalAssessment: IClinicalAssessmentRequest,
+    patientIdentification: string
+  ) => {
+    if (
+      hasPermissions(
+        MODULE_IDENTIFICATOR.CR_CLINICAL_ASSESSMENT,
+        PERMISSION_TYPE.CREATE
+      )
+    ) {
+      try {
+        console.log(
+          "requestRegisterClinicalAssessment ",
+          newClinicalAssessment
+        );
+        const res = await cRClinicalAssessmentContract.methods
+          .addClinicalAssessment(
+            sessionContract.options.address.toString(),
+            parseInt(patientIdentification),
+            [
+              newClinicalAssessment.date,
+              newClinicalAssessment.bath,
+              newClinicalAssessment.dress,
+              newClinicalAssessment.hygienicService,
+              newClinicalAssessment.movilization,
+              newClinicalAssessment.incontinence,
+              newClinicalAssessment.feeding,
+            ]
+          )
+          .send({ from: currentAccount });
+        console.log("requestRegisterClinicalAssessment creation res: ", res);
+      } catch (e: any) {
+        if (e.message.includes("sender is not")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log(e.message);
+        }
       }
     } else {
       throw new Error("No tienes permisos para usar esta opción");
@@ -572,6 +888,159 @@ const AppDataProvider = ({ children }) => {
     }
   };
 
+  const requestRegisterCommentary = async (
+    newCommentary: ICommentaryRequest,
+    patientIdentification: string
+  ) => {
+    if (
+      hasPermissions(MODULE_IDENTIFICATOR.CR_COMMENTARY, PERMISSION_TYPE.CREATE)
+    ) {
+      try {
+        console.log("requestRegisterCommentary ", newCommentary);
+        const res = await cRCommentaryContract.methods
+          .addCommentary(
+            sessionContract.options.address.toString(),
+            parseInt(patientIdentification),
+            [newCommentary.date, newCommentary.comment]
+          )
+          .send({ from: currentAccount });
+        console.log("requestRegisterCommentary creation res: ", res);
+      } catch (e: any) {
+        if (e.message.includes("sender is not")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log(e.message);
+        }
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
+  const getExamBysicknessIdentifier = async (sicknessIdentifier: string) => {
+    if (
+      hasPermissions(
+        MODULE_IDENTIFICATOR.CR_EXAM_RESULT,
+        PERMISSION_TYPE.VISUALIZE
+      )
+    ) {
+      try {
+        let _exams: IExam[] = await cRSicknessContract.methods
+          .getExamBysicknessIdentifier(
+            sessionContract.options.address.toString(),
+            sicknessIdentifier
+          )
+          .call({ from: currentAccount });
+        console.log("_exams ", _exams);
+        if (_exams !== undefined) {
+          console.log("obtained _exams ", _exams);
+          setcrExams(_exams);
+        } else {
+          console.log("no se pudieron obtener comentarios");
+        }
+      } catch (e: any) {
+        console.log("Error al consultar comentarios");
+        console.log(e.message);
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
+  const requestRegisterExam = async (
+    newExam: IExamRequest,
+    sicknessIdentifier: string
+  ) => {
+    if (
+      hasPermissions(
+        MODULE_IDENTIFICATOR.CR_EXAM_RESULT,
+        PERMISSION_TYPE.CREATE
+      )
+    ) {
+      try {
+        console.log("requestRegisterExam ", newExam);
+        const res = await cRSicknessContract.methods
+          .addExam(
+            sessionContract.options.address.toString(),
+            sicknessIdentifier,
+            [newExam.date, newExam.examName, newExam.examDetail]
+          )
+          .send({ from: currentAccount });
+        console.log("requestRegisterExam creation res: ", res);
+      } catch (e: any) {
+        if (e.message.includes("sender is not")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log(e.message);
+        }
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
+  const getResultBysicknessIdentifier = async (sicknessIdentifier: string) => {
+    if (
+      hasPermissions(
+        MODULE_IDENTIFICATOR.CR_EXAM_RESULT,
+        PERMISSION_TYPE.VISUALIZE
+      )
+    ) {
+      try {
+        let _results: IResult[] = await cRSicknessContract.methods
+          .getResultBysicknessIdentifier(
+            sessionContract.options.address.toString(),
+            sicknessIdentifier
+          )
+          .call({ from: currentAccount });
+        console.log("_results ", _results);
+        if (_results !== undefined) {
+          console.log("obtained _results ", _results);
+          setcrResult(_results);
+        } else {
+          console.log("no se pudieron obtener comentarios");
+        }
+      } catch (e: any) {
+        console.log("Error al consultar comentarios");
+        console.log(e.message);
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
+  const requestRegisterResult = async (
+    newResult: IResultRequest,
+    sicknessIdentifier: string
+  ) => {
+    if (
+      hasPermissions(
+        MODULE_IDENTIFICATOR.CR_EXAM_RESULT,
+        PERMISSION_TYPE.CREATE
+      )
+    ) {
+      try {
+        console.log("requestRegisterResult ", newResult);
+        const res = await cRSicknessContract.methods
+          .addResult(
+            sessionContract.options.address.toString(),
+            sicknessIdentifier,
+            [newResult.date, newResult.examName, newResult.resultDetail]
+          )
+          .send({ from: currentAccount });
+        console.log("requestRegisterResult creation res: ", res);
+      } catch (e: any) {
+        if (e.message.includes("sender is not")) {
+          throw new Error("La dirección Ethereum ingresada no es válida");
+        } else {
+          console.log(e.message);
+        }
+      }
+    } else {
+      throw new Error("No tienes permisos para usar esta opción");
+    }
+  };
+
   return (
     <AppDataContext.Provider
       value={{
@@ -599,12 +1068,23 @@ const AppDataProvider = ({ children }) => {
         requestRegisterMedicalsInfo,
         requestRegisterPatientsInfo,
         getSicknessByIdentification,
+        requestRegisterSickness,
         getBiologicFunctionsByIdentification,
+        requestRegisterBiologicFunctions,
         getPatologicalHistoryByIdentification,
+        requestRegisterPatologicalHistory,
         getPhysicalExamByIdentification,
+        requestRegisterPhysicalExam,
         getSyndromesGeriatricProblemsByIdentification,
+        requestRegisterSyndromesGeriatricProblems,
         getClinicalAssessmentByIdentification,
+        requestRegisterClinicalAssessment,
         getCommentaryByIdentification,
+        requestRegisterCommentary,
+        getExamBysicknessIdentifier,
+        requestRegisterExam,
+        getResultBysicknessIdentifier,
+        requestRegisterResult,
       }}
     >
       {children}

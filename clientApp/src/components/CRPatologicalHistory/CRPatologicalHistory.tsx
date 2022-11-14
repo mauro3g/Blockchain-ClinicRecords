@@ -47,7 +47,7 @@ const CRPatologicalHistory = (props: Props) => {
     IPatologicalHistory | undefined
   >(undefined);
   const [patologicalHistoryTable, setPatologycalHistoryTable] = React.useState<
-    Array<IPatologicalHistory>
+    Array<IPatologicalHistoryTable>
   >([]);
 
   const navigate = useNavigate();
@@ -119,7 +119,7 @@ const CRPatologicalHistory = (props: Props) => {
       if (activeDatePicker) {
         const _crPatologicalHistory: IPatologicalHistory[] | undefined =
           crPatologicalHistory.filter((ph) => {
-            let registryDate: Date = new Date(parseInt(ph.date));
+            let registryDate: Date = new Date(ph.date);
             return registryDate >= startDate && registryDate <= endDate;
           });
         setcrPatologicalHistoryFiltered(_crPatologicalHistory);

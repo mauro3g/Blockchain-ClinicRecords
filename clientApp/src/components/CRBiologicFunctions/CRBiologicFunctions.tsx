@@ -45,7 +45,7 @@ const CRBiologicFunctions = (props: Props) => {
     IBiologicFunctions | undefined
   >(undefined);
   const [biologicFunctionsTable, setBiologicFunctionsTable] = React.useState<
-    Array<IBiologicFunctions>
+    Array<IBiologicFunctionsTable>
   >([]);
 
   const navigate = useNavigate();
@@ -107,7 +107,7 @@ const CRBiologicFunctions = (props: Props) => {
       if (activeDatePicker) {
         const _crBiologicFunctions: IBiologicFunctions[] | undefined =
           crBiologicFunctions.filter((sn) => {
-            let registryDate: Date = new Date(parseInt(sn.date));
+            let registryDate: Date = new Date(sn.date);
             return registryDate >= startDate && registryDate <= endDate;
           });
         setcrBiologicFunctionsFiltered(_crBiologicFunctions);

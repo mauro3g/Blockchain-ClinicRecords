@@ -17,6 +17,11 @@ interface Props {
   activeDatePicker: boolean;
   startDate: Date;
   endDate: Date;
+  selectedSickness: ISickness | undefined;
+  setSelectedSicness: React.Dispatch<
+    React.SetStateAction<ISickness | undefined>
+  >;
+  handleExamResult: () => void;
 }
 
 interface ISicknessTable {
@@ -34,9 +39,15 @@ interface ISicknessTable {
 }
 
 const CRSickness = (props: Props) => {
-  const { activeDatePicker, startDate, endDate } = props;
+  const {
+    activeDatePicker,
+    startDate,
+    endDate,
+    selectedSickness,
+    setSelectedSicness,
+    handleExamResult,
+  } = props;
   const { crSickness } = React.useContext(AppDataContext);
-  const { sessionValuesActive, openNav } = React.useContext(SessionContext);
   const [actionsAnchorEl, setActionsAnchorEl] =
     React.useState<null | HTMLElement>(null);
 
@@ -44,9 +55,6 @@ const CRSickness = (props: Props) => {
     ISickness[]
   >([]);
 
-  const [selectedSickness, setSelectedSicness] = React.useState<
-    ISickness | undefined
-  >(undefined);
   const [sicknessTable, setSicknessTable] = React.useState<
     Array<ISicknessTable>
   >([]);
@@ -112,12 +120,11 @@ const CRSickness = (props: Props) => {
   };
 
   React.useEffect(() => {
-    console.log(startDate, endDate);
     const filterSickness = () => {
       if (activeDatePicker) {
         const _crSicknessFiltered: ISickness[] | undefined = crSickness.filter(
           (sn) => {
-            let registryDate: Date = new Date(parseInt(sn.registerDate));
+            let registryDate: Date = new Date(sn.registerDate);
             return registryDate >= startDate && registryDate <= endDate;
           }
         );
@@ -173,23 +180,12 @@ const CRSickness = (props: Props) => {
         open={Boolean(actionsAnchorEl)}
         onClose={() => setActionsAnchorEl(null)}
       >
-        {Boolean(selectedSickness) ? (
-          <MenuItem onClick={() => handleViewDetail()} dense>
-            {"Ver detalle"}
-          </MenuItem>
-        ) : (
-          <MenuItem
-            sx={{
-              width: 215,
-              height: 35,
-              display: "flex",
-              justifyContent: "center",
-              overflow: "hidden",
-            }}
-          >
-            <CircularProgress sx={{ padding: 1 }} />{" "}
-          </MenuItem>
-        )}
+        <MenuItem onClick={() => handleViewDetail()} dense>
+          {"Ver detalle"}
+        </MenuItem>
+        <MenuItem onClick={() => handleExamResult()} dense>
+          {"Exámenes y Resultados"}
+        </MenuItem>
       </Menu>
     </div>
   );

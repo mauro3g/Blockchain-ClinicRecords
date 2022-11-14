@@ -57,7 +57,7 @@ const CRPhysicalExam = (props: Props) => {
     undefined
   );
   const [physicalExamTable, setPhysicalExamTable] = React.useState<
-    Array<IPhysicalExam>
+    Array<IPhysicalExamTable>
   >([]);
 
   const navigate = useNavigate();
@@ -138,7 +138,7 @@ const CRPhysicalExam = (props: Props) => {
       if (activeDatePicker) {
         const _crPhysicalExam: IPhysicalExam[] | undefined =
           crPhysicalExam.filter((sn) => {
-            let registryDate: Date = new Date(parseInt(sn.date));
+            let registryDate: Date = new Date(sn.date);
             return registryDate >= startDate && registryDate <= endDate;
           });
         setcrPhysicalExamFiltered(_crPhysicalExam);
