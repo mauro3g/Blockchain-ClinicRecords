@@ -17,7 +17,7 @@ declare module "@mui/material/styles" {
 const theme = createTheme({
   palette: {
     primary: {
-      main: blue[600],
+      main: blue[700],
       light: blue[400],
       dark: blue[900],
     },
@@ -36,6 +36,20 @@ const theme = createTheme({
 
   typography: {
     fontFamily: "Roboto",
+  },
+
+  components: {
+    // Name of the component
+    MuiButton: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          fontSize: '1rem',
+          borderRadius: '20px'
+        },
+      },
+    },
   },
 });
 

@@ -11,6 +11,7 @@ import {
   Dialog,
   Snackbar,
   IconButton,
+  Tooltip,
 } from "@mui/material";
 import { ClinicRecordsNavigator, CRExamsResults, Transition } from "components";
 import { AppDataContext, SessionContext } from "context";
@@ -36,7 +37,7 @@ const ClinicRecords = () => {
     getCommentaryByIdentification,
   } = React.useContext(AppDataContext);
 
-  const { openNav } = React.useContext(SessionContext);
+  const { sessionValuesActive, openNav } = React.useContext(SessionContext);
 
   const [identification, setIdentification] = React.useState("");
   const [dateRange, setDateRange] = React.useState([new Date(), new Date()]);
@@ -107,10 +108,22 @@ const ClinicRecords = () => {
   }, [selectedPatient]);
 
   React.useEffect(() => {
-    if (patients.length === 0) {
-      getPatients();
+    const initializeData = () => {
+      try {
+        getPatients();
+      } catch (error: any) {
+        setMessageConfig({
+          open: true,
+          message: error.message,
+          severity: "error",
+        });
+      }
+    };
+
+    if (sessionValuesActive && patients.length === 0) {
+      initializeData();
     }
-  }, [patients]);
+  }, [patients, sessionValuesActive]);
 
   return (
     <>
@@ -128,8 +141,11 @@ const ClinicRecords = () => {
           <Typography variant="h6" noWrap className="flex-grow">
             Historias Clinicas
           </Typography>
-          <div className="flex w-full items-center">
-            <div className="flex-grow flex items-center">
+          <Box
+            className="flex items-center justify-center"
+            sx={{ width: "90vw" }}
+          >
+            <div className=" flex items-center">
               <Icon sx={{ mt: 1.5, ml: 1, mr: 2 }}>badge</Icon>
               <TextField
                 id="identification-input"
@@ -170,18 +186,21 @@ const ClinicRecords = () => {
               )}
             </div>
             {selectedPatient && (
-              <Button
-                disableElevation
-                variant="contained"
-                color="primary"
-                onClick={handleNew}
-                size="small"
-              >
-                <Icon className="mr-2">add</Icon>
-                {"Nuevo"}
-              </Button>
+              <Tooltip title="Buscar">
+                <Button
+                  sx={{ ml: 15 }}
+                  disableElevation
+                  variant="contained"
+                  color="primary"
+                  onClick={handleNew}
+                  size="medium"
+                >
+                  <Icon className="mr-2">add</Icon>
+                  {"Agregar a la historia"}
+                </Button>
+              </Tooltip>
             )}
-          </div>
+          </Box>
         </Box>
       </form>
       {selectedPatient ? (
@@ -195,7 +214,12 @@ const ClinicRecords = () => {
           handleExamResult={handleExamResult}
         />
       ) : (
-        <div>No existe informacion disponible</div>
+        <Box
+          className="flex items-center justify-center"
+          sx={{ width: "90vw" }}
+        >
+          No existe informacion disponible
+        </Box>
       )}
       <Dialog
         fullScreen

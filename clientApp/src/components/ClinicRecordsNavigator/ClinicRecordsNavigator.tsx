@@ -16,6 +16,8 @@ import {
 import { IPatient } from "types/UsersInformation";
 import CRSickness from "../CRSickness/CRSickness";
 import { ISickness } from "types/ClinicRecords";
+import { SessionContext } from "context";
+import { MODULE_IDENTIFICATOR, PERMISSION_TYPE } from "lib/constants/modules";
 
 interface Props {
   selectedPatient: IPatient;
@@ -26,7 +28,7 @@ interface Props {
   setSelectedSicness: React.Dispatch<
     React.SetStateAction<ISickness | undefined>
   >;
-  handleExamResult: () => void
+  handleExamResult: () => void;
 }
 
 interface TabPanelProps {
@@ -70,8 +72,10 @@ const ClinicRecordsNavigator = (props: Props) => {
     endDate,
     selectedSickness,
     setSelectedSicness,
-    handleExamResult
+    handleExamResult,
   } = props;
+  const { hasPermissions } = React.useContext(SessionContext);
+
   const [tableOption, setTableOption] = React.useState(0);
 
   const handleChangeTableOption = (
@@ -100,13 +104,76 @@ const ClinicRecordsNavigator = (props: Props) => {
           sx={{ borderRight: 4, borderColor: "divider" }}
         >
           <Tab label="Datos Personales" {...a11yProps(0)} />
-          <Tab label="Enfermedades" {...a11yProps(1)} />
-          <Tab label="Funciones Biológicas" {...a11yProps(2)} />
-          <Tab label="Antecedentes Patológicos" {...a11yProps(3)} />
-          <Tab label="Exámen Físico" {...a11yProps(4)} />
-          <Tab label="Síndromes/Problemas" {...a11yProps(5)} />
-          <Tab label="Valoración Clínica" {...a11yProps(6)} />
-          <Tab label="Comentarios" {...a11yProps(7)} />
+          <Tab
+            disabled={
+              !hasPermissions(
+                MODULE_IDENTIFICATOR.CR_SICKNESS,
+                PERMISSION_TYPE.VISUALIZE
+              )
+            }
+            label="Enfermedades"
+            {...a11yProps(1)}
+          />
+          <Tab
+            disabled={
+              !hasPermissions(
+                MODULE_IDENTIFICATOR.CR_BIOLOGIC_FUNCTIONS,
+                PERMISSION_TYPE.VISUALIZE
+              )
+            }
+            label="Funciones Biológicas"
+            {...a11yProps(2)}
+          />
+          <Tab
+            disabled={
+              !hasPermissions(
+                MODULE_IDENTIFICATOR.CR_PATOLOGICAL_HISTORY,
+                PERMISSION_TYPE.VISUALIZE
+              )
+            }
+            label="Antecedentes Patológicos"
+            {...a11yProps(3)}
+          />
+          <Tab
+            disabled={
+              !hasPermissions(
+                MODULE_IDENTIFICATOR.CR_PHYSYCAL_EXAM,
+                PERMISSION_TYPE.VISUALIZE
+              )
+            }
+            label="Exámen Físico"
+            {...a11yProps(4)}
+          />
+          <Tab
+            disabled={
+              !hasPermissions(
+                MODULE_IDENTIFICATOR.CR_SYNDROMES_GERIATRIC,
+                PERMISSION_TYPE.VISUALIZE
+              )
+            }
+            label="Síndromes/Problemas"
+            {...a11yProps(5)}
+          />
+          <Tab
+            disabled={
+              !hasPermissions(
+                MODULE_IDENTIFICATOR.CR_CLINICAL_ASSESSMENT,
+                PERMISSION_TYPE.VISUALIZE
+              )
+            }
+            label="Valoración Clínica"
+            {...a11yProps(6)}
+          />
+          <Tab
+            disabled={
+              !hasPermissions(
+                MODULE_IDENTIFICATOR.CR_COMMENTARY,
+                PERMISSION_TYPE.VISUALIZE
+              )
+            }
+            label="Comentarios"
+            {...a11yProps(7)}
+          />
         </Tabs>
         <TabPanel value={tableOption} index={0}>
           <CRPersonalData patient={selectedPatient} />

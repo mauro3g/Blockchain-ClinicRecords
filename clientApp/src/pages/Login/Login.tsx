@@ -5,10 +5,10 @@ import {
   Box,
   Button,
   CircularProgress,
+  Icon,
   Snackbar,
   TextField,
   Typography,
-  withTheme,
 } from "@mui/material";
 import { useValues } from "hooks";
 import { IMessageConfig } from "types/feedback";
@@ -23,7 +23,7 @@ const Layout = styled(Box)`
 
 const LoginPanel = styled(Box)`
   width: 50%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,9 +31,10 @@ const LoginPanel = styled(Box)`
 `;
 
 const LoginPanelForm = styled(LoginPanel)`
-  padding: 2vw;
+  padding-top: 8vw;
   color: white;
   background-color: ${(props) => props.theme.palette.primary.main};
+  justify-content: flex-start;
 `;
 
 const LoginPanelForm2 = styled(LoginPanel)(({ theme }) => ({
@@ -98,10 +99,11 @@ const Login = () => {
     <React.Fragment>
       <Layout>
         <LoginPanelForm>
-          <Typography className="py-8" variant="h4">
-            {"Inicio de sesión"}
-          </Typography>
-
+          <Box className="flex" sx={{ mb: 12, border: 3, padding: 2, borderRadius: 10 }}>
+            <Icon sx={{ fontSize: 40, mr: 1.5 }}>local_hospital</Icon>
+            <Typography variant="h4">{"Clinic records  Blockchain"}</Typography>
+          </Box>
+          <Typography variant="h5">{"Inicio de sesión"}</Typography>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -151,10 +153,10 @@ const Login = () => {
         </LoginPanelForm>
         <LoginPanel>
           <img
-            src={`${process.env.PUBLIC_URL}/assets/images/recordImg.jpg`}
+            src={`${process.env.PUBLIC_URL}/assets/images/elderly-patient.jpg`}
             alt="clinic_record"
-            width="350"
-            height="350"
+            width="90%"
+            height="90%"
           />
         </LoginPanel>
       </Layout>

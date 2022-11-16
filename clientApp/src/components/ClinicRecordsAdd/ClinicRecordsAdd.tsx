@@ -23,7 +23,8 @@ import {
   CRSicknessForm,
   CRSyndromesGeriatricProblemsForm,
 } from "components";
-import { AppDataContext } from "context";
+import { AppDataContext, SessionContext } from "context";
+import { MODULE_IDENTIFICATOR, PERMISSION_TYPE } from "lib/constants/modules";
 
 interface Props {
   selectedPatient: IPatient | undefined;
@@ -32,6 +33,7 @@ interface Props {
 const ClinicRecordsAdd = (props: Props) => {
   const { selectedPatient } = props;
   const { crSickness } = React.useContext(AppDataContext);
+  const { hasPermissions } = React.useContext(SessionContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -126,6 +128,12 @@ const ClinicRecordsAdd = (props: Props) => {
                     size="large"
                     startIcon={<Icon>coronavirus</Icon>}
                     onClick={handleNewSickness}
+                    disabled={
+                      !hasPermissions(
+                        MODULE_IDENTIFICATOR.CR_SICKNESS,
+                        PERMISSION_TYPE.CREATE
+                      )
+                    }
                   >
                     Enfermedades
                   </Button>
@@ -137,7 +145,13 @@ const ClinicRecordsAdd = (props: Props) => {
                     size="large"
                     startIcon={<Icon>monitor_heart</Icon>}
                     onClick={handleNewExamResult}
-                    disabled={crSickness.length === 0}
+                    disabled={
+                      crSickness.length === 0 ||
+                      !hasPermissions(
+                        MODULE_IDENTIFICATOR.CR_EXAM_RESULT,
+                        PERMISSION_TYPE.CREATE
+                      )
+                    }
                   >
                     Exámenes/Resultados
                   </Button>
@@ -149,6 +163,12 @@ const ClinicRecordsAdd = (props: Props) => {
                     size="large"
                     startIcon={<Icon>attribution</Icon>}
                     onClick={handleNewBiologicFunction}
+                    disabled={
+                      !hasPermissions(
+                        MODULE_IDENTIFICATOR.CR_BIOLOGIC_FUNCTIONS,
+                        PERMISSION_TYPE.CREATE
+                      )
+                    }
                   >
                     Funciones Biológicas
                   </Button>
@@ -160,6 +180,12 @@ const ClinicRecordsAdd = (props: Props) => {
                     size="large"
                     startIcon={<Icon>work_history</Icon>}
                     onClick={handleNewPatological}
+                    disabled={
+                      !hasPermissions(
+                        MODULE_IDENTIFICATOR.CR_PATOLOGICAL_HISTORY,
+                        PERMISSION_TYPE.CREATE
+                      )
+                    }
                   >
                     Antecedentes Patológicos
                   </Button>
@@ -171,6 +197,12 @@ const ClinicRecordsAdd = (props: Props) => {
                     size="large"
                     startIcon={<Icon>medical_information</Icon>}
                     onClick={handleNewPhysicalExam}
+                    disabled={
+                      !hasPermissions(
+                        MODULE_IDENTIFICATOR.CR_PHYSYCAL_EXAM,
+                        PERMISSION_TYPE.CREATE
+                      )
+                    }
                   >
                     Exámen Físico
                   </Button>
@@ -182,6 +214,12 @@ const ClinicRecordsAdd = (props: Props) => {
                     size="large"
                     startIcon={<Icon>elderly</Icon>}
                     onClick={handleNewSindromeProblems}
+                    disabled={
+                      !hasPermissions(
+                        MODULE_IDENTIFICATOR.CR_SYNDROMES_GERIATRIC,
+                        PERMISSION_TYPE.CREATE
+                      )
+                    }
                   >
                     Síndromes/Problemas
                   </Button>
@@ -193,6 +231,12 @@ const ClinicRecordsAdd = (props: Props) => {
                     size="large"
                     startIcon={<Icon>local_pharmacy</Icon>}
                     onClick={handleNewClinicalAssesment}
+                    disabled={
+                      !hasPermissions(
+                        MODULE_IDENTIFICATOR.CR_CLINICAL_ASSESSMENT,
+                        PERMISSION_TYPE.CREATE
+                      )
+                    }
                   >
                     Valoración Clínica
                   </Button>
@@ -204,6 +248,12 @@ const ClinicRecordsAdd = (props: Props) => {
                     size="large"
                     startIcon={<Icon>comment</Icon>}
                     onClick={handleNewCommentary}
+                    disabled={
+                      !hasPermissions(
+                        MODULE_IDENTIFICATOR.CR_COMMENTARY,
+                        PERMISSION_TYPE.CREATE
+                      )
+                    }
                   >
                     Comentarios
                   </Button>

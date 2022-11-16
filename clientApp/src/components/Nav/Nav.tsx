@@ -98,7 +98,7 @@ const Nav = ({ children }) => {
   };
 
   React.useEffect(() => {
-    console.log(navigation)
+    console.log(navigation);
   }, [navigation]);
 
   return (
@@ -185,7 +185,15 @@ const Nav = ({ children }) => {
                     <ListItemIcon>
                       <Icon>{element.icon}</Icon>
                     </ListItemIcon>
-                    <ListItemText primary={element.text} />
+                    <ListItemText
+                      primary={element.text}
+                      primaryTypographyProps={{
+                        fontSize: 15,
+                        fontWeight: "medium",
+                        lineHeight: "30px",
+                        mb: "2px",
+                      }}
+                    />
                   </ListItem>
                 </RouterLink>
               ))}
