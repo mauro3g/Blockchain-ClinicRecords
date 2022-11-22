@@ -8,6 +8,7 @@ import {
 } from "@mui/x-data-grid";
 import {
   Alert,
+  Avatar,
   Box,
   Button,
   CircularProgress,
@@ -24,8 +25,10 @@ import { IMessageConfig } from "types/feedback";
 import { PATH } from "lib/constants/routes";
 import { Transition, UsersForm } from "components";
 import { useLocation, useNavigate } from "react-router-dom";
+import { stringAvatar } from "lib/utils/avatar";
 
 interface IUserTable {
+  photo: string;
   id: string;
   username: string;
   address: string;
@@ -69,11 +72,9 @@ const Users = () => {
       filterable: false,
       sortable: false,
       disableColumnMenu: true,
-      renderCell: () => (
+      renderCell: (params: GridRenderCellParams) => (
         <strong>
-          <IconButton>
-            <Icon>account_circle</Icon>
-          </IconButton>
+          <Avatar {...stringAvatar(params.value as string)} />
         </strong>
       ),
     },
@@ -152,6 +153,7 @@ const Users = () => {
     users.forEach((user) => {
       const role = searchRoleValues(user.id);
       rows.push({
+        photo: user.username,
         id: user.id,
         username: user.username,
         address: user.userAddress,

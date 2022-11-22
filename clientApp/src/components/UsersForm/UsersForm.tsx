@@ -38,12 +38,12 @@ const initialFormValues = {
 };
 
 const TextFieldLarge = styled(TextField)`
-  min-width: 45vw;
+  min-width: 35vw;
   margin-top: 20px;
 `;
 
 const ContainerLarge = styled(Box)`
-  min-width: 45vw;
+  min-width: 35vw;
   margin-top: 20px;
 `;
 
@@ -65,7 +65,7 @@ const UsersForm = (props: Props) => {
   } = useValues(initialFormValues);
 
   const handleSubmit = async () => {
-    console.log("handleSubmit register user")
+    console.log("handleSubmit register user");
     try {
       setLoading(true);
       const newUser: IAddUser = {
@@ -95,10 +95,12 @@ const UsersForm = (props: Props) => {
     }
   };
 
-
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center">
-      <AppBar position="static" color="transparent">
+    <Box
+      sx={{ backgroundColor: "#81B9D9" }}
+      className="h-full w-full flex flex-col items-center justify-center"
+    >
+      <AppBar position="static" sx={{ backgroundColor: "white", color: "black"}}>
         <Toolbar>
           <Typography variant="h6" noWrap className="flex-grow">
             {edit ? "Editar usuario" : "Nuevo usuario"}
@@ -110,77 +112,92 @@ const UsersForm = (props: Props) => {
           </Tooltip>
         </Toolbar>
       </AppBar>
-      <form
-        className="flex-grow flex justify-center items-center"
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit();
-        }}
-      >
-        <Paper
-          elevation={4}
-          className={"flex justify-center items-center"}
-          style={{
-            minWidth: 300,
-            width: "calc(50vw - 12px)",
-            padding: 8,
-            flexWrap: "wrap",
+      <Box className="flex flex-grow items-center justify-around">
+        <Box>
+          <Paper
+            elevation={8}
+            sx={{ height: "50vh", mx: 10, borderRadius: 50 }}
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/images/doc-user.jpg`}
+              alt="clinic_record"
+            />
+          </Paper>
+        </Box>
+        <form
+          className="flex-grow flex justify-center items-center"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
           }}
         >
-          <TextFieldLarge
-            label={"Dirección ETH"}
-            onChange={(e) => handleChange("userAddress", e.target.value)}
-            value={values["userAddress"]}
-            autoFocus
-            required
-          />
-          <TextFieldLarge
-            label={"Nombre de usuario"}
-            onChange={(e) => handleChange("username", e.target.value)}
-            value={values["username"]}
-            autoFocus
-            required
-          />
-          <ContainerLarge>
-            <FormControl fullWidth>
-              <InputLabel id="role-select">Rol</InputLabel>
-              <Select
-                labelId="role-select"
-                id="role-select"
-                value={values["role"]}
-                label="role"
-                onChange={(e) => handleChange("role", e.target.value)}
+          <Paper
+            elevation={4}
+            className={"flex justify-center items-center"}
+            style={{
+              minWidth: 250,
+              width: "calc(40vw - 12px)",
+              padding: 8,
+              flexWrap: "wrap",
+            }}
+          >
+            <TextFieldLarge
+              label={"Dirección ETH"}
+              onChange={(e) => handleChange("userAddress", e.target.value)}
+              value={values["userAddress"]}
+              autoFocus
+              required
+            />
+            <TextFieldLarge
+              label={"Nombre de usuario"}
+              onChange={(e) => handleChange("username", e.target.value)}
+              value={values["username"]}
+              autoFocus
+              required
+            />
+            <ContainerLarge>
+              <FormControl fullWidth>
+                <InputLabel id="role-select">Rol</InputLabel>
+                <Select
+                  labelId="role-select"
+                  id="role-select"
+                  value={values["role"]}
+                  label="role"
+                  onChange={(e) => handleChange("role", e.target.value)}
+                >
+                  {ROLES_ARRAY.map((role) => (
+                    <MenuItem key={role.id} value={role.id}>
+                      {role.name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </ContainerLarge>
+            <ContainerLarge className="w-full flex justify-center">
+              <Button
+                disabled={loading}
+                disableElevation
+                type="submit"
+                variant="contained"
+                color="primary"
               >
-                {ROLES_ARRAY.map((role) => (
-                  <MenuItem key={role.id} value={role.id}>{role.name}</MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </ContainerLarge>
-          <ContainerLarge className="w-full flex justify-center">
-            <Button
-              disabled={loading}
-              disableElevation
-              type="submit"
-              variant="contained"
-              color="primary"
-            >
-              {loading ? (
-                <CircularProgress
-                  style={{ color: "white" }}
-                  size={20}
-                  className="my-1"
-                  thickness={10}
-                />
-              ) : edit ? (
-                "Editar"
-              ) : (
-                "Crear"
-              )}
-            </Button>
-          </ContainerLarge>
-        </Paper>
-      </form>
+                {loading ? (
+                  <CircularProgress
+                    style={{ color: "white" }}
+                    size={20}
+                    className="my-1"
+                    thickness={10}
+                  />
+                ) : edit ? (
+                  "Editar"
+                ) : (
+                  "Crear"
+                )}
+              </Button>
+            </ContainerLarge>
+          </Paper>
+        </form>
+      </Box>
       <Snackbar
         open={messageConfig.open}
         autoHideDuration={6000}
@@ -194,7 +211,7 @@ const UsersForm = (props: Props) => {
           {messageConfig.message}
         </Alert>
       </Snackbar>
-    </div>
+    </Box>
   );
 };
 

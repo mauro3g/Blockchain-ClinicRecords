@@ -99,9 +99,16 @@ const Login = () => {
     <React.Fragment>
       <Layout>
         <LoginPanelForm>
-          <Box className="flex" sx={{ mb: 12, border: 3, padding: 2, borderRadius: 10 }}>
-            <Icon sx={{ fontSize: 40, mr: 1.5 }}>local_hospital</Icon>
-            <Typography variant="h4">{"Clinic records  Blockchain"}</Typography>
+          <Box
+            className="flex"
+            sx={{ mb: 12, border: 3, padding: 2, borderRadius: 10 }}
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/images/health-icon.svg`}
+              alt="clinic_record"
+              height="40px"
+            />
+            <Typography variant="h4">{"Historial Clínico Geriátrico"}</Typography>
           </Box>
           <Typography variant="h5">{"Inicio de sesión"}</Typography>
           <form

@@ -105,7 +105,11 @@ const Nav = ({ children }) => {
     <Box sx={{ display: "flex" }}>
       {Boolean(loggedUser) && !location.pathname.includes(PATH.error) ? (
         <React.Fragment>
-          <AppBar position="fixed" open={openNav}>
+          <AppBar
+            position="fixed"
+            sx={{ backgroundColor: "white" }}
+            open={openNav}
+          >
             <Toolbar>
               <Box
                 sx={{
@@ -121,41 +125,49 @@ const Nav = ({ children }) => {
                     onClick={handleDrawerOpen}
                     edge="start"
                     sx={{
-                      color: "white",
+                      color: "black",
                       mr: 2,
                       ...(openNav && { display: "none" }),
                     }}
                   >
                     <Icon>menu</Icon>
                   </IconButton>
+                  <img
+                    src={`${process.env.PUBLIC_URL}/assets/images/health-icon.svg`}
+                    alt="clinic_record"
+                    height="40px"
+                  />
                   <Box>
                     <Button onClick={redirectHome}>
-                      <Typography variant="h6" color="white" noWrap>
-                        {"Clinic Records Blockchain"}
+                      <Typography variant="h6" color="primary" noWrap>
+                        {"Historial Clínico Geriátrico"}
                       </Typography>
                     </Button>
                   </Box>
                 </div>
                 <div className="flex items-center">
                   <div className="mr-4">
-                    <Typography color="white">
+                    <Typography color="primary">
                       {loggedUser?.username}
                     </Typography>
                   </div>
                   <IconButton onClick={(e) => setAnchorEl(e.currentTarget)}>
-                    <Icon style={{ color: "white" }}>account_circle</Icon>
+                    <Icon color="primary">account_circle</Icon>
                   </IconButton>
                 </div>
               </Box>
             </Toolbar>
           </AppBar>
           <Drawer
+            color="primary"
             sx={{
+              textAlign: "center",
               width: drawerWidth,
               flexShrink: 0,
               "& .MuiDrawer-paper": {
                 width: drawerWidth,
                 boxSizing: "border-box",
+                backgroundColor: "#81B9D9",
               },
             }}
             variant="persistent"
@@ -164,34 +176,41 @@ const Nav = ({ children }) => {
           >
             <DrawerHeader>
               <IconButton onClick={handleDrawerClose}>
-                <Icon>
+                <Icon sx= {{color: "white"}}>
                   {theme.direction === "ltr" ? "chevron_left" : "chevron_right"}
                 </Icon>
               </IconButton>
             </DrawerHeader>
             <Divider />
-            <List>
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/images/cicle-med-back.jpg`}
+              alt="clinic_record"
+              width="200px"
+              height="200px"
+            />
+            <List sx={{ mt: 2 }}>
               {navigation.map((element, index) => (
                 <RouterLink
                   to={element.to}
                   color="inherit"
                   key={element.text + index}
+                  style={{textDecoration: 'none'}}
                 >
                   <ListItem
-                    dense
-                    button
                     selected={location.pathname.includes(element.to)}
+                    sx={{textDecoration: "none"}}
                   >
                     <ListItemIcon>
-                      <Icon>{element.icon}</Icon>
+                      <Icon sx= {{color: "white"}}>{element.icon}</Icon>
                     </ListItemIcon>
                     <ListItemText
                       primary={element.text}
                       primaryTypographyProps={{
-                        fontSize: 15,
-                        fontWeight: "medium",
+                        fontSize: 16,
+                        fontWeight: "500",
                         lineHeight: "30px",
                         mb: "2px",
+                        color: "white"
                       }}
                     />
                   </ListItem>
