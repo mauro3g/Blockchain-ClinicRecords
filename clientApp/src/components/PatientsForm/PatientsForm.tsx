@@ -5,6 +5,7 @@ import {
   Button,
   CircularProgress,
   FormControl,
+  Grid,
   Icon,
   IconButton,
   InputLabel,
@@ -49,11 +50,6 @@ const initialFormValues = {
   contactPerson: "",
   phone: "",
 };
-
-const TextFieldLarge = styled(TextField)`
-  min-width: 45vw;
-  margin-top: 20px;
-`;
 
 const ContainerLarge = styled(Box)`
   min-width: 45vw;
@@ -139,91 +135,143 @@ const PatientsForm = (props: Props) => {
           className={"flex justify-center items-center"}
           style={{
             minWidth: 300,
-            marginTop: 200,
-            marginBottom: 20,
-            width: "calc(50vw - 12px)",
-            padding: 8,
+            minHeight: "70vh",
+            width: "50vw",
             flexWrap: "wrap",
+            padding: 40,
+            marginTop: 30,
           }}
         >
-          <TextFieldLarge
-            label={"Nombres"}
-            onChange={(e) => handleChange("name", e.target.value)}
-            value={values["name"]}
-            autoFocus
-            required
-          />
-          <TextFieldLarge
-            label={"Identificación"}
-            type={"number"}
-            onChange={(e) =>
-              handleChange("identificationNumber", e.target.value)
-            }
-            value={values["identificationNumber"]}
-            required
-          />
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker
-              label="Fecha de nacimiento"
-              value={selectedDate}
-              onChange={(e) => {
-                handleChange("birthDate", Date.parse(e?.toString() as string));
-                setSelectedDate(e);
-              }}
-              renderInput={(params) => <TextFieldLarge {...params} />}
-            />
-          </LocalizationProvider>
-          <TextFieldLarge
-            label={"Género"}
-            onChange={(e) => handleChange("gender", e.target.value)}
-            value={values["gender"]}
-            required
-          />
-          <ContainerLarge>
-            <FormControl fullWidth>
-              <InputLabel id="marital-status-lbl">Estado civil</InputLabel>
-              <Select
-                labelId="marital-status-lbl"
-                id="marital-status-select"
-                value={MARITAL_STATUS.findIndex(
-                  (ms) => ms === values["maritalStatus"]
-                )}
-                label="maritalStatus"
-                onChange={(e) =>
-                  handleChange("maritalStatus", MARITAL_STATUS[e.target.value])
-                }
-              >
-                {MARITAL_STATUS.map((status, index) => (
-                  <MenuItem value={index}>{status}</MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </ContainerLarge>
-          <TextFieldLarge
-            label={"Ocupación"}
-            onChange={(e) => handleChange("occupation", e.target.value)}
-            value={values["occupation"]}
-            required
-          />
-          <TextFieldLarge
-            label={"Dirección"}
-            onChange={(e) => handleChange("direction", e.target.value)}
-            value={values["direction"]}
-            required
-          />
-          <TextFieldLarge
-            label={"Contácto"}
-            onChange={(e) => handleChange("contactPerson", e.target.value)}
-            value={values["contactPerson"]}
-            required
-          />
-          <TextFieldLarge
-            label={"Teléfono"}
-            type={"number"}
-            onChange={(e) => handleChange("phone", e.target.value)}
-            value={values["phone"]}
-            required
-          />
+          <Grid container rowSpacing={0} columnSpacing={{ xs: 0 }}>
+            <Grid item xs={12}>
+              <Box sx={{ mx: 1, my: 1.5 }}>
+                <TextField
+                  className="w-full"
+                  label={"Nombres"}
+                  onChange={(e) => handleChange("name", e.target.value)}
+                  value={values["name"]}
+                  autoFocus
+                  required
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={6}>
+              <Box sx={{ mx: 1, my: 1.5 }}>
+                <TextField
+                  className="w-full"
+                  label={"Identificación"}
+                  type={"number"}
+                  onChange={(e) =>
+                    handleChange("identificationNumber", e.target.value)
+                  }
+                  value={values["identificationNumber"]}
+                  required
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={6}>
+              <Box sx={{ mx: 1, my: 1.5 }}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DatePicker
+                    className="w-full"
+                    label="Fecha de nacimiento"
+                    value={selectedDate}
+                    onChange={(e) => {
+                      handleChange(
+                        "birthDate",
+                        Date.parse(e?.toString() as string)
+                      );
+                      setSelectedDate(e);
+                    }}
+                    renderInput={(params) => <TextField {...params} />}
+                  />
+                </LocalizationProvider>
+              </Box>
+            </Grid>
+            <Grid item xs={6}>
+              <Box sx={{ mx: 1, my: 1.5 }}>
+                <TextField
+                  className="w-full"
+                  label={"Género"}
+                  onChange={(e) => handleChange("gender", e.target.value)}
+                  value={values["gender"]}
+                  required
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={6}>
+              <Box sx={{ mx: 1, my: 1.5 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="marital-status-lbl">Estado civil</InputLabel>
+                  <Select
+                    labelId="marital-status-lbl"
+                    id="marital-status-select"
+                    value={MARITAL_STATUS.findIndex(
+                      (ms) => ms === values["maritalStatus"]
+                    )}
+                    label="maritalStatus"
+                    onChange={(e) =>
+                      handleChange(
+                        "maritalStatus",
+                        MARITAL_STATUS[e.target.value]
+                      )
+                    }
+                  >
+                    {MARITAL_STATUS.map((status, index) => (
+                      <MenuItem value={index}>{status}</MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </Box>
+            </Grid>
+            <Grid item xs={6}>
+              <Box sx={{ mx: 1, my: 1.5 }}>
+                <TextField
+                  className="w-full"
+                  label={"Ocupación"}
+                  onChange={(e) => handleChange("occupation", e.target.value)}
+                  value={values["occupation"]}
+                  required
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={6}>
+              <Box sx={{ mx: 1, my: 1.5 }}>
+                <TextField
+                  className="w-full"
+                  label={"Dirección"}
+                  onChange={(e) => handleChange("direction", e.target.value)}
+                  value={values["direction"]}
+                  required
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={6}>
+              <Box sx={{ mx: 1, my: 1.5 }}>
+                <TextField
+                  className="w-full"
+                  label={"Contácto"}
+                  onChange={(e) =>
+                    handleChange("contactPerson", e.target.value)
+                  }
+                  value={values["contactPerson"]}
+                  required
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={6}>
+              <Box sx={{ mx: 1, my: 1.5 }}>
+                <TextField
+                  className="w-full"
+                  label={"Teléfono"}
+                  type={"number"}
+                  onChange={(e) => handleChange("phone", e.target.value)}
+                  value={values["phone"]}
+                  required
+                />
+              </Box>
+            </Grid>
+          </Grid>
           <ContainerLarge className="w-full flex justify-center">
             <Button
               disabled={loading}

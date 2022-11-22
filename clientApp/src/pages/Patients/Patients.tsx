@@ -10,12 +10,14 @@ import {
   Snackbar,
   Typography,
   Button,
+  Avatar,
 } from "@mui/material";
 import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import { PatientsForm, Transition } from "components";
 import MedicalForm from "components/MedicalForm/MedicalForm";
 import { AppDataContext, SessionContext } from "context";
 import { PATH } from "lib/constants/routes";
+import { stringAvatar } from "lib/utils/avatar";
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { IMessageConfig } from "types/feedback";
@@ -23,6 +25,7 @@ import { IUser } from "types/Session";
 import { IPatient } from "../../types/UsersInformation";
 
 interface IPatientsTable {
+  photo: string;
   id: string;
   name: string;
   identificationNumber: string;
@@ -66,11 +69,9 @@ const Patients = () => {
       filterable: false,
       sortable: false,
       disableColumnMenu: true,
-      renderCell: () => (
+      renderCell: (params: GridRenderCellParams) => (
         <strong>
-          <IconButton>
-            <Icon>account_circle</Icon>
-          </IconButton>
+          <Avatar {...stringAvatar(params.value as string)} />
         </strong>
       ),
     },
@@ -151,6 +152,7 @@ const Patients = () => {
       const rows: Array<IPatientsTable> = [];
       patients.forEach((patient, index) => {
         rows.push({
+          photo: patient.personalInformation.name as string,
           id: (index + 1).toString(),
           name: patient.personalInformation.name as string,
           identificationNumber:

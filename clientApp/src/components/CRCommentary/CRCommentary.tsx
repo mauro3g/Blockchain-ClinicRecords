@@ -62,7 +62,7 @@ const CRCommentary = (props: Props) => {
       if (activeDatePicker) {
         const _crCommentary: ICommentary[] | undefined = crCommentary.filter(
           (sn) => {
-            let registryDate: Date = new Date(sn.date);
+            let registryDate: Date = new Date(parseInt(sn.date));
             return registryDate >= startDate && registryDate <= endDate;
           }
         );

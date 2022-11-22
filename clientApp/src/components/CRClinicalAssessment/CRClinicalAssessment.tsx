@@ -107,7 +107,7 @@ const CRClinicalAssessment = (props: Props) => {
       if (activeDatePicker) {
         const _crClinicalAssessment: IClinicalAssessment[] | undefined =
           crClinicalAssessment.filter((sn) => {
-            let registryDate: Date = new Date(sn.date);
+            let registryDate: Date = new Date(parseInt(sn.date));
             return registryDate >= startDate && registryDate <= endDate;
           });
         setcrClinicalAssessmentFiltered(_crClinicalAssessment);

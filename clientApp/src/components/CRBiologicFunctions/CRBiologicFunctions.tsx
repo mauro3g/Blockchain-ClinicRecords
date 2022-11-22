@@ -107,7 +107,7 @@ const CRBiologicFunctions = (props: Props) => {
       if (activeDatePicker) {
         const _crBiologicFunctions: IBiologicFunctions[] | undefined =
           crBiologicFunctions.filter((sn) => {
-            let registryDate: Date = new Date(sn.date);
+            let registryDate: Date = new Date(parseInt(sn.date));
             return registryDate >= startDate && registryDate <= endDate;
           });
         setcrBiologicFunctionsFiltered(_crBiologicFunctions);

@@ -119,7 +119,7 @@ const CRPatologicalHistory = (props: Props) => {
       if (activeDatePicker) {
         const _crPatologicalHistory: IPatologicalHistory[] | undefined =
           crPatologicalHistory.filter((ph) => {
-            let registryDate: Date = new Date(ph.date);
+            let registryDate: Date = new Date(parseInt(ph.date));
             return registryDate >= startDate && registryDate <= endDate;
           });
         setcrPatologicalHistoryFiltered(_crPatologicalHistory);

@@ -124,7 +124,7 @@ const CRSickness = (props: Props) => {
       if (activeDatePicker) {
         const _crSicknessFiltered: ISickness[] | undefined = crSickness.filter(
           (sn) => {
-            let registryDate: Date = new Date(sn.registerDate);
+            let registryDate: Date = new Date(parseInt(sn.registerDate));
             return registryDate >= startDate && registryDate <= endDate;
           }
         );

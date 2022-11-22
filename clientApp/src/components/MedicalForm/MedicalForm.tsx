@@ -34,6 +34,7 @@ import { IMedicalRequest } from "types/UsersInformation";
 interface Props {
   edit?: boolean;
   savedUser: IUser;
+  isNurse: boolean;
 }
 
 const initialFormValues = {
@@ -55,7 +56,7 @@ const ContainerLarge = styled(Box)`
 `;
 
 const MedicalForm = (props: Props) => {
-  const { edit, savedUser } = props;
+  const { edit, savedUser, isNurse } = props;
   const { requestRegisterMedicalsInfo, getMedicals } =
     React.useContext(AppDataContext);
   const [messageConfig, setMessageConfig] = React.useState<IMessageConfig>({
@@ -72,6 +73,8 @@ const MedicalForm = (props: Props) => {
     updateValue: handleChange,
     updateValues,
   } = useValues(initialFormValues);
+
+  const title = isNurse? "Enfermera": "Médico"
 
   const handleSubmit = async () => {
     console.log("handleSubmit register medical ", savedUser.id);
@@ -90,16 +93,17 @@ const MedicalForm = (props: Props) => {
       await requestRegisterMedicalsInfo(newUser);
       await getMedicals();
       updateValues(initialFormValues);
+      const message = isNurse ? "Enfermera registrada" : "dico registrado!";
       setMessageConfig({
         open: true,
-        message: "Medico registrado!",
+        message: message,
         severity: "success",
       });
       setLoading(false);
     } catch (error: any) {
       setMessageConfig({
         open: true,
-        message: `No se pudo registrar el usuario...\n ${error.message}`,
+        message: `No se pudo registrar información...\n ${error.message}`,
         severity: "error",
       });
       setLoading(false);
@@ -112,7 +116,7 @@ const MedicalForm = (props: Props) => {
       <AppBar position="static" color="transparent">
         <Toolbar>
           <Typography variant="h6" noWrap className="flex-grow">
-            {edit ? "Editar Médico" : "Nuevo Médico"}
+            {edit ? `Editar ${title}` : `Nuevo/a ${title}`}
           </Typography>
           <Tooltip title="Cerrar formulario" arrow>
             <IconButton onClick={() => navigate(-1)}>

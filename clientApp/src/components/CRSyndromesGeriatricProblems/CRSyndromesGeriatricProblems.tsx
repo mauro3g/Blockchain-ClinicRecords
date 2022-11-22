@@ -129,7 +129,7 @@ const CRSyndromesGeriatricProblems = (props: Props) => {
         const _crSyndromesGeriatricProblems:
           | ISyndromesGeriatricProblems[]
           | undefined = crSyndromesGeriatricProblems.filter((sn) => {
-          let registryDate: Date = new Date(sn.date);
+            let registryDate: Date = new Date(parseInt(sn.date));
           return registryDate >= startDate && registryDate <= endDate;
         });
         setcrSyndromesGeriatricProblemsFiltered(_crSyndromesGeriatricProblems);

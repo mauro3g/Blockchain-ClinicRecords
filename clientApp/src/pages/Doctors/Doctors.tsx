@@ -10,6 +10,7 @@ import {
   MenuItem,
   Snackbar,
   Typography,
+  Avatar,
 } from "@mui/material";
 import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import { AppDataContext, SessionContext } from "context";
@@ -22,8 +23,10 @@ import { ROLE_IDENTIFICATOR } from "lib/constants/roles";
 import { IMedical } from "../../types/UsersInformation";
 import { Transition, UsersForm } from "components";
 import MedicalForm from "../../components/MedicalForm/MedicalForm";
+import { stringAvatar } from "lib/utils/avatar";
 
 interface IDoctorTable {
+  photo: string;
   id: string;
   username: string;
   name: string;
@@ -66,11 +69,9 @@ const Doctors = () => {
       filterable: false,
       sortable: false,
       disableColumnMenu: true,
-      renderCell: () => (
+      renderCell: (params: GridRenderCellParams) => (
         <strong>
-          <IconButton>
-            <Icon>account_circle</Icon>
-          </IconButton>
+          <Avatar {...stringAvatar(params.value as string)} />
         </strong>
       ),
     },
@@ -182,15 +183,18 @@ const Doctors = () => {
           );
 
           rows.push({
+            photo: user.username,
             id: user.id,
             username: user.username,
             name: medicalInfo?.personalInformation.name as string,
             speciality: medicalInfo?.speciality as string,
             identificationNumber: medicalInfo?.personalInformation
               .identificationNumber as string,
-            birthDate: new Date(
-              parseInt(medicalInfo?.personalInformation.birthDate as string)
-            ).toLocaleDateString(),
+            birthDate: medicalInfo?.personalInformation.birthDate
+              ? new Date(
+                  parseInt(medicalInfo?.personalInformation.birthDate as string)
+                ).toLocaleDateString()
+              : "",
             gender: medicalInfo?.personalInformation.gender as string,
             options: user.id,
           });
@@ -256,7 +260,7 @@ const Doctors = () => {
         }}
         classes={{ paper: "dialog-paper-full-width" }}
       >
-        <MedicalForm savedUser={selectedUser as IUser} />
+        <MedicalForm savedUser={selectedUser as IUser} isNurse={false} />
       </Dialog>
       <Snackbar
         open={messageConfig.open}

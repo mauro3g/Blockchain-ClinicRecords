@@ -9,6 +9,7 @@ import {
   Dialog,
   Snackbar,
   Alert,
+  Avatar,
 } from "@mui/material";
 import { GridColDef, GridRenderCellParams, DataGrid } from "@mui/x-data-grid";
 import { Transition } from "components";
@@ -16,6 +17,7 @@ import MedicalForm from "components/MedicalForm/MedicalForm";
 import { AppDataContext, SessionContext } from "context";
 import { ROLE_IDENTIFICATOR } from "lib/constants/roles";
 import { PATH } from "lib/constants/routes";
+import { stringAvatar } from "lib/utils/avatar";
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { IMessageConfig } from "types/feedback";
@@ -23,6 +25,7 @@ import { IUser } from "types/Session";
 import { IMedical } from "types/UsersInformation";
 
 interface INurseTable {
+  photo: string;
   id: string;
   username: string;
   name: string;
@@ -63,11 +66,9 @@ const Nurses = () => {
       filterable: false,
       sortable: false,
       disableColumnMenu: true,
-      renderCell: () => (
+      renderCell: (params: GridRenderCellParams) => (
         <strong>
-          <IconButton>
-            <Icon>account_circle</Icon>
-          </IconButton>
+          <Avatar {...stringAvatar(params.value as string)} />
         </strong>
       ),
     },
@@ -179,15 +180,18 @@ const Nurses = () => {
           );
 
           rows.push({
+            photo: user.username,
             id: user.id,
             username: user.username,
             name: medicalInfo?.personalInformation.name as string,
             speciality: medicalInfo?.speciality as string,
             identificationNumber: medicalInfo?.personalInformation
               .identificationNumber as string,
-            birthDate: new Date(
-              parseInt(medicalInfo?.personalInformation.birthDate as string)
-            ).toLocaleDateString(),
+            birthDate: medicalInfo?.personalInformation.birthDate
+              ? new Date(
+                  parseInt(medicalInfo?.personalInformation.birthDate as string)
+                ).toLocaleDateString()
+              : "",
             gender: medicalInfo?.personalInformation.gender as string,
             options: user.id,
           });
@@ -253,7 +257,7 @@ const Nurses = () => {
         }}
         classes={{ paper: "dialog-paper-full-width" }}
       >
-        <MedicalForm savedUser={selectedUser as IUser} />
+        <MedicalForm savedUser={selectedUser as IUser} isNurse={true} />
       </Dialog>
       <Snackbar
         open={messageConfig.open}

@@ -25,6 +25,7 @@ import {
 } from "@mui/material";
 import { IMessageConfig } from "types/feedback";
 import { AppDataContext } from "../../context/AppDataProvider/AppDataProvider";
+import { removeSpaces } from "lib/utils/string";
 
 interface Props {
   edit?: boolean;
@@ -49,7 +50,7 @@ const ContainerLarge = styled(Box)`
 
 const UsersForm = (props: Props) => {
   const { edit, savedUser } = props;
-  const { requestRegisterUser, getUsers } = React.useContext(AppDataContext);
+  const { requestRegisterUser, getUsers, getUserRoles } = React.useContext(AppDataContext);
   const [messageConfig, setMessageConfig] = React.useState<IMessageConfig>({
     open: false,
     message: "",
@@ -77,6 +78,7 @@ const UsersForm = (props: Props) => {
       };
       await requestRegisterUser(newUser);
       await getUsers();
+      await getUserRoles();
       updateValues(initialFormValues);
       setMessageConfig({
         open: true,
@@ -143,14 +145,14 @@ const UsersForm = (props: Props) => {
           >
             <TextFieldLarge
               label={"Dirección ETH"}
-              onChange={(e) => handleChange("userAddress", e.target.value)}
+              onChange={(e) => handleChange("userAddress", removeSpaces(e.target.value))}
               value={values["userAddress"]}
               autoFocus
               required
             />
             <TextFieldLarge
               label={"Nombre de usuario"}
-              onChange={(e) => handleChange("username", e.target.value)}
+              onChange={(e) => handleChange("username", removeSpaces(e.target.value))}
               value={values["username"]}
               autoFocus
               required

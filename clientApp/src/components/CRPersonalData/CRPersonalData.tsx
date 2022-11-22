@@ -92,7 +92,7 @@ const CRPersonalData = (props: Props) => {
               Contácto:
             </Box>
           </Box>
-          <Box sx={{ px: 5, py: 1 }}>{localeDate(patient.contactPerson)}</Box>
+          <Box sx={{ px: 5, py: 1 }}>{patient.contactPerson}</Box>
         </div>
         <div>
           <Box className="flex items-center">
