@@ -447,10 +447,6 @@ contract SessionContract {
         return users;
     }
 
-    function getSender() external view returns (address) {
-        return msg.sender;
-    }
-
     /**
      * @notice retrieves all the modules
      * @return Module module array

@@ -79,9 +79,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sessionContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_usersInformation\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crSickness\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crBiologicFunctions\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crPatologicalHistory\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crPhysicalExam\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crSyndromeGeriatricProblems\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crClinicalAssessment\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crCommentary\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getSessionContractAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUsersInfoAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Blockchain Clinic Records Team\",\"details\":\"inherits from Ownable to use modifiers\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Controller\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Contract to mantain the deployed contract addresses on the environment\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Controller.sol\":\"Controller\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CRBiologicFunctions.sol\":{\"keccak256\":\"0x14bc8014abd6094bb40b2cd45930015a7042545d4cc0e6bafee19783a0159683\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://b023ce477b7b15302e2c0d2395c757f8cb188af1fbede1c88c82c02ce7b4d248\",\"dweb:/ipfs/QmYKPyTRYNEmFi1vKVUwhgxL839c5vSR7MDhQbZend6vcd\"]},\"project:/contracts/CRClinicalAssessment.sol\":{\"keccak256\":\"0xd68e395f91bb7872bde0444e4543a7ef70bfa204114e121ee2a09af58f898ad2\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://992a5fd3ee558879370b62d97377a35be38d999b7704ab500decf117c6a5caf8\",\"dweb:/ipfs/QmZLSX3s3Zxud6XC55yV79sC2Kjnp3CS4VXM9SvHGfDmB3\"]},\"project:/contracts/CRCommentary.sol\":{\"keccak256\":\"0x9cd99e19627f33aeea5939c3346268e9018d54fae069ab0ad787fa62caf9457c\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://d816de3f7daff55628a9e7696e823d3a39a346d2f3d028800a60fab342206773\",\"dweb:/ipfs/QmQKzmjHyJBF8Ga1hAjen9sxZy3Z21n6UVqioxBoLH8EnJ\"]},\"project:/contracts/CRPatologicalHistory.sol\":{\"keccak256\":\"0xf1719c3ab0cb1f366fe7b36feb6717277872241f3ce6ace961b60889493e5ea4\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5f95c364b3bb44200f036992068a9a570228cf4b0a040b8f0366f351fec8c8d0\",\"dweb:/ipfs/QmXJRya4LcfKmDQm7qtihjmBdvMttVf5oNxHQnkYEGZ5FN\"]},\"project:/contracts/CRPhysicalExam.sol\":{\"keccak256\":\"0x01f6282b2500f6ed48a2bb5c45ebed215e73e0aa2b884398961106b77b063a75\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://2d6d82ec8d9229569d7771e9cb1867d6dbcd075e0abe7793789382ed7720a1b2\",\"dweb:/ipfs/QmQD9G3bd1MjBUCQuHhfSwQCQc5i7w76i8w2EF3zbXUxj8\"]},\"project:/contracts/CRSickness.sol\":{\"keccak256\":\"0x8c0a9d554ab31891fb9aa28e467c65bf1edd4c7f374c4ffa18d6b11a3415882a\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://85647eec6a2b5ccfa595c86e897247fd33179d76a38cbca42f4b66f75972f253\",\"dweb:/ipfs/QmPuF4rnMKEeQPaGemmDM8auECoZRZk8sjerBs4qeYiQiN\"]},\"project:/contracts/CRSyndromesGeriatricProblems.sol\":{\"keccak256\":\"0xdf92521081f173a9db055517cdf649e94bd9ae44da746efa39810146c609e114\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://3710ba5a0a168ced7427f995b445f1882a7e455c4588dafb0e6b4ff6f8aa347e\",\"dweb:/ipfs/QmNh7b4XAenVKBpgEXLSHNXHjJCGXyb8gG4zXDQwvRc35m\"]},\"project:/contracts/Controller.sol\":{\"keccak256\":\"0x53e8ba90573ef185bf23fbe2d1b0cbae71008eba75e327bc4e1af11691b558a8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a8f55ec346c91d8460d1a36b9ec360cd42b6ecd6cb914802e94b3e5f8d88f391\",\"dweb:/ipfs/QmXd66ysEYXsqt3cTmo3LCkZmhy12bzr1CsvCkM5xsGeU4\"]},\"project:/contracts/Ownable.sol\":{\"keccak256\":\"0x1aeed8b61f24bff40102add7287a31dc44d77651019f9fd9888aaa801dfb42b4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4b36cf358a224ad025930f0b4093aef86ee5c155134b2acc14909a06b09d3c21\",\"dweb:/ipfs/QmRyHoPgerBYF9wSwC6E4n9SN7G6WvdCmvrFjAG6v5Pi7p\"]},\"project:/contracts/ProfileModifier.sol\":{\"keccak256\":\"0x7b6866ecb7e34f77b32ef6b0b2f9d57db3e7e8b650e8db65654ec788c8754b41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6eea6e407d1c5a06224577b3bf752203630ce256411399c7aa0157a35b9ea83\",\"dweb:/ipfs/Qmak4ED9tNLmTNLKp4w9Ft7AAPW6du7YwqRLNM2KL3kv4Q\"]},\"project:/contracts/RoleTypes.sol\":{\"keccak256\":\"0xd0071b3c60d31d752b026ef9a249cd19b588b8e0702f9f4a02750ed4a8004593\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a333c38b49598c4fc9f048689d8a52c7192fef31a914dcc31aa37e771133ef1c\",\"dweb:/ipfs/QmRZtr7SWnWUFAADqgFFYJg6kjBZnmCakrNXah37AHMYqE\"]},\"project:/contracts/SessionContract.sol\":{\"keccak256\":\"0xadae0922dda60cdf4de2684f05fd63af6e573c27b984b93cb0789a2dde2c817e\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://06d29cecd088201f7da97b45f09187106f2919546803ef7969184593b90a1b7b\",\"dweb:/ipfs/Qmcicmi3b56E86yaCJoTrm6h9zgUHzGKTLz5nADNMQzo9z\"]},\"project:/contracts/UsersInformation.sol\":{\"keccak256\":\"0x4eef714641d80427e50a855fc2533cff0b0eab67697d38230b63d793246fdaa1\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://109e5ff6a405c47917aa74ebb5959ae119c6402db6bac394e98d8acb9a6968b0\",\"dweb:/ipfs/Qme5e3joX8t5k6NmTiCxLr37DSsRaNEyQPZ4hsrJiswJr9\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060405161029438038061029483398101604081905261002f916100f5565b6000805433600160a060020a031991821617909155600180548216600160a060020a039b8c16179055600280548216998b1699909917909855600380548916978a1697909717909655600480548816958916959095179094556005805487169388169390931790925560068054861691871691909117905560078054851691861691909117905560088054841691851691909117905560098054909216921691909117905561019d565b8051600160a060020a03811681146100f057600080fd5b919050565b60008060008060008060008060006101208a8c03121561011457600080fd5b61011d8a6100d9565b985061012b60208b016100d9565b975061013960408b016100d9565b965061014760608b016100d9565b955061015560808b016100d9565b945061016360a08b016100d9565b935061017160c08b016100d9565b925061017f60e08b016100d9565b915061018e6101008b016100d9565b90509295985092959850929598565b60e9806101ab6000396000f3fe6080604052348015600f57600080fd5b5060043610604e577c01000000000000000000000000000000000000000000000000000000006000350463282b46ce81146053578063afae03ef146096575b600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff165b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60025473ffffffffffffffffffffffffffffffffffffffff16606d56fea2646970667358221220fbd0caacfdd75b0a471f32dded9e7960a9c77822e91537db40ca02cc3e42028664736f6c63430008070033",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610604e577c01000000000000000000000000000000000000000000000000000000006000350463282b46ce81146053578063afae03ef146096575b600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff165b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60025473ffffffffffffffffffffffffffffffffffffffff16606d56fea2646970667358221220fbd0caacfdd75b0a471f32dded9e7960a9c77822e91537db40ca02cc3e42028664736f6c63430008070033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sessionContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_usersInformation\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crSickness\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crBiologicFunctions\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crPatologicalHistory\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crPhysicalExam\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crSyndromeGeriatricProblems\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crClinicalAssessment\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_crCommentary\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getSessionContractAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUsersInfoAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Blockchain Clinic Records Team\",\"details\":\"inherits from Ownable to use modifiers\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Controller\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Contract to mantain the deployed contract addresses on the environment\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Controller.sol\":\"Controller\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CRBiologicFunctions.sol\":{\"keccak256\":\"0x14bc8014abd6094bb40b2cd45930015a7042545d4cc0e6bafee19783a0159683\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://b023ce477b7b15302e2c0d2395c757f8cb188af1fbede1c88c82c02ce7b4d248\",\"dweb:/ipfs/QmYKPyTRYNEmFi1vKVUwhgxL839c5vSR7MDhQbZend6vcd\"]},\"project:/contracts/CRClinicalAssessment.sol\":{\"keccak256\":\"0xd68e395f91bb7872bde0444e4543a7ef70bfa204114e121ee2a09af58f898ad2\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://992a5fd3ee558879370b62d97377a35be38d999b7704ab500decf117c6a5caf8\",\"dweb:/ipfs/QmZLSX3s3Zxud6XC55yV79sC2Kjnp3CS4VXM9SvHGfDmB3\"]},\"project:/contracts/CRCommentary.sol\":{\"keccak256\":\"0x9cd99e19627f33aeea5939c3346268e9018d54fae069ab0ad787fa62caf9457c\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://d816de3f7daff55628a9e7696e823d3a39a346d2f3d028800a60fab342206773\",\"dweb:/ipfs/QmQKzmjHyJBF8Ga1hAjen9sxZy3Z21n6UVqioxBoLH8EnJ\"]},\"project:/contracts/CRPatologicalHistory.sol\":{\"keccak256\":\"0xf1719c3ab0cb1f366fe7b36feb6717277872241f3ce6ace961b60889493e5ea4\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5f95c364b3bb44200f036992068a9a570228cf4b0a040b8f0366f351fec8c8d0\",\"dweb:/ipfs/QmXJRya4LcfKmDQm7qtihjmBdvMttVf5oNxHQnkYEGZ5FN\"]},\"project:/contracts/CRPhysicalExam.sol\":{\"keccak256\":\"0x01f6282b2500f6ed48a2bb5c45ebed215e73e0aa2b884398961106b77b063a75\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://2d6d82ec8d9229569d7771e9cb1867d6dbcd075e0abe7793789382ed7720a1b2\",\"dweb:/ipfs/QmQD9G3bd1MjBUCQuHhfSwQCQc5i7w76i8w2EF3zbXUxj8\"]},\"project:/contracts/CRSickness.sol\":{\"keccak256\":\"0xac7f02bb92e26763e388a8aaceeb9fecd9094bc7c31654b1877436e6f35c4829\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://e6eaf8ce3f0e782d61db63bdaa261450d451dcd6f4892a86a0ce44439a83ee20\",\"dweb:/ipfs/QmWEc5gfeGjYcoEGXEzzzAWxoQ8JBZgPcMYRN5cxeh7efi\"]},\"project:/contracts/CRSyndromesGeriatricProblems.sol\":{\"keccak256\":\"0xdf92521081f173a9db055517cdf649e94bd9ae44da746efa39810146c609e114\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://3710ba5a0a168ced7427f995b445f1882a7e455c4588dafb0e6b4ff6f8aa347e\",\"dweb:/ipfs/QmNh7b4XAenVKBpgEXLSHNXHjJCGXyb8gG4zXDQwvRc35m\"]},\"project:/contracts/Controller.sol\":{\"keccak256\":\"0x53e8ba90573ef185bf23fbe2d1b0cbae71008eba75e327bc4e1af11691b558a8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a8f55ec346c91d8460d1a36b9ec360cd42b6ecd6cb914802e94b3e5f8d88f391\",\"dweb:/ipfs/QmXd66ysEYXsqt3cTmo3LCkZmhy12bzr1CsvCkM5xsGeU4\"]},\"project:/contracts/Ownable.sol\":{\"keccak256\":\"0x1aeed8b61f24bff40102add7287a31dc44d77651019f9fd9888aaa801dfb42b4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4b36cf358a224ad025930f0b4093aef86ee5c155134b2acc14909a06b09d3c21\",\"dweb:/ipfs/QmRyHoPgerBYF9wSwC6E4n9SN7G6WvdCmvrFjAG6v5Pi7p\"]},\"project:/contracts/ProfileModifier.sol\":{\"keccak256\":\"0x7b6866ecb7e34f77b32ef6b0b2f9d57db3e7e8b650e8db65654ec788c8754b41\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6eea6e407d1c5a06224577b3bf752203630ce256411399c7aa0157a35b9ea83\",\"dweb:/ipfs/Qmak4ED9tNLmTNLKp4w9Ft7AAPW6du7YwqRLNM2KL3kv4Q\"]},\"project:/contracts/RoleTypes.sol\":{\"keccak256\":\"0xd0071b3c60d31d752b026ef9a249cd19b588b8e0702f9f4a02750ed4a8004593\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a333c38b49598c4fc9f048689d8a52c7192fef31a914dcc31aa37e771133ef1c\",\"dweb:/ipfs/QmRZtr7SWnWUFAADqgFFYJg6kjBZnmCakrNXah37AHMYqE\"]},\"project:/contracts/SessionContract.sol\":{\"keccak256\":\"0xb3256c0c0d50c2d58b6c1faeac0dc5d8b5b50fb4e3e1ffec256f0f88041bcd5e\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://a14e0f35423510c3c82c5a6df37ebeefb4d8a01b2d43e76b1be896d3c00040e0\",\"dweb:/ipfs/QmS72Ak8TCvvxiJWx8VWZ8KT4crrQ74xNLn9ntVxCeYsJd\"]},\"project:/contracts/UsersInformation.sol\":{\"keccak256\":\"0x4eef714641d80427e50a855fc2533cff0b0eab67697d38230b63d793246fdaa1\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://109e5ff6a405c47917aa74ebb5959ae119c6402db6bac394e98d8acb9a6968b0\",\"dweb:/ipfs/Qme5e3joX8t5k6NmTiCxLr37DSsRaNEyQPZ4hsrJiswJr9\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161029438038061029483398101604081905261002f916100f5565b6000805433600160a060020a031991821617909155600180548216600160a060020a039b8c16179055600280548216998b1699909917909855600380548916978a1697909717909655600480548816958916959095179094556005805487169388169390931790925560068054861691871691909117905560078054851691861691909117905560088054841691851691909117905560098054909216921691909117905561019d565b8051600160a060020a03811681146100f057600080fd5b919050565b60008060008060008060008060006101208a8c03121561011457600080fd5b61011d8a6100d9565b985061012b60208b016100d9565b975061013960408b016100d9565b965061014760608b016100d9565b955061015560808b016100d9565b945061016360a08b016100d9565b935061017160c08b016100d9565b925061017f60e08b016100d9565b915061018e6101008b016100d9565b90509295985092959850929598565b60e9806101ab6000396000f3fe6080604052348015600f57600080fd5b5060043610604e577c01000000000000000000000000000000000000000000000000000000006000350463282b46ce81146053578063afae03ef146096575b600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff165b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60025473ffffffffffffffffffffffffffffffffffffffff16606d56fea2646970667358221220914fe3733d87c810f7cd8b674b7b7bad539db7b0d8ab1dc74ae65060504475c664736f6c63430008070033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610604e577c01000000000000000000000000000000000000000000000000000000006000350463282b46ce81146053578063afae03ef146096575b600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff165b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60025473ffffffffffffffffffffffffffffffffffffffff16606d56fea2646970667358221220914fe3733d87c810f7cd8b674b7b7bad539db7b0d8ab1dc74ae65060504475c664736f6c63430008070033",
   "immutableReferences": {},
   "generatedSources": [
     {
@@ -982,10 +982,10 @@
         535
       ],
       "CRSickness": [
-        772
+        774
       ],
       "CRSyndromesGeriatricProblems": [
-        872
+        874
       ],
       "ClinicalAssessment": [
         108
@@ -994,84 +994,84 @@
         189
       ],
       "Controller": [
-        1018
+        1020
       ],
       "Exam": [
-        562
+        564
       ],
       "Medical": [
-        2607
+        2600
       ],
       "Module": [
-        1219
+        1221
       ],
       "ModuleIdentificator": [
-        1279
+        1281
       ],
       "ModulePermissions": [
-        1248
+        1250
       ],
       "Ownable": [
-        1079
+        1081
       ],
       "Patient": [
-        2599
+        2592
       ],
       "PatologicalHistory": [
         349
       ],
       "Permisions": [
-        1214
+        1216
       ],
       "PersonalInformation": [
-        2585
+        2578
       ],
       "PhysicalExam": [
         462
       ],
       "ProfileModifier": [
-        1197
+        1199
       ],
       "Result": [
-        569
+        571
       ],
       "Role": [
-        1226
+        1228
       ],
       "RoleModules": [
-        1255
+        1257
       ],
       "RoleTypes": [
-        1204
+        1206
       ],
       "Session": [
-        1264
+        1266
       ],
       "SessionContract": [
-        2573
+        2566
       ],
       "Sickness": [
-        555
+        557
       ],
       "SyndromesGeriatricProblems": [
-        800
+        802
       ],
       "User": [
-        1237
+        1239
       ],
       "UserRole": [
-        1242
+        1244
       ],
       "UsersInformation": [
-        2915
+        2908
       ]
     },
-    "id": 1019,
+    "id": 1021,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 874,
+        "id": 876,
         "literals": [
           "solidity",
           "^",
@@ -1084,11 +1084,11 @@
       {
         "absolutePath": "project:/contracts/Ownable.sol",
         "file": "./Ownable.sol",
-        "id": 875,
+        "id": 877,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1019,
-        "sourceUnit": 1080,
+        "scope": 1021,
+        "sourceUnit": 1082,
         "src": "62:23:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1096,11 +1096,11 @@
       {
         "absolutePath": "project:/contracts/SessionContract.sol",
         "file": "./SessionContract.sol",
-        "id": 876,
+        "id": 878,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1019,
-        "sourceUnit": 2574,
+        "scope": 1021,
+        "sourceUnit": 2567,
         "src": "87:31:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1108,11 +1108,11 @@
       {
         "absolutePath": "project:/contracts/ProfileModifier.sol",
         "file": "./ProfileModifier.sol",
-        "id": 877,
+        "id": 879,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1019,
-        "sourceUnit": 1198,
+        "scope": 1021,
+        "sourceUnit": 1200,
         "src": "120:31:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1120,11 +1120,11 @@
       {
         "absolutePath": "project:/contracts/UsersInformation.sol",
         "file": "./UsersInformation.sol",
-        "id": 878,
+        "id": 880,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1019,
-        "sourceUnit": 2916,
+        "scope": 1021,
+        "sourceUnit": 2909,
         "src": "153:32:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1132,11 +1132,11 @@
       {
         "absolutePath": "project:/contracts/CRSickness.sol",
         "file": "./CRSickness.sol",
-        "id": 879,
+        "id": 881,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1019,
-        "sourceUnit": 773,
+        "scope": 1021,
+        "sourceUnit": 775,
         "src": "187:26:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1144,10 +1144,10 @@
       {
         "absolutePath": "project:/contracts/CRBiologicFunctions.sol",
         "file": "./CRBiologicFunctions.sol",
-        "id": 880,
+        "id": 882,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1019,
+        "scope": 1021,
         "sourceUnit": 91,
         "src": "215:35:7",
         "symbolAliases": [],
@@ -1156,10 +1156,10 @@
       {
         "absolutePath": "project:/contracts/CRPatologicalHistory.sol",
         "file": "./CRPatologicalHistory.sol",
-        "id": 881,
+        "id": 883,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1019,
+        "scope": 1021,
         "sourceUnit": 423,
         "src": "252:36:7",
         "symbolAliases": [],
@@ -1168,10 +1168,10 @@
       {
         "absolutePath": "project:/contracts/CRPhysicalExam.sol",
         "file": "./CRPhysicalExam.sol",
-        "id": 882,
+        "id": 884,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1019,
+        "scope": 1021,
         "sourceUnit": 536,
         "src": "290:30:7",
         "symbolAliases": [],
@@ -1180,11 +1180,11 @@
       {
         "absolutePath": "project:/contracts/CRSyndromesGeriatricProblems.sol",
         "file": "./CRSyndromesGeriatricProblems.sol",
-        "id": 883,
+        "id": 885,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1019,
-        "sourceUnit": 873,
+        "scope": 1021,
+        "sourceUnit": 875,
         "src": "322:44:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1192,10 +1192,10 @@
       {
         "absolutePath": "project:/contracts/CRClinicalAssessment.sol",
         "file": "./CRClinicalAssessment.sol",
-        "id": 884,
+        "id": 886,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1019,
+        "scope": 1021,
         "sourceUnit": 182,
         "src": "368:36:7",
         "symbolAliases": [],
@@ -1204,10 +1204,10 @@
       {
         "absolutePath": "project:/contracts/CRCommentary.sol",
         "file": "./CRCommentary.sol",
-        "id": 885,
+        "id": 887,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1019,
+        "scope": 1021,
         "sourceUnit": 328,
         "src": "406:28:7",
         "symbolAliases": [],
@@ -1218,13 +1218,13 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 887,
+              "id": 889,
               "name": "Ownable",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 1079,
+              "referencedDeclaration": 1081,
               "src": "667:7:7"
             },
-            "id": 888,
+            "id": 890,
             "nodeType": "InheritanceSpecifier",
             "src": "667:7:7"
           }
@@ -1232,16 +1232,16 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 886,
+          "id": 888,
           "nodeType": "StructuredDocumentation",
           "src": "438:204:7",
           "text": " @author Blockchain Clinic Records Team\n @dev inherits from Ownable to use modifiers\n @title Controller\n @notice Contract to mantain the deployed contract addresses on the environment"
         },
         "fullyImplemented": true,
-        "id": 1018,
+        "id": 1020,
         "linearizedBaseContracts": [
-          1018,
-          1079
+          1020,
+          1081
         ],
         "name": "Controller",
         "nameLocation": "653:10:7",
@@ -1249,33 +1249,33 @@
         "nodes": [
           {
             "constant": false,
-            "id": 891,
+            "id": 893,
             "mutability": "mutable",
             "name": "sessionContract",
             "nameLocation": "698:15:7",
             "nodeType": "VariableDeclaration",
-            "scope": 1018,
+            "scope": 1020,
             "src": "682:31:7",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_SessionContract_$2573",
+              "typeIdentifier": "t_contract$_SessionContract_$2566",
               "typeString": "contract SessionContract"
             },
             "typeName": {
-              "id": 890,
+              "id": 892,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 889,
+                "id": 891,
                 "name": "SessionContract",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 2573,
+                "referencedDeclaration": 2566,
                 "src": "682:15:7"
               },
-              "referencedDeclaration": 2573,
+              "referencedDeclaration": 2566,
               "src": "682:15:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SessionContract_$2573",
+                "typeIdentifier": "t_contract$_SessionContract_$2566",
                 "typeString": "contract SessionContract"
               }
             },
@@ -1283,33 +1283,33 @@
           },
           {
             "constant": false,
-            "id": 894,
+            "id": 896,
             "mutability": "mutable",
             "name": "usersInformation",
             "nameLocation": "737:16:7",
             "nodeType": "VariableDeclaration",
-            "scope": 1018,
+            "scope": 1020,
             "src": "720:33:7",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_UsersInformation_$2915",
+              "typeIdentifier": "t_contract$_UsersInformation_$2908",
               "typeString": "contract UsersInformation"
             },
             "typeName": {
-              "id": 893,
+              "id": 895,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 892,
+                "id": 894,
                 "name": "UsersInformation",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 2915,
+                "referencedDeclaration": 2908,
                 "src": "720:16:7"
               },
-              "referencedDeclaration": 2915,
+              "referencedDeclaration": 2908,
               "src": "720:16:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_UsersInformation_$2915",
+                "typeIdentifier": "t_contract$_UsersInformation_$2908",
                 "typeString": "contract UsersInformation"
               }
             },
@@ -1317,33 +1317,33 @@
           },
           {
             "constant": false,
-            "id": 897,
+            "id": 899,
             "mutability": "mutable",
             "name": "crSickness",
             "nameLocation": "771:10:7",
             "nodeType": "VariableDeclaration",
-            "scope": 1018,
+            "scope": 1020,
             "src": "760:21:7",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_CRSickness_$772",
+              "typeIdentifier": "t_contract$_CRSickness_$774",
               "typeString": "contract CRSickness"
             },
             "typeName": {
-              "id": 896,
+              "id": 898,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 895,
+                "id": 897,
                 "name": "CRSickness",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 772,
+                "referencedDeclaration": 774,
                 "src": "760:10:7"
               },
-              "referencedDeclaration": 772,
+              "referencedDeclaration": 774,
               "src": "760:10:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CRSickness_$772",
+                "typeIdentifier": "t_contract$_CRSickness_$774",
                 "typeString": "contract CRSickness"
               }
             },
@@ -1351,12 +1351,12 @@
           },
           {
             "constant": false,
-            "id": 900,
+            "id": 902,
             "mutability": "mutable",
             "name": "crBiologicFunctions",
             "nameLocation": "808:19:7",
             "nodeType": "VariableDeclaration",
-            "scope": 1018,
+            "scope": 1020,
             "src": "788:39:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1365,10 +1365,10 @@
               "typeString": "contract CRBiologicFunctions"
             },
             "typeName": {
-              "id": 899,
+              "id": 901,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 898,
+                "id": 900,
                 "name": "CRBiologicFunctions",
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 90,
@@ -1385,12 +1385,12 @@
           },
           {
             "constant": false,
-            "id": 903,
+            "id": 905,
             "mutability": "mutable",
             "name": "crPatologicalHistory",
             "nameLocation": "855:20:7",
             "nodeType": "VariableDeclaration",
-            "scope": 1018,
+            "scope": 1020,
             "src": "834:41:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1399,10 +1399,10 @@
               "typeString": "contract CRPatologicalHistory"
             },
             "typeName": {
-              "id": 902,
+              "id": 904,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 901,
+                "id": 903,
                 "name": "CRPatologicalHistory",
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 422,
@@ -1419,12 +1419,12 @@
           },
           {
             "constant": false,
-            "id": 906,
+            "id": 908,
             "mutability": "mutable",
             "name": "crPhysicalExam",
             "nameLocation": "897:14:7",
             "nodeType": "VariableDeclaration",
-            "scope": 1018,
+            "scope": 1020,
             "src": "882:29:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1433,10 +1433,10 @@
               "typeString": "contract CRPhysicalExam"
             },
             "typeName": {
-              "id": 905,
+              "id": 907,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 904,
+                "id": 906,
                 "name": "CRPhysicalExam",
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 535,
@@ -1453,33 +1453,33 @@
           },
           {
             "constant": false,
-            "id": 909,
+            "id": 911,
             "mutability": "mutable",
             "name": "crSyndromesGeriatricProblems",
             "nameLocation": "947:28:7",
             "nodeType": "VariableDeclaration",
-            "scope": 1018,
+            "scope": 1020,
             "src": "918:57:7",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$872",
+              "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$874",
               "typeString": "contract CRSyndromesGeriatricProblems"
             },
             "typeName": {
-              "id": 908,
+              "id": 910,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 907,
+                "id": 909,
                 "name": "CRSyndromesGeriatricProblems",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 872,
+                "referencedDeclaration": 874,
                 "src": "918:28:7"
               },
-              "referencedDeclaration": 872,
+              "referencedDeclaration": 874,
               "src": "918:28:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$872",
+                "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$874",
                 "typeString": "contract CRSyndromesGeriatricProblems"
               }
             },
@@ -1487,12 +1487,12 @@
           },
           {
             "constant": false,
-            "id": 912,
+            "id": 914,
             "mutability": "mutable",
             "name": "crClinicalAssessment",
             "nameLocation": "1003:20:7",
             "nodeType": "VariableDeclaration",
-            "scope": 1018,
+            "scope": 1020,
             "src": "982:41:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1501,10 +1501,10 @@
               "typeString": "contract CRClinicalAssessment"
             },
             "typeName": {
-              "id": 911,
+              "id": 913,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 910,
+                "id": 912,
                 "name": "CRClinicalAssessment",
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 181,
@@ -1521,12 +1521,12 @@
           },
           {
             "constant": false,
-            "id": 915,
+            "id": 917,
             "mutability": "mutable",
             "name": "crCommentary",
             "nameLocation": "1043:12:7",
             "nodeType": "VariableDeclaration",
-            "scope": 1018,
+            "scope": 1020,
             "src": "1030:25:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1535,10 +1535,10 @@
               "typeString": "contract CRCommentary"
             },
             "typeName": {
-              "id": 914,
+              "id": 916,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 913,
+                "id": 915,
                 "name": "CRCommentary",
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 327,
@@ -1555,26 +1555,26 @@
           },
           {
             "body": {
-              "id": 994,
+              "id": 996,
               "nodeType": "Block",
               "src": "1600:646:7",
               "statements": [
                 {
                   "expression": {
-                    "id": 944,
+                    "id": 946,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 940,
+                      "id": 942,
                       "name": "sessionContract",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 891,
+                      "referencedDeclaration": 893,
                       "src": "1611:15:7",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_SessionContract_$2573",
+                        "typeIdentifier": "t_contract$_SessionContract_$2566",
                         "typeString": "contract SessionContract"
                       }
                     },
@@ -1583,11 +1583,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 942,
+                          "id": 944,
                           "name": "_sessionContract",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 917,
+                          "referencedDeclaration": 919,
                           "src": "1645:16:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1602,18 +1602,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 941,
+                        "id": 943,
                         "name": "SessionContract",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2573,
+                        "referencedDeclaration": 2566,
                         "src": "1629:15:7",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_SessionContract_$2573_$",
+                          "typeIdentifier": "t_type$_t_contract$_SessionContract_$2566_$",
                           "typeString": "type(contract SessionContract)"
                         }
                       },
-                      "id": 943,
+                      "id": 945,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1624,36 +1624,36 @@
                       "src": "1629:33:7",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_SessionContract_$2573",
+                        "typeIdentifier": "t_contract$_SessionContract_$2566",
                         "typeString": "contract SessionContract"
                       }
                     },
                     "src": "1611:51:7",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_SessionContract_$2573",
+                      "typeIdentifier": "t_contract$_SessionContract_$2566",
                       "typeString": "contract SessionContract"
                     }
                   },
-                  "id": 945,
+                  "id": 947,
                   "nodeType": "ExpressionStatement",
                   "src": "1611:51:7"
                 },
                 {
                   "expression": {
-                    "id": 950,
+                    "id": 952,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 946,
+                      "id": 948,
                       "name": "usersInformation",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 894,
+                      "referencedDeclaration": 896,
                       "src": "1673:16:7",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_UsersInformation_$2915",
+                        "typeIdentifier": "t_contract$_UsersInformation_$2908",
                         "typeString": "contract UsersInformation"
                       }
                     },
@@ -1662,11 +1662,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 948,
+                          "id": 950,
                           "name": "_usersInformation",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 919,
+                          "referencedDeclaration": 921,
                           "src": "1709:17:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1681,18 +1681,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 947,
+                        "id": 949,
                         "name": "UsersInformation",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2915,
+                        "referencedDeclaration": 2908,
                         "src": "1692:16:7",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_UsersInformation_$2915_$",
+                          "typeIdentifier": "t_type$_t_contract$_UsersInformation_$2908_$",
                           "typeString": "type(contract UsersInformation)"
                         }
                       },
-                      "id": 949,
+                      "id": 951,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1703,36 +1703,36 @@
                       "src": "1692:35:7",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_UsersInformation_$2915",
+                        "typeIdentifier": "t_contract$_UsersInformation_$2908",
                         "typeString": "contract UsersInformation"
                       }
                     },
                     "src": "1673:54:7",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_UsersInformation_$2915",
+                      "typeIdentifier": "t_contract$_UsersInformation_$2908",
                       "typeString": "contract UsersInformation"
                     }
                   },
-                  "id": 951,
+                  "id": 953,
                   "nodeType": "ExpressionStatement",
                   "src": "1673:54:7"
                 },
                 {
                   "expression": {
-                    "id": 956,
+                    "id": 958,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 952,
+                      "id": 954,
                       "name": "crSickness",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 897,
+                      "referencedDeclaration": 899,
                       "src": "1738:10:7",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CRSickness_$772",
+                        "typeIdentifier": "t_contract$_CRSickness_$774",
                         "typeString": "contract CRSickness"
                       }
                     },
@@ -1741,11 +1741,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 954,
+                          "id": 956,
                           "name": "_crSickness",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 921,
+                          "referencedDeclaration": 923,
                           "src": "1762:11:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1760,18 +1760,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 953,
+                        "id": 955,
                         "name": "CRSickness",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 772,
+                        "referencedDeclaration": 774,
                         "src": "1751:10:7",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_CRSickness_$772_$",
+                          "typeIdentifier": "t_type$_t_contract$_CRSickness_$774_$",
                           "typeString": "type(contract CRSickness)"
                         }
                       },
-                      "id": 955,
+                      "id": 957,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1782,33 +1782,33 @@
                       "src": "1751:23:7",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CRSickness_$772",
+                        "typeIdentifier": "t_contract$_CRSickness_$774",
                         "typeString": "contract CRSickness"
                       }
                     },
                     "src": "1738:36:7",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_CRSickness_$772",
+                      "typeIdentifier": "t_contract$_CRSickness_$774",
                       "typeString": "contract CRSickness"
                     }
                   },
-                  "id": 957,
+                  "id": 959,
                   "nodeType": "ExpressionStatement",
                   "src": "1738:36:7"
                 },
                 {
                   "expression": {
-                    "id": 962,
+                    "id": 964,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 958,
+                      "id": 960,
                       "name": "crBiologicFunctions",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 900,
+                      "referencedDeclaration": 902,
                       "src": "1785:19:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_CRBiologicFunctions_$90",
@@ -1820,11 +1820,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 960,
+                          "id": 962,
                           "name": "_crBiologicFunctions",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 923,
+                          "referencedDeclaration": 925,
                           "src": "1827:20:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1839,7 +1839,7 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 959,
+                        "id": 961,
                         "name": "CRBiologicFunctions",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -1850,7 +1850,7 @@
                           "typeString": "type(contract CRBiologicFunctions)"
                         }
                       },
-                      "id": 961,
+                      "id": 963,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1871,23 +1871,23 @@
                       "typeString": "contract CRBiologicFunctions"
                     }
                   },
-                  "id": 963,
+                  "id": 965,
                   "nodeType": "ExpressionStatement",
                   "src": "1785:63:7"
                 },
                 {
                   "expression": {
-                    "id": 968,
+                    "id": 970,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 964,
+                      "id": 966,
                       "name": "crPatologicalHistory",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 903,
+                      "referencedDeclaration": 905,
                       "src": "1859:20:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_CRPatologicalHistory_$422",
@@ -1899,11 +1899,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 966,
+                          "id": 968,
                           "name": "_crPatologicalHistory",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 925,
+                          "referencedDeclaration": 927,
                           "src": "1903:21:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1918,7 +1918,7 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 965,
+                        "id": 967,
                         "name": "CRPatologicalHistory",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -1929,7 +1929,7 @@
                           "typeString": "type(contract CRPatologicalHistory)"
                         }
                       },
-                      "id": 967,
+                      "id": 969,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1950,23 +1950,23 @@
                       "typeString": "contract CRPatologicalHistory"
                     }
                   },
-                  "id": 969,
+                  "id": 971,
                   "nodeType": "ExpressionStatement",
                   "src": "1859:66:7"
                 },
                 {
                   "expression": {
-                    "id": 974,
+                    "id": 976,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 970,
+                      "id": 972,
                       "name": "crPhysicalExam",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 906,
+                      "referencedDeclaration": 908,
                       "src": "1936:14:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_CRPhysicalExam_$535",
@@ -1978,11 +1978,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 972,
+                          "id": 974,
                           "name": "_crPhysicalExam",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 927,
+                          "referencedDeclaration": 929,
                           "src": "1968:15:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1997,7 +1997,7 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 971,
+                        "id": 973,
                         "name": "CRPhysicalExam",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -2008,7 +2008,7 @@
                           "typeString": "type(contract CRPhysicalExam)"
                         }
                       },
-                      "id": 973,
+                      "id": 975,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2029,26 +2029,26 @@
                       "typeString": "contract CRPhysicalExam"
                     }
                   },
-                  "id": 975,
+                  "id": 977,
                   "nodeType": "ExpressionStatement",
                   "src": "1936:48:7"
                 },
                 {
                   "expression": {
-                    "id": 980,
+                    "id": 982,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 976,
+                      "id": 978,
                       "name": "crSyndromesGeriatricProblems",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 909,
+                      "referencedDeclaration": 911,
                       "src": "1995:28:7",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$872",
+                        "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$874",
                         "typeString": "contract CRSyndromesGeriatricProblems"
                       }
                     },
@@ -2057,11 +2057,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 978,
+                          "id": 980,
                           "name": "_crSyndromeGeriatricProblems",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 929,
+                          "referencedDeclaration": 931,
                           "src": "2069:28:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2076,18 +2076,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 977,
+                        "id": 979,
                         "name": "CRSyndromesGeriatricProblems",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 872,
+                        "referencedDeclaration": 874,
                         "src": "2026:28:7",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_CRSyndromesGeriatricProblems_$872_$",
+                          "typeIdentifier": "t_type$_t_contract$_CRSyndromesGeriatricProblems_$874_$",
                           "typeString": "type(contract CRSyndromesGeriatricProblems)"
                         }
                       },
-                      "id": 979,
+                      "id": 981,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2098,33 +2098,33 @@
                       "src": "2026:82:7",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$872",
+                        "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$874",
                         "typeString": "contract CRSyndromesGeriatricProblems"
                       }
                     },
                     "src": "1995:113:7",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$872",
+                      "typeIdentifier": "t_contract$_CRSyndromesGeriatricProblems_$874",
                       "typeString": "contract CRSyndromesGeriatricProblems"
                     }
                   },
-                  "id": 981,
+                  "id": 983,
                   "nodeType": "ExpressionStatement",
                   "src": "1995:113:7"
                 },
                 {
                   "expression": {
-                    "id": 986,
+                    "id": 988,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 982,
+                      "id": 984,
                       "name": "crClinicalAssessment",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 912,
+                      "referencedDeclaration": 914,
                       "src": "2119:20:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_CRClinicalAssessment_$181",
@@ -2136,11 +2136,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 984,
+                          "id": 986,
                           "name": "_crClinicalAssessment",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 931,
+                          "referencedDeclaration": 933,
                           "src": "2163:21:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2155,7 +2155,7 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 983,
+                        "id": 985,
                         "name": "CRClinicalAssessment",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -2166,7 +2166,7 @@
                           "typeString": "type(contract CRClinicalAssessment)"
                         }
                       },
-                      "id": 985,
+                      "id": 987,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2187,23 +2187,23 @@
                       "typeString": "contract CRClinicalAssessment"
                     }
                   },
-                  "id": 987,
+                  "id": 989,
                   "nodeType": "ExpressionStatement",
                   "src": "2119:66:7"
                 },
                 {
                   "expression": {
-                    "id": 992,
+                    "id": 994,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 988,
+                      "id": 990,
                       "name": "crCommentary",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 915,
+                      "referencedDeclaration": 917,
                       "src": "2196:12:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_CRCommentary_$327",
@@ -2215,11 +2215,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 990,
+                          "id": 992,
                           "name": "_crCommentary",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 933,
+                          "referencedDeclaration": 935,
                           "src": "2224:13:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2234,7 +2234,7 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 989,
+                        "id": 991,
                         "name": "CRCommentary",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -2245,7 +2245,7 @@
                           "typeString": "type(contract CRCommentary)"
                         }
                       },
-                      "id": 991,
+                      "id": 993,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2266,13 +2266,13 @@
                       "typeString": "contract CRCommentary"
                     }
                   },
-                  "id": 993,
+                  "id": 995,
                   "nodeType": "ExpressionStatement",
                   "src": "2196:42:7"
                 }
               ]
             },
-            "id": 995,
+            "id": 997,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
@@ -2280,7 +2280,7 @@
                 "arguments": [
                   {
                     "expression": {
-                      "id": 936,
+                      "id": 938,
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
@@ -2291,7 +2291,7 @@
                         "typeString": "msg"
                       }
                     },
-                    "id": 937,
+                    "id": 939,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2305,13 +2305,13 @@
                     }
                   }
                 ],
-                "id": 938,
+                "id": 940,
                 "kind": "baseConstructorSpecifier",
                 "modifierName": {
-                  "id": 935,
+                  "id": 937,
                   "name": "Ownable",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1079,
+                  "referencedDeclaration": 1081,
                   "src": "1580:7:7"
                 },
                 "nodeType": "ModifierInvocation",
@@ -2322,17 +2322,17 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 934,
+              "id": 936,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 917,
+                  "id": 919,
                   "mutability": "mutable",
                   "name": "_sessionContract",
                   "nameLocation": "1258:16:7",
                   "nodeType": "VariableDeclaration",
-                  "scope": 995,
+                  "scope": 997,
                   "src": "1250:24:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2341,7 +2341,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 916,
+                    "id": 918,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1250:7:7",
@@ -2355,12 +2355,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 919,
+                  "id": 921,
                   "mutability": "mutable",
                   "name": "_usersInformation",
                   "nameLocation": "1293:17:7",
                   "nodeType": "VariableDeclaration",
-                  "scope": 995,
+                  "scope": 997,
                   "src": "1285:25:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2369,7 +2369,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 918,
+                    "id": 920,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1285:7:7",
@@ -2383,12 +2383,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 921,
+                  "id": 923,
                   "mutability": "mutable",
                   "name": "_crSickness",
                   "nameLocation": "1329:11:7",
                   "nodeType": "VariableDeclaration",
-                  "scope": 995,
+                  "scope": 997,
                   "src": "1321:19:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2397,7 +2397,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 920,
+                    "id": 922,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1321:7:7",
@@ -2411,12 +2411,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 923,
+                  "id": 925,
                   "mutability": "mutable",
                   "name": "_crBiologicFunctions",
                   "nameLocation": "1359:20:7",
                   "nodeType": "VariableDeclaration",
-                  "scope": 995,
+                  "scope": 997,
                   "src": "1351:28:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2425,7 +2425,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 922,
+                    "id": 924,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1351:7:7",
@@ -2439,12 +2439,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 925,
+                  "id": 927,
                   "mutability": "mutable",
                   "name": "_crPatologicalHistory",
                   "nameLocation": "1398:21:7",
                   "nodeType": "VariableDeclaration",
-                  "scope": 995,
+                  "scope": 997,
                   "src": "1390:29:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2453,7 +2453,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 924,
+                    "id": 926,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1390:7:7",
@@ -2467,12 +2467,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 927,
+                  "id": 929,
                   "mutability": "mutable",
                   "name": "_crPhysicalExam",
                   "nameLocation": "1438:15:7",
                   "nodeType": "VariableDeclaration",
-                  "scope": 995,
+                  "scope": 997,
                   "src": "1430:23:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2481,7 +2481,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 926,
+                    "id": 928,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1430:7:7",
@@ -2495,12 +2495,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 929,
+                  "id": 931,
                   "mutability": "mutable",
                   "name": "_crSyndromeGeriatricProblems",
                   "nameLocation": "1472:28:7",
                   "nodeType": "VariableDeclaration",
-                  "scope": 995,
+                  "scope": 997,
                   "src": "1464:36:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2509,7 +2509,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 928,
+                    "id": 930,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1464:7:7",
@@ -2523,12 +2523,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 931,
+                  "id": 933,
                   "mutability": "mutable",
                   "name": "_crClinicalAssessment",
                   "nameLocation": "1519:21:7",
                   "nodeType": "VariableDeclaration",
-                  "scope": 995,
+                  "scope": 997,
                   "src": "1511:29:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2537,7 +2537,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 930,
+                    "id": 932,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1511:7:7",
@@ -2551,12 +2551,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 933,
+                  "id": 935,
                   "mutability": "mutable",
                   "name": "_crCommentary",
                   "nameLocation": "1559:13:7",
                   "nodeType": "VariableDeclaration",
-                  "scope": 995,
+                  "scope": 997,
                   "src": "1551:21:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2565,7 +2565,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 932,
+                    "id": 934,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1551:7:7",
@@ -2581,12 +2581,12 @@
               "src": "1239:340:7"
             },
             "returnParameters": {
-              "id": 939,
+              "id": 941,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1600:0:7"
             },
-            "scope": 1018,
+            "scope": 1020,
             "src": "1228:1018:7",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -2594,7 +2594,7 @@
           },
           {
             "body": {
-              "id": 1005,
+              "id": 1007,
               "nodeType": "Block",
               "src": "2323:50:7",
               "statements": [
@@ -2602,14 +2602,14 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 1002,
+                        "id": 1004,
                         "name": "sessionContract",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 891,
+                        "referencedDeclaration": 893,
                         "src": "2349:15:7",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_SessionContract_$2573",
+                          "typeIdentifier": "t_contract$_SessionContract_$2566",
                           "typeString": "contract SessionContract"
                         }
                       }
@@ -2617,11 +2617,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_SessionContract_$2573",
+                          "typeIdentifier": "t_contract$_SessionContract_$2566",
                           "typeString": "contract SessionContract"
                         }
                       ],
-                      "id": 1001,
+                      "id": 1003,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2633,14 +2633,14 @@
                         "typeString": "type(address)"
                       },
                       "typeName": {
-                        "id": 1000,
+                        "id": 1002,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "2341:7:7",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 1003,
+                    "id": 1005,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2655,15 +2655,15 @@
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 999,
-                  "id": 1004,
+                  "functionReturnParameters": 1001,
+                  "id": 1006,
                   "nodeType": "Return",
                   "src": "2334:31:7"
                 }
               ]
             },
             "functionSelector": "282b46ce",
-            "id": 1006,
+            "id": 1008,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -2671,23 +2671,23 @@
             "nameLocation": "2263:25:7",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 996,
+              "id": 998,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2288:2:7"
             },
             "returnParameters": {
-              "id": 999,
+              "id": 1001,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 998,
+                  "id": 1000,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1006,
+                  "scope": 1008,
                   "src": "2314:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2696,7 +2696,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 997,
+                    "id": 999,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2314:7:7",
@@ -2711,7 +2711,7 @@
               ],
               "src": "2313:9:7"
             },
-            "scope": 1018,
+            "scope": 1020,
             "src": "2254:119:7",
             "stateMutability": "view",
             "virtual": false,
@@ -2719,7 +2719,7 @@
           },
           {
             "body": {
-              "id": 1016,
+              "id": 1018,
               "nodeType": "Block",
               "src": "2444:51:7",
               "statements": [
@@ -2727,14 +2727,14 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 1013,
+                        "id": 1015,
                         "name": "usersInformation",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 894,
+                        "referencedDeclaration": 896,
                         "src": "2470:16:7",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_UsersInformation_$2915",
+                          "typeIdentifier": "t_contract$_UsersInformation_$2908",
                           "typeString": "contract UsersInformation"
                         }
                       }
@@ -2742,11 +2742,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_UsersInformation_$2915",
+                          "typeIdentifier": "t_contract$_UsersInformation_$2908",
                           "typeString": "contract UsersInformation"
                         }
                       ],
-                      "id": 1012,
+                      "id": 1014,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2758,14 +2758,14 @@
                         "typeString": "type(address)"
                       },
                       "typeName": {
-                        "id": 1011,
+                        "id": 1013,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "2462:7:7",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 1014,
+                    "id": 1016,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2780,15 +2780,15 @@
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 1010,
-                  "id": 1015,
+                  "functionReturnParameters": 1012,
+                  "id": 1017,
                   "nodeType": "Return",
                   "src": "2455:32:7"
                 }
               ]
             },
             "functionSelector": "afae03ef",
-            "id": 1017,
+            "id": 1019,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -2796,23 +2796,23 @@
             "nameLocation": "2390:19:7",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1007,
+              "id": 1009,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2409:2:7"
             },
             "returnParameters": {
-              "id": 1010,
+              "id": 1012,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1009,
+                  "id": 1011,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1017,
+                  "scope": 1019,
                   "src": "2435:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2821,7 +2821,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1008,
+                    "id": 1010,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2435:7:7",
@@ -2836,14 +2836,14 @@
               ],
               "src": "2434:9:7"
             },
-            "scope": 1018,
+            "scope": 1020,
             "src": "2381:114:7",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1019,
+        "scope": 1021,
         "src": "644:1854:7",
         "usedErrors": []
       }
@@ -2856,7 +2856,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-10-26T04:05:26.491Z",
+  "updatedAt": "2023-03-25T17:18:28.675Z",
   "devdoc": {
     "author": "Blockchain Clinic Records Team",
     "details": "inherits from Ownable to use modifiers",

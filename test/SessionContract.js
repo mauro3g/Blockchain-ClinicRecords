@@ -17,7 +17,7 @@ contract("SessionContract", (accounts) => {
         this.sessionContract = await SessionContract.deployed()
     })
 
-    it('migrate deployed successfully', async () => {
+    it('contract deployed successfully', async () => {
         const address = this.sessionContract.address
         assert.notEqual(address, null)
         assert.notEqual(address, undefined)
@@ -79,7 +79,6 @@ contract("SessionContract", (accounts) => {
         mockArray.push(userAdmin)
         mockArray.push(userDoctor)
 
-        //assert.equal(objectsEqual(userAdmin, resultContract[0]), true)
         assert.equal(arraysEqual(mockArray, resultContract), true)
         // wrap what you want to debug with `debug()`:
         //await debug(this.sessionContract.getUsers({ from: accounts[0] }));
@@ -88,7 +87,7 @@ contract("SessionContract", (accounts) => {
     it('should not retrieve users', async () => {
         const userAccount = accounts[1]
         let err = null
-        let errMessage = "asdas"
+        let errMessage = ""
 
         try {
             await this.sessionContract.getUsers({ from: userAccount })
@@ -99,5 +98,343 @@ contract("SessionContract", (accounts) => {
 
         assert.ok(err instanceof Error)
         assert.equal(errMessage.includes("sender is not an admin"), true)
+    })
+
+    it('should retrieve modules', async () => {
+        const sender = accounts[0]
+        const resultContract = await this.sessionContract.getModules({ from: sender })
+
+        const mockArray = [
+            {
+                id: "1",
+                name: "Usuarios"
+            },
+            {
+                id: "2",
+                name: "Doctores"
+            },
+            {
+                id: "3",
+                name: "Enfermeras"
+            },
+            {
+                id: "4",
+                name: "Pacientes"
+            },
+            {
+                id: "5",
+                name: "Informacion de Medicos"
+            },
+            {
+                id: "6",
+                name: "Examenes - Resultados"
+            },
+            {
+                id: "7",
+                name: "Enfermedades"
+            },
+            {
+                id: "8",
+                name: "Funciones Biologicas"
+            },
+            {
+                id: "9",
+                name: "Historial Patologico"
+            },
+            {
+                id: "10",
+                name: "Examen Fisico"
+            },
+            {
+                id: "11",
+                name: "Sindromes y problemas geriatricos"
+            },
+            {
+                id: "12",
+                name: "Registro Clinico"
+            },
+            {
+                id: "13",
+                name: "Comentarios"
+            },
+        ]
+
+        assert.equal(arraysEqual(mockArray, resultContract), true)
+    })
+
+    it('should retrieve roles', async () => {
+        const sender = accounts[0]
+        const resultContract = await this.sessionContract.getRoles({ from: sender })
+
+        const mockArray = [
+            {
+                id: "1",
+                name: "Administrador",
+                description: "Permisos para gestionar usuarios"
+            },
+            {
+                id: "2",
+                name: "Doctor",
+                description: "Usuario para agregar historias clinicas"
+            },
+            {
+                id: "3",
+                name: "Enfermera",
+                description: "Usuario asignado para enfermeras"
+            },
+        ]
+
+        assert.equal(arraysEqual(mockArray, resultContract), true)
+    })
+
+    it('should retrieve user roles', async () => {
+        const sender = accounts[0]
+        const resultContract = await this.sessionContract.getUserRoles({ from: sender })
+
+        const mockArray = [
+            {
+                userId: "1",
+                roleId: "1",
+            },
+            {
+                userId: "2",
+                roleId: "2",
+            },
+        ]
+
+        assert.equal(arraysEqual(mockArray, resultContract), true)
+    })
+
+    it('should not retrieve user roles', async () => {
+        const userAccount = accounts[1]
+        let err = null
+        let errMessage = ""
+
+        try {
+            await this.sessionContract.getUserRoles({ from: userAccount })
+        } catch (error) {
+            err = error
+            errMessage = errMessage + error.toString()
+        }
+
+        assert.ok(err instanceof Error)
+        assert.equal(errMessage.includes("sender is not an admin"), true)
+    })
+
+    it('should retrieve role modules', async () => {
+        const sender = accounts[0]
+        const resultContract = await this.sessionContract.getRoleModules({ from: sender })
+
+        const mockArray = [
+            {
+                roleId: "1",
+                modulePermissions: [
+                    {
+                        moduleId: "1",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "2",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "3",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "5",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                ]
+            },
+            {
+                roleId: "2",
+                modulePermissions: [
+                    {
+                        moduleId: "4",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "6",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "7",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "8",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "9",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "10",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "11",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "12",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "13",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                ]
+            },
+            {
+                roleId: "3",
+                modulePermissions: [
+                    {
+                        moduleId: "4",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "6",
+                        permisions: {
+                            create: false,
+                            modify: false,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "7",
+                        permisions: {
+                            create: false,
+                            modify: false,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "8",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "9",
+                        permisions: {
+                            create: false,
+                            modify: false,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "10",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "11",
+                        permisions: {
+                            create: false,
+                            modify: false,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "12",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                    {
+                        moduleId: "13",
+                        permisions: {
+                            create: true,
+                            modify: true,
+                            visualize: true
+                        }
+                    },
+                ]
+            },
+        ]
+
+        assert.equal(resultContract[0].roleId, mockArray[0].roleId)
+        assert.equal(resultContract[1].roleId, mockArray[1].roleId)
+        assert.equal(resultContract[2].roleId, mockArray[2].roleId)
+    })
+
+    it('should retrieve success login', async () => {
+        const sender = accounts[0]
+        const resultContract = await this.sessionContract.login("admin", "admin", { from: sender })
+
+        const mockResult = {
+            userId: "1",
+            username: "admin",
+            state: true,
+            roleId: "1"
+        }
+
+        assert.equal(objectsEqual(mockResult, resultContract), true)
     })
 })

@@ -325,15 +325,15 @@
     "absolutePath": "project:/contracts/Ownable.sol",
     "exportedSymbols": {
       "Ownable": [
-        1079
+        1081
       ]
     },
-    "id": 1080,
+    "id": 1082,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1053,
+        "id": 1055,
         "literals": [
           "solidity",
           "^",
@@ -349,15 +349,15 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 1054,
+          "id": 1056,
           "nodeType": "StructuredDocumentation",
           "src": "62:119:9",
           "text": " @author Blockchain Clinic Records Team\n @title Ownable\n @notice Contract to mantain a contract owner"
         },
         "fullyImplemented": true,
-        "id": 1079,
+        "id": 1081,
         "linearizedBaseContracts": [
-          1079
+          1081
         ],
         "name": "Ownable",
         "nameLocation": "192:7:9",
@@ -365,12 +365,12 @@
         "nodes": [
           {
             "constant": false,
-            "id": 1056,
+            "id": 1058,
             "mutability": "mutable",
             "name": "ownerAddress",
             "nameLocation": "224:12:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1079,
+            "scope": 1081,
             "src": "207:29:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -379,7 +379,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1055,
+              "id": 1057,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "207:7:9",
@@ -393,23 +393,23 @@
           },
           {
             "body": {
-              "id": 1065,
+              "id": 1067,
               "nodeType": "Block",
               "src": "283:47:9",
               "statements": [
                 {
                   "expression": {
-                    "id": 1063,
+                    "id": 1065,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 1061,
+                      "id": 1063,
                       "name": "ownerAddress",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1056,
+                      "referencedDeclaration": 1058,
                       "src": "294:12:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -419,11 +419,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 1062,
+                      "id": 1064,
                       "name": "_ownerAddress",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1058,
+                      "referencedDeclaration": 1060,
                       "src": "309:13:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -436,13 +436,13 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 1064,
+                  "id": 1066,
                   "nodeType": "ExpressionStatement",
                   "src": "294:28:9"
                 }
               ]
             },
-            "id": 1066,
+            "id": 1068,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -450,17 +450,17 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1059,
+              "id": 1061,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1058,
+                  "id": 1060,
                   "mutability": "mutable",
                   "name": "_ownerAddress",
                   "nameLocation": "269:13:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1066,
+                  "scope": 1068,
                   "src": "261:21:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -469,7 +469,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1057,
+                    "id": 1059,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "261:7:9",
@@ -485,12 +485,12 @@
               "src": "260:23:9"
             },
             "returnParameters": {
-              "id": 1060,
+              "id": 1062,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "283:0:9"
             },
-            "scope": 1079,
+            "scope": 1081,
             "src": "249:81:9",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -498,7 +498,7 @@
           },
           {
             "body": {
-              "id": 1077,
+              "id": 1079,
               "nodeType": "Block",
               "src": "360:91:9",
               "statements": [
@@ -510,17 +510,17 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 1072,
+                        "id": 1074,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 1069,
+                          "id": 1071,
                           "name": "ownerAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1056,
+                          "referencedDeclaration": 1058,
                           "src": "379:12:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -531,7 +531,7 @@
                         "operator": "==",
                         "rightExpression": {
                           "expression": {
-                            "id": 1070,
+                            "id": 1072,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -542,7 +542,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 1071,
+                          "id": 1073,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -563,7 +563,7 @@
                       },
                       {
                         "hexValue": "796f7520617265206e6f7420746865206f776e6572",
-                        "id": 1073,
+                        "id": 1075,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -589,7 +589,7 @@
                           "typeString": "literal_string \"you are not the owner\""
                         }
                       ],
-                      "id": 1068,
+                      "id": 1070,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -603,7 +603,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1074,
+                    "id": 1076,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -618,23 +618,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1075,
+                  "id": 1077,
                   "nodeType": "ExpressionStatement",
                   "src": "371:60:9"
                 },
                 {
-                  "id": 1076,
+                  "id": 1078,
                   "nodeType": "PlaceholderStatement",
                   "src": "442:1:9"
                 }
               ]
             },
-            "id": 1078,
+            "id": 1080,
             "name": "isOwner",
             "nameLocation": "351:7:9",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1067,
+              "id": 1069,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "358:2:9"
@@ -644,7 +644,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 1080,
+        "scope": 1082,
         "src": "183:271:9",
         "usedErrors": []
       }
@@ -657,7 +657,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-10-26T04:05:26.495Z",
+  "updatedAt": "2023-03-25T17:18:28.684Z",
   "devdoc": {
     "author": "Blockchain Clinic Records Team",
     "kind": "dev",
