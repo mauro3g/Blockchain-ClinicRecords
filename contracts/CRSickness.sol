@@ -4,8 +4,8 @@ pragma solidity ^0.8.7;
 import "./ProfileModifier.sol";
 
 struct Sickness {
-    uint256 registerDate;
-    uint256 initialDate;
+    int256 registerDate;
+    int256 initialDate;
     string sicknessName;
     string diagnostic;
     string startWay;
@@ -16,13 +16,13 @@ struct Sickness {
 }
 
 struct Exam {
-    uint256 date;
+    int256 date;
     string examName;
     string examDetail;
 }
 
 struct Result {
-    uint256 date;
+    int256 date;
     string examName;
     string resultDetail;
 }

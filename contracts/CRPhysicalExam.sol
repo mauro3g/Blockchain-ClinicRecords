@@ -4,7 +4,7 @@ pragma solidity ^0.8.7;
 import "./ProfileModifier.sol";
 
 struct PhysicalExam {
-    uint256 date;
+    int256 date;
     string bloodPressure;
     string heartRate;
     string breathingFrequency;

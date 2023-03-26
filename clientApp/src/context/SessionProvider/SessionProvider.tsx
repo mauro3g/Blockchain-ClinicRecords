@@ -128,6 +128,10 @@ const SessionProvider = ({ children }) => {
       if (e.message.toString().includes("Invalid username or password")) {
         throw new Error("Nombre de usuario o contraseña inválidos");
       }
+      else if (e.message.toString().includes("revert Disabled user")) {
+        
+        throw new Error("Usuario Inactivo");
+      }
     }
   };
 

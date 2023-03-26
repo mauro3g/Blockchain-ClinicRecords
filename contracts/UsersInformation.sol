@@ -6,7 +6,7 @@ import "./ProfileModifier.sol";
 struct PersonalInformation {
     string name;
     uint256 identificationNumber;
-    uint256 birthDate;
+    int256 birthDate;
     string gender;
 }
 
@@ -55,7 +55,7 @@ contract UsersInformation is ProfileModifier {
     function putPersonalInformation(
         string memory _name,
         uint256 _identificationNumber,
-        uint256 _birthDate,
+        int256 _birthDate,
         string memory _gender
     ) internal pure returns (PersonalInformation memory) {
         PersonalInformation memory _personalInformation;
@@ -86,7 +86,7 @@ contract UsersInformation is ProfileModifier {
         address sessionContractAddress,
         uint256 _identificationNumber,
         string memory _name,
-        uint256 _birthDate,
+        int256 _birthDate,
         string memory _gender,
         string memory _maritalStatus,
         string memory _occupation,
@@ -164,7 +164,7 @@ contract UsersInformation is ProfileModifier {
         uint256 userId,
         string memory _name,
         uint256 _identificationNumber,
-        uint256 _birthDate,
+        int256 _birthDate,
         string memory _gender,
         string memory _speciality
     ) external isAdmin(msg.sender, sessionContractAddress) {

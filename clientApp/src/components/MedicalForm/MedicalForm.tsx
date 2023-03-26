@@ -93,7 +93,7 @@ const MedicalForm = (props: Props) => {
       await requestRegisterMedicalsInfo(newUser);
       await getMedicals();
       updateValues(initialFormValues);
-      const message = isNurse ? "Enfermera registrada" : "dico registrado!";
+      const message = isNurse ? "Enfermera registrada" : "Médico registrado!";
       setMessageConfig({
         open: true,
         message: message,

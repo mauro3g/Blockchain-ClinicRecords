@@ -94,7 +94,7 @@ const PatientsForm = (props: Props) => {
       updateValues(initialFormValues);
       setMessageConfig({
         open: true,
-        message: "Medico registrado!",
+        message: "Paciente registrado!",
         severity: "success",
       });
       setLoading(false);

@@ -71,6 +71,8 @@ const EthNetworkProvider = ({ children }) => {
               console.log("change");
               const _accounts = await web3.eth.requestAccounts();
               //setAccounts(_accounts);
+              console.log(_accounts);
+              
               setCurrentAccount(_accounts[0]);
             }
           });

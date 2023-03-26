@@ -16,7 +16,7 @@
   "sourceMap": "270:2254:10:-:0;;;302:16;;;;;;;;;;270:2254;;;;;;",
   "deployedSourceMap": "270:2254:10:-:0;;;;;",
   "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.7;\r\n\r\nimport \"./RoleTypes.sol\";\r\nimport \"./SessionContract.sol\";\r\n\r\n/**\r\n * @author Blockchain Clinic Records Team\r\n * @title ProfileModifier\r\n * @notice Contract to use modifiers which validates users roles\r\n */\r\ncontract ProfileModifier {\r\n    constructor() {}\r\n\r\n    /**\r\n     * @notice modifier that validates if a user has an administrator role\r\n     * @param _sender user address eoa\r\n     * @param sessionContract address of the deployed SessionContract instance\r\n     */\r\n    modifier isAdmin(address _sender, address sessionContract) {\r\n        require(\r\n            SessionContract(sessionContract).validateUser(\r\n                _sender,\r\n                uint256(RoleTypes.ADMIN)\r\n            ),\r\n            \"sender is not an admin\"\r\n        );\r\n        _;\r\n    }\r\n\r\n    /**\r\n     * @notice modifier that validates if a user has a doctor role\r\n     * @param _sender user address eoa\r\n     * @param sessionContract address of the deployed SessionContract instance\r\n     */\r\n    modifier isDoctor(address _sender, address sessionContract) {\r\n        require(\r\n            SessionContract(sessionContract).validateUser(\r\n                _sender,\r\n                uint256(RoleTypes.DOCTOR)\r\n            ),\r\n            \"sender is not a doctor\"\r\n        );\r\n        _;\r\n    }\r\n\r\n    /**\r\n     * @notice modifier that validates if a user has a nurse role\r\n     * @param _sender user address eoa\r\n     * @param sessionContract address of the deployed SessionContract instance\r\n     */\r\n    modifier isNurse(address _sender, address sessionContract) {\r\n        require(\r\n            SessionContract(sessionContract).validateUser(\r\n                _sender,\r\n                uint256(RoleTypes.NURSE)\r\n            ),\r\n            \"sender is not a nurse\"\r\n        );\r\n        _;\r\n    }\r\n\r\n    /**\r\n     * @notice modifier that validates if a user has a nurse or doctor role\r\n     * @param _sender user address eoa\r\n     * @param sessionContract address of the deployed SessionContract instance\r\n     */\r\n    modifier isMedical(address _sender, address sessionContract) {\r\n        require(\r\n            SessionContract(sessionContract).validateUser(\r\n                _sender,\r\n                uint256(RoleTypes.DOCTOR)\r\n            ) ||\r\n                SessionContract(sessionContract).validateUser(\r\n                    _sender,\r\n                    uint256(RoleTypes.NURSE)\r\n                ),\r\n            \"sender is not a medical\"\r\n        );\r\n        _;\r\n    }\r\n}\r\n",
-  "sourcePath": "D:\\Documents\\React\\Tesis Historias Clinicas\\contracts\\ProfileModifier.sol",
+  "sourcePath": "D:\\Tesis Historia Geriatrica\\Blockchain-ClinicRecords\\contracts\\ProfileModifier.sol",
   "ast": {
     "absolutePath": "project:/contracts/ProfileModifier.sol",
     "exportedSymbols": {
@@ -1666,7 +1666,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2023-03-25T17:18:28.686Z",
+  "updatedAt": "2023-03-26T15:45:17.922Z",
   "devdoc": {
     "author": "Blockchain Clinic Records Team",
     "kind": "dev",

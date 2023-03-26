@@ -4,7 +4,7 @@ pragma solidity ^0.8.7;
 import "./ProfileModifier.sol";
 
 struct Commentary {
-    uint256 date;
+    int256 date;
     string comment;
 }
 

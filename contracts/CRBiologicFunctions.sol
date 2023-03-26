@@ -4,7 +4,7 @@ pragma solidity ^0.8.7;
 import "./ProfileModifier.sol";
 
 struct BiologicFunctions {
-    uint256 date;
+    int256 date;
     string urination;
     string stools;
     string appetite;

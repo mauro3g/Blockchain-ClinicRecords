@@ -320,7 +320,7 @@
   "sourceMap": "183:271:9:-:0;;;249:81;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;294:12;:28;;-1:-1:-1;;;;;;294:28:9;-1:-1:-1;;;;;294:28:9;;;;;;;;;;183:271;;14:290:14;84:6;137:2;125:9;116:7;112:23;108:32;105:52;;;153:1;150;143:12;105:52;179:16;;-1:-1:-1;;;;;224:31:14;;214:42;;204:70;;270:1;267;260:12;204:70;293:5;14:290;-1:-1:-1;;;14:290:14:o;:::-;183:271:9;;;;;;",
   "deployedSourceMap": "183:271:9:-:0;;;;;",
   "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.7;\r\n\r\n/**\r\n * @author Blockchain Clinic Records Team\r\n * @title Ownable\r\n * @notice Contract to mantain a contract owner\r\n */\r\ncontract Ownable {\r\n    address internal ownerAddress;\r\n    \r\n    constructor(address _ownerAddress){\r\n        ownerAddress = _ownerAddress;\r\n    }\r\n    \r\n    modifier isOwner(){\r\n        require(ownerAddress == msg.sender, 'you are not the owner');\r\n        _;\r\n    }\r\n}",
-  "sourcePath": "D:\\Documents\\React\\Tesis Historias Clinicas\\contracts\\Ownable.sol",
+  "sourcePath": "D:\\Tesis Historia Geriatrica\\Blockchain-ClinicRecords\\contracts\\Ownable.sol",
   "ast": {
     "absolutePath": "project:/contracts/Ownable.sol",
     "exportedSymbols": {
@@ -657,7 +657,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2023-03-25T17:18:28.684Z",
+  "updatedAt": "2023-03-26T15:45:17.920Z",
   "devdoc": {
     "author": "Blockchain Clinic Records Team",
     "kind": "dev",
